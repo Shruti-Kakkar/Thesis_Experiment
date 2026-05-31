@@ -85,6 +85,14 @@ print("Class weights:", class_weights)
 # ─────────────────────────────────────────────
 # 5. DATA PIPELINE
 # ─────────────────────────────────────────────
+augmentation_layer = tf.keras.Sequential([
+    tf.keras.layers.RandomFlip("horizontal_and_vertical"),
+    tf.keras.layers.RandomRotation(0.2),
+    tf.keras.layers.RandomZoom(0.2),
+    tf.keras.layers.RandomBrightness(0.2),
+    tf.keras.layers.RandomContrast(0.2),
+])
+
 def load_and_preprocess(filepath, label, augment=False):
     img = tf.io.read_file(filepath)
     img = tf.image.decode_jpeg(img, channels=3)
@@ -128,17 +136,7 @@ print(f"Test images (known labels): {len(test_df)}")
 
 test_ds = make_dataset(test_df, augment=False, shuffle=False)
 # ─────────────────────────────────────────────
-# 7. ADDING AUGMENTATION LAYER DEFINITION (for training images) 
-# ─────────────────────────────────────────────
-augmentation_layer = tf.keras.Sequential([
-    tf.keras.layers.RandomFlip("horizontal_and_vertical"),
-    tf.keras.layers.RandomRotation(0.2),
-    tf.keras.layers.RandomZoom(0.2),
-    tf.keras.layers.RandomBrightness(0.2),
-    tf.keras.layers.RandomContrast(0.2),
-])
-# ─────────────────────────────────────────────
-# 8. BUILD MODEL
+# 7. BUILD MODEL
 # ─────────────────────────────────────────────
 def build_model():
     base_model = ResNet50V2(
@@ -162,7 +160,7 @@ model, base_model = build_model()
 model.summary()
 
 # ─────────────────────────────────────────────
-# 9. CALLBACKS
+# 8. CALLBACKS
 # ─────────────────────────────────────────────
 def get_callbacks(phase):
     return [
@@ -176,7 +174,7 @@ def get_callbacks(phase):
     ]
 
 # ─────────────────────────────────────────────
-# 10. PHASE 1 — TRAIN HEAD ONLY
+# 9. PHASE 1 — TRAIN HEAD ONLY
 # ─────────────────────────────────────────────
 print("\n--- Phase 1: Training classification head ---")
 model.compile(
@@ -193,7 +191,7 @@ history_p1 = model.fit(
     verbose=1)
 
 # ─────────────────────────────────────────────
-# 11. PHASE 2 — FINE-TUNE TOP LAYERS
+# 10. PHASE 2 — FINE-TUNE TOP LAYERS
 # ─────────────────────────────────────────────
 print("\n--- Phase 2: Fine-tuning top layers ---")
 
@@ -216,14 +214,14 @@ history_p2 = model.fit(
     verbose=1)
 
 # ─────────────────────────────────────────────
-# 12. SAVE FINAL MODEL
+# 11. SAVE FINAL MODEL
 # ─────────────────────────────────────────────
 final_model_path = os.path.join(MODEL_DIR, f'resnet50v2_isic2019_final{RUN_TAG}.keras')
 model.save(final_model_path)
 print(f"\nFinal model saved to: {final_model_path}")
 
 # ─────────────────────────────────────────────
-# 13. PLOT TRAINING CURVES
+# 12. PLOT TRAINING CURVES
 # ─────────────────────────────────────────────
 def plot_history(h1, h2, output_dir):
     acc  = h1.history['accuracy']      + h2.history['accuracy']
@@ -257,7 +255,7 @@ def plot_history(h1, h2, output_dir):
 plot_history(history_p1, history_p2, OUTPUT_DIR)
 
 # ─────────────────────────────────────────────
-# 14. EVALUATE ON TEST SET
+# 13. EVALUATE ON TEST SET
 # ─────────────────────────────────────────────
 print("\n--- Evaluating on official test set ---")
 
