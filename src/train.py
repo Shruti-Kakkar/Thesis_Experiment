@@ -45,6 +45,7 @@ BATCH_SIZE  = 32
 EPOCHS_P1   = 10           # Phase 1: frozen base
 EPOCHS_P2   = 40           # Phase 2: fine-tuning
 SEED        = 42
+RUN_TAG     = "_run2"      # suffix appended to all output filenames
 
 CLASS_NAMES = ['MEL', 'NV', 'BCC', 'AK', 'BKL', 'DF', 'VASC', 'SCC']
 NUM_CLASSES = len(CLASS_NAMES)
@@ -91,10 +92,7 @@ def load_and_preprocess(filepath, label, augment=False):
     img = tf.keras.applications.resnet_v2.preprocess_input(img)
 
     if augment:
-        img = tf.image.random_flip_left_right(img)
-        img = tf.image.random_flip_up_down(img)
-        img = tf.image.random_brightness(img, max_delta=0.1)
-        img = tf.image.random_contrast(img, lower=0.9, upper=1.1)
+        img = augmentation_layer(img, training=True)
 
     label = tf.one_hot(label, NUM_CLASSES)
     return img, label
@@ -129,9 +127,18 @@ test_df = test_df[test_df['filepath'].apply(os.path.exists)]
 print(f"Test images (known labels): {len(test_df)}")
 
 test_ds = make_dataset(test_df, augment=False, shuffle=False)
-
 # ─────────────────────────────────────────────
-# 7. BUILD MODEL
+# 7. ADDING AUGMENTATION LAYER DEFINITION (for training images) 
+# ─────────────────────────────────────────────
+augmentation_layer = tf.keras.Sequential([
+    tf.keras.layers.RandomFlip("horizontal_and_vertical"),
+    tf.keras.layers.RandomRotation(0.2),
+    tf.keras.layers.RandomZoom(0.2),
+    tf.keras.layers.RandomBrightness(0.2),
+    tf.keras.layers.RandomContrast(0.2),
+])
+# ─────────────────────────────────────────────
+# 8. BUILD MODEL
 # ─────────────────────────────────────────────
 def build_model():
     base_model = ResNet50V2(
@@ -145,7 +152,7 @@ def build_model():
     x = layers.GlobalAveragePooling2D()(x)
     x = layers.BatchNormalization()(x)
     x = layers.Dense(256, activation='relu')(x)
-    x = layers.Dropout(0.5)(x)
+    x = layers.Dropout(0.6)(x)
     outputs = layers.Dense(NUM_CLASSES, activation='softmax')(x)
 
     model = Model(inputs, outputs)
@@ -155,21 +162,21 @@ model, base_model = build_model()
 model.summary()
 
 # ─────────────────────────────────────────────
-# 8. CALLBACKS
+# 9. CALLBACKS
 # ─────────────────────────────────────────────
 def get_callbacks(phase):
     return [
         EarlyStopping(monitor='val_loss', patience=5,
                       restore_best_weights=True, verbose=1),
         ModelCheckpoint(
-            os.path.join(MODEL_DIR, f'resnet50v2_phase{phase}_best.keras'),
+            os.path.join(MODEL_DIR, f'resnet50v2_phase{phase}_best{RUN_TAG}.keras'),
             monitor='val_loss', save_best_only=True, verbose=1),
         ReduceLROnPlateau(monitor='val_loss', factor=0.5,
                           patience=3, min_lr=1e-7, verbose=1)
     ]
 
 # ─────────────────────────────────────────────
-# 9. PHASE 1 — TRAIN HEAD ONLY
+# 10. PHASE 1 — TRAIN HEAD ONLY
 # ─────────────────────────────────────────────
 print("\n--- Phase 1: Training classification head ---")
 model.compile(
@@ -186,17 +193,17 @@ history_p1 = model.fit(
     verbose=1)
 
 # ─────────────────────────────────────────────
-# 10. PHASE 2 — FINE-TUNE TOP LAYERS
+# 11. PHASE 2 — FINE-TUNE TOP LAYERS
 # ─────────────────────────────────────────────
 print("\n--- Phase 2: Fine-tuning top layers ---")
 
 # Unfreeze top 30 layers of base model
 base_model.trainable = True
-for layer in base_model.layers[:-30]:
+for layer in base_model.layers[:-50]:
     layer.trainable = False
 
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5),
     loss='categorical_crossentropy',
     metrics=['accuracy'])
 
@@ -209,14 +216,14 @@ history_p2 = model.fit(
     verbose=1)
 
 # ─────────────────────────────────────────────
-# 11. SAVE FINAL MODEL
+# 12. SAVE FINAL MODEL
 # ─────────────────────────────────────────────
-final_model_path = os.path.join(MODEL_DIR, 'resnet50v2_isic2019_final.keras')
+final_model_path = os.path.join(MODEL_DIR, f'resnet50v2_isic2019_final{RUN_TAG}.keras')
 model.save(final_model_path)
 print(f"\nFinal model saved to: {final_model_path}")
 
 # ─────────────────────────────────────────────
-# 12. PLOT TRAINING CURVES
+# 13. PLOT TRAINING CURVES
 # ─────────────────────────────────────────────
 def plot_history(h1, h2, output_dir):
     acc  = h1.history['accuracy']      + h2.history['accuracy']
@@ -244,13 +251,13 @@ def plot_history(h1, h2, output_dir):
     ax2.legend()
 
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, 'training_curves.png'), dpi=150)
+    plt.savefig(os.path.join(output_dir, f'training_curves{RUN_TAG}.png'), dpi=150)
     print("Training curves saved.")
 
 plot_history(history_p1, history_p2, OUTPUT_DIR)
 
 # ─────────────────────────────────────────────
-# 13. EVALUATE ON TEST SET
+# 14. EVALUATE ON TEST SET
 # ─────────────────────────────────────────────
 print("\n--- Evaluating on official test set ---")
 
@@ -263,7 +270,7 @@ report = classification_report(y_true, y_pred_classes,
                                 target_names=CLASS_NAMES)
 print(report)
 
-with open(os.path.join(OUTPUT_DIR, 'classification_report.txt'), 'w') as f:
+with open(os.path.join(OUTPUT_DIR, f'classification_report{RUN_TAG}.txt'), 'w') as f:
     f.write(report)
 
 # Confusion matrix
@@ -275,6 +282,6 @@ plt.title('Confusion Matrix — ResNet50V2 on ISIC 2019')
 plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.tight_layout()
-plt.savefig(os.path.join(OUTPUT_DIR, 'confusion_matrix.png'), dpi=150)
+plt.savefig(os.path.join(OUTPUT_DIR, f'confusion_matrix{RUN_TAG}.png'), dpi=150)
 print("Confusion matrix saved.")
 print("\nDone!")
