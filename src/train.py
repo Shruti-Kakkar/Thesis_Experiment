@@ -43,9 +43,9 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 IMG_SIZE    = 224          # ResNet50V2 input size
 BATCH_SIZE  = 32
 EPOCHS_P1   = 10           # Phase 1: frozen base
-EPOCHS_P2   = 60           # Phase 2: fine-tuning
+EPOCHS_P2   = 40           # Phase 2: fine-tuning
 SEED        = 42
-RUN_TAG     = "_run4"      # suffix appended to all output filenames
+RUN_TAG     = "_run1"      # suffix appended to all output filenames
 
 CLASS_NAMES = ['MEL', 'NV', 'BCC', 'AK', 'BKL', 'DF', 'VASC', 'SCC']
 NUM_CLASSES = len(CLASS_NAMES)
@@ -85,7 +85,6 @@ print("Class weights:", class_weights)
 # ─────────────────────────────────────────────
 # 5. DATA PIPELINE
 # ─────────────────────────────────────────────
-
 def load_and_preprocess(filepath, label, augment=False):
     img = tf.io.read_file(filepath)
     img = tf.image.decode_jpeg(img, channels=3)
@@ -95,10 +94,8 @@ def load_and_preprocess(filepath, label, augment=False):
     if augment:
         img = tf.image.random_flip_left_right(img)
         img = tf.image.random_flip_up_down(img)
-        img = tf.image.rot90(img, k=tf.random.uniform(
-            shape=[], minval=0, maxval=4, dtype=tf.int32))
-        img = tf.image.random_brightness(img, max_delta=0.2)
-        img = tf.image.random_contrast(img, lower=0.8, upper=1.2)
+        img = tf.image.random_brightness(img, max_delta=0.1)
+        img = tf.image.random_contrast(img, lower=0.9, upper=1.1)
 
     label = tf.one_hot(label, NUM_CLASSES)
     return img, label
@@ -133,6 +130,7 @@ test_df = test_df[test_df['filepath'].apply(os.path.exists)]
 print(f"Test images (known labels): {len(test_df)}")
 
 test_ds = make_dataset(test_df, augment=False, shuffle=False)
+
 # ─────────────────────────────────────────────
 # 7. BUILD MODEL
 # ─────────────────────────────────────────────
@@ -148,7 +146,7 @@ def build_model():
     x = layers.GlobalAveragePooling2D()(x)
     x = layers.BatchNormalization()(x)
     x = layers.Dense(256, activation='relu')(x)
-    x = layers.Dropout(0.6)(x)
+    x = layers.Dropout(0.5)(x)
     outputs = layers.Dense(NUM_CLASSES, activation='softmax')(x)
 
     model = Model(inputs, outputs)
@@ -162,7 +160,7 @@ model.summary()
 # ─────────────────────────────────────────────
 def get_callbacks(phase):
     return [
-        EarlyStopping(monitor='val_loss', patience=10,
+        EarlyStopping(monitor='val_loss', patience=5,
                       restore_best_weights=True, verbose=1),
         ModelCheckpoint(
             os.path.join(MODEL_DIR, f'resnet50v2_phase{phase}_best{RUN_TAG}.keras'),
@@ -193,13 +191,13 @@ history_p1 = model.fit(
 # ─────────────────────────────────────────────
 print("\n--- Phase 2: Fine-tuning top layers ---")
 
-# Unfreeze top 50 layers of base model
+# Unfreeze top 30 layers of base model
 base_model.trainable = True
-for layer in base_model.layers[:-50]:
+for layer in base_model.layers[:-30]:
     layer.trainable = False
 
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4),
     loss='categorical_crossentropy',
     metrics=['accuracy'])
 
