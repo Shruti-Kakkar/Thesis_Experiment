@@ -220,6 +220,8 @@ __marimo__/
 # Project specific - large files
 datasets/
 models/
+concept_images/
+outputs/vtcav/
 
 *.h5
 *.keras
