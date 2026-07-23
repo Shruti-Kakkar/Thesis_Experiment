@@ -100,6 +100,7 @@ class VisualTCAV():
 		models_dir=None, cache_dir=None, test_images_dir=None,
 		concept_images_dir=None, random_images_folder=None,
 		negative_suffix="negative",
+		extra_negative_concepts=None,
 	):
 
 		# Folders and directories
@@ -115,6 +116,15 @@ class VisualTCAV():
 		#   concept_images/<concept_root>/<negative_suffix>/
 		# e.g. concept_images/pigment_network_typical/negative/
 		self.negative_suffix = negative_suffix
+
+		# MODIFICATION: optional additional negative sources per concept,
+		# combined with the default 'absent' folder. Dict mapping
+		# concept_root -> list of extra concept-folder paths, e.g.:
+		#   {"pigment_network_typical": ["pigment_network_atypical/positive"]}
+		# Default {} reproduces original behavior exactly (absent-only
+		# negatives), so existing cached results for concepts not listed
+		# here stay valid and reproducible.
+		self.extra_negative_concepts = extra_negative_concepts or {}
 		
 		os.makedirs(self.models_dir, exist_ok=True)
 		os.makedirs(self.cache_base_dir, exist_ok=True)
@@ -263,27 +273,61 @@ class VisualTCAV():
 		concept_name is passed as "<concept_root>/positive"
 		so concept_root = concept_name.split('/')[0]
 		negative folder = concept_root + '/' + self.negative_suffix
+
+		MODIFICATION: if self.extra_negative_concepts has an entry for
+		this concept_root, additional negative sources (e.g. the opposite
+		label -- 'atypical' as a negative for 'typical') are loaded and
+		concatenated with the default 'absent' negatives.
+
+		IMPORTANT: each source is loaded and capped by max_examples
+		INDEPENDENTLY, then concatenated -- never as one combined file
+		list truncated by max_examples together. Combining raw file lists
+		before truncating would let a large 'absent' folder (e.g. already
+		at the max_examples cap on its own) crowd out every image from a
+		smaller added source, silently dropping it entirely. Loading each
+		source separately guarantees every source contributes up to its
+		own max_examples budget.
 		"""
 		concept_root = concept_name.split('/')[0]
 		negative_folder = concept_root + '/' + self.negative_suffix
 
-		# Cache path — keyed to concept so each concept has its own cache
+		extra_folders = self.extra_negative_concepts.get(concept_root, [])
+
+		# Cache key includes the extra sources (sorted for determinism) so
+		# a combined-negative run can never silently reuse a stale
+		# absent-only cache file, or vice versa.
 		safe_name = concept_root.replace('/', '_')
+		extra_tag = ""
+		if extra_folders:
+			extra_safe = "_".join(sorted(f.replace('/', '-') for f in extra_folders))
+			extra_tag = f"_plus_{extra_safe}"
 		cache_neg_path = os.path.join(
 			self.cache_dir,
-			f'neg_acts_{safe_name}_{self.model.max_examples}_{layer_name}.joblib'
+			f'neg_acts_{safe_name}{extra_tag}_{self.model.max_examples}_{layer_name}.joblib'
 		)
 
 		if cache and os.path.isfile(cache_neg_path):
-			negative_acts = load(cache_neg_path)
-		else:
-			negative_acts = self.model.activation_generator.get_feature_maps_for_concept(
-				negative_folder,
+			return load(cache_neg_path)
+
+		# Default source: the 'absent' folder, loaded with its own
+		# max_examples budget as before.
+		negative_acts = self.model.activation_generator.get_feature_maps_for_concept(
+			negative_folder,
+			layer_name,
+		)
+
+		# Additional sources, each loaded independently (own max_examples
+		# budget each) then concatenated onto the default negatives.
+		for extra_folder in extra_folders:
+			extra_acts = self.model.activation_generator.get_feature_maps_for_concept(
+				extra_folder,
 				layer_name,
 			)
-			if cache:
-				os.makedirs(os.path.dirname(cache_neg_path), exist_ok=True)
-				dump(negative_acts, cache_neg_path, compress=3)
+			negative_acts = np.concatenate([negative_acts, extra_acts], axis=0)
+
+		if cache:
+			os.makedirs(os.path.dirname(cache_neg_path), exist_ok=True)
+			dump(negative_acts, cache_neg_path, compress=3)
 
 		return negative_acts
 
@@ -317,9 +361,23 @@ class VisualTCAV():
 		  cav.concept_emblem = computed from mean direction
 		"""
 		safe_name = concept_name.replace('/', '_')
+
+		# MODIFICATION: cache key must reflect extra_negative_concepts too,
+		# not just the negative-activations cache. Without this, a cached
+		# ConceptLayer from an earlier absent-only run would be silently
+		# returned here -- before _compute_negative_activations (and its
+		# own extra-negatives logic) ever runs -- reusing a stale direction
+		# computed from the wrong negative set.
+		concept_root = concept_name.split('/')[0]
+		extra_folders = self.extra_negative_concepts.get(concept_root, [])
+		extra_tag = ""
+		if extra_folders:
+			extra_safe = "_".join(sorted(f.replace('/', '-') for f in extra_folders))
+			extra_tag = f"_plus_{extra_safe}"
+
 		cache_path = os.path.join(
 			self.cache_dir,
-			f'cav_{safe_name}_{self.model.max_examples}'
+			f'cav_{safe_name}{extra_tag}_{self.model.max_examples}'
 			f'_neg_{n_runs}runs_{layer_name}.joblib'
 		)
 
