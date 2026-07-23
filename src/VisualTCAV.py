@@ -371,18 +371,23 @@ class VisualTCAV():
 			c1 = tf.reduce_mean(neg_train, axis=0)
 			direction = tf.subtract(c0, c1)
 
-			# Validation accuracy: dot product with direction should be
-			# positive for positive class, negative for negative class
+			# Validation: single fixed threshold (nearest-centroid decision
+			# boundary), computed ONCE from the training centroids -- not
+			# per validation example. This replaces a per-pair midpoint
+			# that collapsed to an arbitrary, order-dependent comparison.
+			threshold = tf.reduce_sum(
+				tf.multiply((c0 + c1) / 2.0, direction)
+			)
+
 			pos_scores = tf.reduce_sum(
 				tf.multiply(tf.constant(pos_val), direction[None, :]), axis=1
 			)
 			neg_scores = tf.reduce_sum(
 				tf.multiply(tf.constant(neg_val), direction[None, :]), axis=1
 			)
-			mid_point = (pos_scores + neg_scores) / 2.0
 			correct = (
-				tf.reduce_sum(tf.cast(pos_scores > mid_point, tf.float32)) +
-				tf.reduce_sum(tf.cast(neg_scores < mid_point, tf.float32))
+				tf.reduce_sum(tf.cast(pos_scores > threshold, tf.float32)) +
+				tf.reduce_sum(tf.cast(neg_scores < threshold, tf.float32))
 			)
 			val_acc = float(correct) / (len(pos_val) + len(neg_val))
 
