@@ -36,7 +36,7 @@ MODELS_DIR      = os.path.join(VTCAV_DIR, "models")
 CACHE_DIR       = os.path.join(VTCAV_DIR, "cache")
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
 CONCEPT_DIR     = os.path.join(PROJECT_ROOT, "concept_images")
-RESULTS_DIR     = os.path.join(PROJECT_ROOT, "outputs", "vtcav_results")
+RESULTS_DIR     = os.path.join(PROJECT_ROOT, "outputs", "vtcav_results_run2")
 
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(CACHE_DIR,  exist_ok=True)
@@ -64,7 +64,7 @@ if not os.path.exists(graph_dest):
     print(f"Symlinked model to: {graph_dest}")
 
 # Write labels file — alphabetical order matching training
-CLASSES = ["AK", "BCC", "BKL", "DF", "MEL", "NV", "SCC", "VASC"]
+CLASSES = ['MEL', 'NV', 'BCC', 'AK', 'BKL', 'DF', 'VASC', 'SCC']
 labels_dest = os.path.join(MODEL_SUBDIR, LABELS_FILENAME)
 if not os.path.exists(labels_dest):
     with open(labels_dest, 'w') as f:

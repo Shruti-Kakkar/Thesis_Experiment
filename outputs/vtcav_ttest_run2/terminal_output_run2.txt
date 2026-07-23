@@ -1,0 +1,693 @@
+atology/src$ python VisualTCAV_derma_ttest.py
+2026-07-11 00:46:25.760929: E external/local_xla/xla/stream_execu
+tor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Atte
+mpting to register factory for plugin cuDNN when one has already
+been registered
+2026-07-11 00:46:25.760968: E external/local_xla/xla/stream_execu
+tor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attem
+pting to register factory for plugin cuFFT when one has already b
+een registered
+2026-07-11 00:46:25.762156: E external/local_xla/xla/stream_execu
+tor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: At
+tempting to register factory for plugin cuBLAS when one has alrea
+dy been registered
+============================================================
+Visual-TCAV Statistical Significance Testing
+N random CAVs: 50 | Alpha: 0.05
+============================================================
+
+Loading model wrapper...
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+  Model: resnet50v2
+
+────────────────────────────────────────────────────────────
+Concept: pigment_network_typical
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=160 neg=160
+    MEL: mean=-3.69098 p=0.0000 ✓ significant
+    NV: mean=-3.59874 p=0.0000 ✓ significant
+    BCC: mean=-4.57861 p=0.0000 ✓ significant
+    AK: mean=-4.64946 p=0.0000 ✓ significant
+    BKL: mean=-3.94339 p=0.0000 ✓ significant
+    DF: mean=-4.20945 p=0.0000 ✓ significant
+    VASC: mean=-6.31107 p=0.0000 ✓ significant
+    SCC: mean=-4.75317 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=160 neg=160
+    MEL: mean=-6.96254 p=0.0001 ✓ significant
+    NV: mean=-6.94207 p=0.0001 ✓ significant
+    BCC: mean=-7.77143 p=0.0000 ✓ significant
+    AK: mean=-7.89352 p=0.0000 ✓ significant
+    BKL: mean=-7.07550 p=0.0000 ✓ significant
+    DF: mean=-7.46412 p=0.0000 ✓ significant
+    VASC: mean=-9.93735 p=0.0000 ✓ significant
+    SCC: mean=-8.05493 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=160 neg=160
+    MEL: mean=-4.08154 p=0.0128 ✓ significant
+    NV: mean=-4.05800 p=0.0119 ✓ significant
+    BCC: mean=-4.90428 p=0.0024 ✓ significant
+    AK: mean=-4.96551 p=0.0025 ✓ significant
+    BKL: mean=-4.25900 p=0.0075 ✓ significant
+    DF: mean=-4.57949 p=0.0046 ✓ significant
+    VASC: mean=-6.82229 p=0.0003 ✓ significant
+    SCC: mean=-5.13705 p=0.0020 ✓ significant
+  Layer post_relu: pos=160 neg=160
+    MEL: mean=1.70618 p=0.0000 ✓ significant
+    NV: mean=1.79192 p=0.0000 ✓ significant
+    BCC: mean=-0.53283 p=0.2552 * NOT significant
+    AK: mean=-0.20923 p=0.8600 * NOT significant
+    BKL: mean=0.98856 p=0.0006 ✓ significant
+    DF: mean=0.65517 p=0.0371 ✓ significant
+    VASC: mean=-2.75744 p=0.0000 ✓ significant
+    SCC: mean=-0.38615 p=0.4699 * NOT significant
+
+────────────────────────────────────────────────────────────
+Concept: pigment_network_atypical
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=93 neg=160
+    MEL: mean=2.69015 p=0.0000 ✓ significant
+    NV: mean=1.34024 p=0.0049 ✓ significant
+    BCC: mean=0.90610 p=0.0599 * NOT significant
+    AK: mean=0.93782 p=0.0602 * NOT significant
+    BKL: mean=1.84228 p=0.0003 ✓ significant
+    DF: mean=0.44059 p=0.3562 * NOT significant
+    VASC: mean=-0.48577 p=0.4653 * NOT significant
+    SCC: mean=0.61803 p=0.2257 * NOT significant
+  Layer conv5_block2_out: pos=93 neg=160
+    MEL: mean=8.61265 p=0.0000 ✓ significant
+    NV: mean=7.22951 p=0.0001 ✓ significant
+    BCC: mean=6.71907 p=0.0002 ✓ significant
+    AK: mean=6.81901 p=0.0002 ✓ significant
+    BKL: mean=7.58191 p=0.0000 ✓ significant
+    DF: mean=6.31737 p=0.0005 ✓ significant
+    VASC: mean=5.84876 p=0.0030 ✓ significant
+    SCC: mean=6.57148 p=0.0004 ✓ significant
+  Layer conv5_block3_out: pos=93 neg=160
+    MEL: mean=12.08311 p=0.0000 ✓ significant
+    NV: mean=10.70509 p=0.0000 ✓ significant
+    BCC: mean=10.09973 p=0.0000 ✓ significant
+    AK: mean=10.22733 p=0.0000 ✓ significant
+    BKL: mean=10.91815 p=0.0000 ✓ significant
+    DF: mean=9.75901 p=0.0000 ✓ significant
+    VASC: mean=9.60161 p=0.0000 ✓ significant
+    SCC: mean=10.03945 p=0.0000 ✓ significant
+  Layer post_relu: pos=93 neg=160
+    MEL: mean=2.83742 p=0.0000 ✓ significant
+    NV: mean=0.65105 p=0.0223 ✓ significant
+    BCC: mean=-0.68475 p=0.1279 * NOT significant
+    AK: mean=-0.47663 p=0.3621 * NOT significant
+    BKL: mean=1.03702 p=0.0007 ✓ significant
+    DF: mean=-0.42181 p=0.5587 * NOT significant
+    VASC: mean=-2.09959 p=0.0000 ✓ significant
+    SCC: mean=-0.61894 p=0.2172 * NOT significant
+
+────────────────────────────────────────────────────────────
+Concept: streaks_regular
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=39 neg=200
+    MEL: mean=-4.69477 p=0.0000 ✓ significant
+    NV: mean=-2.52852 p=0.0000 ✓ significant
+    BCC: mean=-4.28917 p=0.0000 ✓ significant
+    AK: mean=-3.96413 p=0.0000 ✓ significant
+    BKL: mean=-4.93954 p=0.0000 ✓ significant
+    DF: mean=-3.06755 p=0.0000 ✓ significant
+    VASC: mean=-3.45860 p=0.0000 ✓ significant
+    SCC: mean=-4.13430 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=39 neg=200
+    MEL: mean=3.28715 p=0.0002 ✓ significant
+    NV: mean=5.40938 p=0.0000 ✓ significant
+    BCC: mean=3.58424 p=0.0001 ✓ significant
+    AK: mean=4.00408 p=0.0000 ✓ significant
+    BKL: mean=2.82912 p=0.0005 ✓ significant
+    DF: mean=4.86802 p=0.0000 ✓ significant
+    VASC: mean=5.09436 p=0.0000 ✓ significant
+    SCC: mean=3.87682 p=0.0001 ✓ significant
+  Layer conv5_block3_out: pos=39 neg=200
+    MEL: mean=3.40575 p=0.0001 ✓ significant
+    NV: mean=5.53262 p=0.0000 ✓ significant
+    BCC: mean=3.64299 p=0.0000 ✓ significant
+    AK: mean=4.02639 p=0.0000 ✓ significant
+    BKL: mean=2.89671 p=0.0003 ✓ significant
+    DF: mean=4.96249 p=0.0000 ✓ significant
+    VASC: mean=5.22140 p=0.0000 ✓ significant
+    SCC: mean=3.95514 p=0.0000 ✓ significant
+  Layer post_relu: pos=39 neg=200
+    MEL: mean=-4.92861 p=0.0000 ✓ significant
+    NV: mean=-1.43386 p=0.0004 ✓ significant
+    BCC: mean=-3.33415 p=0.0000 ✓ significant
+    AK: mean=-2.61237 p=0.0000 ✓ significant
+    BKL: mean=-5.00920 p=0.0000 ✓ significant
+    DF: mean=-2.06066 p=0.0070 ✓ significant
+    VASC: mean=-1.67937 p=0.0092 ✓ significant
+    SCC: mean=-2.82903 p=0.0000 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: streaks_irregular
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=101 neg=200
+    MEL: mean=4.64780 p=0.0000 ✓ significant
+    NV: mean=3.54781 p=0.0000 ✓ significant
+    BCC: mean=3.91116 p=0.0000 ✓ significant
+    AK: mean=3.81464 p=0.0000 ✓ significant
+    BKL: mean=3.95592 p=0.0000 ✓ significant
+    DF: mean=3.35379 p=0.0000 ✓ significant
+    VASC: mean=4.02044 p=0.0000 ✓ significant
+    SCC: mean=3.62663 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=101 neg=200
+    MEL: mean=11.92976 p=0.0000 ✓ significant
+    NV: mean=10.85415 p=0.0000 ✓ significant
+    BCC: mean=11.05036 p=0.0000 ✓ significant
+    AK: mean=11.04356 p=0.0000 ✓ significant
+    BKL: mean=10.99026 p=0.0000 ✓ significant
+    DF: mean=10.59022 p=0.0000 ✓ significant
+    VASC: mean=11.90038 p=0.0000 ✓ significant
+    SCC: mean=10.95437 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=101 neg=200
+    MEL: mean=12.68729 p=0.0000 ✓ significant
+    NV: mean=11.61669 p=0.0000 ✓ significant
+    BCC: mean=11.74074 p=0.0000 ✓ significant
+    AK: mean=11.70895 p=0.0000 ✓ significant
+    BKL: mean=11.67998 p=0.0000 ✓ significant
+    DF: mean=11.32351 p=0.0000 ✓ significant
+    VASC: mean=12.72438 p=0.0000 ✓ significant
+    SCC: mean=11.68210 p=0.0000 ✓ significant
+  Layer post_relu: pos=101 neg=200
+    MEL: mean=-0.02963 p=0.6639 * NOT significant
+    NV: mean=-1.73351 p=0.0000 ✓ significant
+    BCC: mean=-1.04005 p=0.0000 ✓ significant
+    AK: mean=-1.41304 p=0.0000 ✓ significant
+    BKL: mean=-1.23870 p=0.0000 ✓ significant
+    DF: mean=-1.63220 p=0.0000 ✓ significant
+    VASC: mean=-0.66184 p=0.0187 ✓ significant
+    SCC: mean=-1.35922 p=0.0000 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: pigmentation
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=160 neg=200
+    MEL: mean=7.01540 p=0.0000 ✓ significant
+    NV: mean=6.50964 p=0.0000 ✓ significant
+    BCC: mean=6.52041 p=0.0000 ✓ significant
+    AK: mean=6.59452 p=0.0000 ✓ significant
+    BKL: mean=6.46657 p=0.0000 ✓ significant
+    DF: mean=6.59139 p=0.0000 ✓ significant
+    VASC: mean=7.83389 p=0.0000 ✓ significant
+    SCC: mean=6.68983 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=160 neg=200
+    MEL: mean=18.96959 p=0.0000 ✓ significant
+    NV: mean=18.52973 p=0.0000 ✓ significant
+    BCC: mean=18.23491 p=0.0000 ✓ significant
+    AK: mean=18.46265 p=0.0000 ✓ significant
+    BKL: mean=18.00487 p=0.0000 ✓ significant
+    DF: mean=18.47156 p=0.0000 ✓ significant
+    VASC: mean=20.80354 p=0.0000 ✓ significant
+    SCC: mean=18.71830 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=160 neg=200
+    MEL: mean=17.84930 p=0.0000 ✓ significant
+    NV: mean=17.41070 p=0.0000 ✓ significant
+    BCC: mean=17.05930 p=0.0000 ✓ significant
+    AK: mean=17.22415 p=0.0000 ✓ significant
+    BKL: mean=16.86302 p=0.0000 ✓ significant
+    DF: mean=17.32527 p=0.0000 ✓ significant
+    VASC: mean=19.59221 p=0.0000 ✓ significant
+    SCC: mean=17.54501 p=0.0000 ✓ significant
+  Layer post_relu: pos=160 neg=200
+    MEL: mean=-0.88210 p=0.1623 * NOT significant
+    NV: mean=-1.30272 p=0.0001 ✓ significant
+    BCC: mean=-2.02430 p=0.0000 ✓ significant
+    AK: mean=-2.31804 p=0.0000 ✓ significant
+    BKL: mean=-1.82553 p=0.0000 ✓ significant
+    DF: mean=-1.72978 p=0.0000 ✓ significant
+    VASC: mean=-0.05558 p=0.3222 * NOT significant
+    SCC: mean=-2.16765 p=0.0000 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: regression_structures
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=96 neg=200
+    MEL: mean=-3.42888 p=0.0000 ✓ significant
+    NV: mean=-5.22248 p=0.0000 ✓ significant
+    BCC: mean=-4.40424 p=0.0000 ✓ significant
+    AK: mean=-4.78301 p=0.0000 ✓ significant
+    BKL: mean=-3.81901 p=0.0000 ✓ significant
+    DF: mean=-5.16474 p=0.0000 ✓ significant
+    VASC: mean=-5.45477 p=0.0000 ✓ significant
+    SCC: mean=-4.43030 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=96 neg=200
+    MEL: mean=-23.12264 p=0.0000 ✓ significant
+    NV: mean=-24.97504 p=0.0000 ✓ significant
+    BCC: mean=-23.75895 p=0.0000 ✓ significant
+    AK: mean=-24.38158 p=0.0000 ✓ significant
+    BKL: mean=-22.88846 p=0.0000 ✓ significant
+    DF: mean=-24.75623 p=0.0000 ✓ significant
+    VASC: mean=-26.72268 p=0.0000 ✓ significant
+    SCC: mean=-24.23107 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=96 neg=200
+    MEL: mean=-22.98278 p=0.0000 ✓ significant
+    NV: mean=-24.83875 p=0.0000 ✓ significant
+    BCC: mean=-23.49526 p=0.0000 ✓ significant
+    AK: mean=-24.03383 p=0.0000 ✓ significant
+    BKL: mean=-22.65529 p=0.0000 ✓ significant
+    DF: mean=-24.56345 p=0.0000 ✓ significant
+    VASC: mean=-26.56411 p=0.0000 ✓ significant
+    SCC: mean=-24.00548 p=0.0000 ✓ significant
+  Layer post_relu: pos=96 neg=200
+    MEL: mean=1.70772 p=0.0000 ✓ significant
+    NV: mean=-1.36786 p=0.0000 ✓ significant
+    BCC: mean=0.59707 p=0.0078 ✓ significant
+    AK: mean=0.20480 p=0.3100 * NOT significant
+    BKL: mean=1.19115 p=0.0000 ✓ significant
+    DF: mean=-0.14491 p=0.9737 * NOT significant
+    VASC: mean=-0.99753 p=0.0259 ✓ significant
+    SCC: mean=0.62880 p=0.0301 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: dots_and_globules_regular
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=156 neg=84
+    MEL: mean=4.55858 p=0.0000 ✓ significant
+    NV: mean=4.42801 p=0.0000 ✓ significant
+    BCC: mean=3.22747 p=0.0000 ✓ significant
+    AK: mean=3.74691 p=0.0000 ✓ significant
+    BKL: mean=4.03152 p=0.0000 ✓ significant
+    DF: mean=3.60739 p=0.0000 ✓ significant
+    VASC: mean=3.17505 p=0.0000 ✓ significant
+    SCC: mean=3.44304 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=156 neg=84
+    MEL: mean=22.17685 p=0.0000 ✓ significant
+    NV: mean=22.03730 p=0.0000 ✓ significant
+    BCC: mean=20.53776 p=0.0000 ✓ significant
+    AK: mean=21.27113 p=0.0000 ✓ significant
+    BKL: mean=21.09539 p=0.0000 ✓ significant
+    DF: mean=21.12094 p=0.0000 ✓ significant
+    VASC: mean=22.13249 p=0.0000 ✓ significant
+    SCC: mean=21.15934 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=156 neg=84
+    MEL: mean=24.61565 p=0.0000 ✓ significant
+    NV: mean=24.48343 p=0.0000 ✓ significant
+    BCC: mean=22.83349 p=0.0000 ✓ significant
+    AK: mean=23.53316 p=0.0000 ✓ significant
+    BKL: mean=23.37980 p=0.0000 ✓ significant
+    DF: mean=23.50674 p=0.0000 ✓ significant
+    VASC: mean=24.76442 p=0.0000 ✓ significant
+    SCC: mean=23.54079 p=0.0000 ✓ significant
+  Layer post_relu: pos=156 neg=84
+    MEL: mean=4.68058 p=0.0000 ✓ significant
+    NV: mean=4.28546 p=0.0000 ✓ significant
+    BCC: mean=1.52561 p=0.0000 ✓ significant
+    AK: mean=2.49170 p=0.0000 ✓ significant
+    BKL: mean=3.30774 p=0.0000 ✓ significant
+    DF: mean=2.80286 p=0.0000 ✓ significant
+    VASC: mean=1.88384 p=0.0000 ✓ significant
+    SCC: mean=2.19523 p=0.0000 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: dots_and_globules_irregular
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=173 neg=84
+    MEL: mean=10.16281 p=0.0000 ✓ significant
+    NV: mean=7.78506 p=0.0000 ✓ significant
+    BCC: mean=8.35936 p=0.0000 ✓ significant
+    AK: mean=8.42872 p=0.0000 ✓ significant
+    BKL: mean=9.08352 p=0.0000 ✓ significant
+    DF: mean=7.74712 p=0.0000 ✓ significant
+    VASC: mean=8.86104 p=0.0000 ✓ significant
+    SCC: mean=8.66603 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=173 neg=84
+    MEL: mean=23.66206 p=0.0000 ✓ significant
+    NV: mean=21.33778 p=0.0000 ✓ significant
+    BCC: mean=21.58414 p=0.0000 ✓ significant
+    AK: mean=21.82228 p=0.0000 ✓ significant
+    BKL: mean=22.11058 p=0.0000 ✓ significant
+    DF: mean=21.16173 p=0.0000 ✓ significant
+    VASC: mean=23.47378 p=0.0000 ✓ significant
+    SCC: mean=22.25713 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=173 neg=84
+    MEL: mean=25.75064 p=0.0000 ✓ significant
+    NV: mean=23.42919 p=0.0000 ✓ significant
+    BCC: mean=23.54623 p=0.0000 ✓ significant
+    AK: mean=23.75549 p=0.0000 ✓ significant
+    BKL: mean=24.06433 p=0.0000 ✓ significant
+    DF: mean=23.20071 p=0.0000 ✓ significant
+    VASC: mean=25.72983 p=0.0000 ✓ significant
+    SCC: mean=24.29528 p=0.0000 ✓ significant
+  Layer post_relu: pos=173 neg=84
+    MEL: mean=4.44209 p=0.0000 ✓ significant
+    NV: mean=0.61730 p=0.0691 * NOT significant
+    BCC: mean=1.02193 p=0.0032 ✓ significant
+    AK: mean=0.69082 p=0.0300 ✓ significant
+    BKL: mean=2.21764 p=0.0000 ✓ significant
+    DF: mean=1.07008 p=0.0139 ✓ significant
+    VASC: mean=2.09291 p=0.0001 ✓ significant
+    SCC: mean=1.46155 p=0.0000 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: blue_whitish_veil
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=74 neg=200
+    MEL: mean=7.29211 p=0.0000 ✓ significant
+    NV: mean=5.62100 p=0.0000 ✓ significant
+    BCC: mean=7.02780 p=0.0000 ✓ significant
+    AK: mean=7.16616 p=0.0000 ✓ significant
+    BKL: mean=6.61887 p=0.0000 ✓ significant
+    DF: mean=6.74107 p=0.0000 ✓ significant
+    VASC: mean=8.75883 p=0.0000 ✓ significant
+    SCC: mean=7.51090 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=74 neg=200
+    MEL: mean=12.52829 p=0.0000 ✓ significant
+    NV: mean=10.92235 p=0.0000 ✓ significant
+    BCC: mean=12.13734 p=0.0000 ✓ significant
+    AK: mean=12.34593 p=0.0000 ✓ significant
+    BKL: mean=11.64220 p=0.0000 ✓ significant
+    DF: mean=11.94638 p=0.0000 ✓ significant
+    VASC: mean=14.49371 p=0.0000 ✓ significant
+    SCC: mean=12.79686 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=74 neg=200
+    MEL: mean=12.32642 p=0.0000 ✓ significant
+    NV: mean=10.71491 p=0.0000 ✓ significant
+    BCC: mean=11.88823 p=0.0000 ✓ significant
+    AK: mean=12.06150 p=0.0000 ✓ significant
+    BKL: mean=11.40618 p=0.0000 ✓ significant
+    DF: mean=11.72229 p=0.0000 ✓ significant
+    VASC: mean=14.27555 p=0.0000 ✓ significant
+    SCC: mean=12.56212 p=0.0000 ✓ significant
+  Layer post_relu: pos=74 neg=200
+    MEL: mean=-1.06114 p=0.0009 ✓ significant
+    NV: mean=-3.49559 p=0.0000 ✓ significant
+    BCC: mean=-1.72345 p=0.0000 ✓ significant
+    AK: mean=-2.05514 p=0.0000 ✓ significant
+    BKL: mean=-2.48870 p=0.0000 ✓ significant
+    DF: mean=-1.77661 p=0.0000 ✓ significant
+    VASC: mean=1.00855 p=0.0231 ✓ significant
+    SCC: mean=-1.33407 p=0.0000 ✓ significant
+
+────────────────────────────────────────────────────────────
+Concept: vascular_structures
+────────────────────────────────────────────────────────────
+  Layer conv5_block1_out: pos=66 neg=200
+    MEL: mean=-7.03971 p=0.0000 ✓ significant
+    NV: mean=-8.37770 p=0.0000 ✓ significant
+    BCC: mean=-6.85270 p=0.0000 ✓ significant
+    AK: mean=-7.43437 p=0.0000 ✓ significant
+    BKL: mean=-6.74535 p=0.0000 ✓ significant
+    DF: mean=-7.51731 p=0.0000 ✓ significant
+    VASC: mean=-7.80156 p=0.0000 ✓ significant
+    SCC: mean=-6.61120 p=0.0000 ✓ significant
+  Layer conv5_block2_out: pos=66 neg=200
+    MEL: mean=-44.40096 p=0.0000 ✓ significant
+    NV: mean=-45.77292 p=0.0000 ✓ significant
+    BCC: mean=-43.57156 p=0.0000 ✓ significant
+    AK: mean=-44.61012 p=0.0000 ✓ significant
+    BKL: mean=-42.93520 p=0.0000 ✓ significant
+    DF: mean=-44.66979 p=0.0000 ✓ significant
+    VASC: mean=-48.07055 p=0.0000 ✓ significant
+    SCC: mean=-44.17400 p=0.0000 ✓ significant
+  Layer conv5_block3_out: pos=66 neg=200
+    MEL: mean=-45.63396 p=0.0000 ✓ significant
+    NV: mean=-47.02732 p=0.0000 ✓ significant
+    BCC: mean=-44.55969 p=0.0000 ✓ significant
+    AK: mean=-45.46523 p=0.0000 ✓ significant
+    BKL: mean=-43.95474 p=0.0000 ✓ significant
+    DF: mean=-45.80860 p=0.0000 ✓ significant
+    VASC: mean=-49.40088 p=0.0000 ✓ significant
+    SCC: mean=-45.26418 p=0.0000 ✓ significant
+  Layer post_relu: pos=66 neg=200
+    MEL: mean=-1.10913 p=0.0002 ✓ significant
+    NV: mean=-3.68207 p=0.0000 ✓ significant
+    BCC: mean=-0.12200 p=0.3601 * NOT significant
+    AK: mean=-0.85776 p=0.0012 ✓ significant
+    BKL: mean=-0.46597 p=0.0690 * NOT significant
+    DF: mean=-1.02681 p=0.0094 ✓ significant
+    VASC: mean=-1.85756 p=0.0000 ✓ significant
+    SCC: mean=0.36771 p=0.7812 * NOT significant
+
+Results saved: /home/student/s/skakkar/scratch/dev-uos/projects/V
+TCAV_Dermatology/outputs/vtcav_ttest_run2/ttest_results.json
+
+=================================================================
+=====
+SUMMARY — post_relu layer
+=================================================================
+=====
+
+Class: MEL
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | 1.70618  |  0.0000 |      ✓
+|
+|   pigment_network_atypical  | 2.83742  |  0.0000 |      ✓
+|
+|       streaks_regular       | -4.92861 |  0.0000 |      ✓
+|
+|      streaks_irregular      | -0.02963 |  0.6639 |     * NS
+|
+|         pigmentation        | -0.88210 |  0.1623 |     * NS
+|
+|    regression_structures    | 1.70772  |  0.0000 |      ✓
+|
+|  dots_and_globules_regular  | 4.68058  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 4.44209  |  0.0000 |      ✓
+|
+|      blue_whitish_veil      | -1.06114 |  0.0009 |      ✓
+|
+|     vascular_structures     | -1.10913 |  0.0002 |      ✓
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: NV
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | 1.79192  |  0.0000 |      ✓
+|
+|   pigment_network_atypical  | 0.65105  |  0.0223 |      ✓
+|
+|       streaks_regular       | -1.43386 |  0.0004 |      ✓
+|
+|      streaks_irregular      | -1.73351 |  0.0000 |      ✓
+|
+|         pigmentation        | -1.30272 |  0.0001 |      ✓
+|
+|    regression_structures    | -1.36786 |  0.0000 |      ✓
+|
+|  dots_and_globules_regular  | 4.28546  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 0.61730  |  0.0691 |     * NS
+|
+|      blue_whitish_veil      | -3.49559 |  0.0000 |      ✓
+|
+|     vascular_structures     | -3.68207 |  0.0000 |      ✓
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: BCC
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | -0.53283 |  0.2552 |     * NS
+|
+|   pigment_network_atypical  | -0.68475 |  0.1279 |     * NS
+|
+|       streaks_regular       | -3.33415 |  0.0000 |      ✓
+|
+|      streaks_irregular      | -1.04005 |  0.0000 |      ✓
+|
+|         pigmentation        | -2.02430 |  0.0000 |      ✓
+|
+|    regression_structures    | 0.59707  |  0.0078 |      ✓
+|
+|  dots_and_globules_regular  | 1.52561  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 1.02193  |  0.0032 |      ✓
+|
+|      blue_whitish_veil      | -1.72345 |  0.0000 |      ✓
+|
+|     vascular_structures     | -0.12200 |  0.3601 |     * NS
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: AK
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | -0.20923 |  0.8600 |     * NS
+|
+|   pigment_network_atypical  | -0.47663 |  0.3621 |     * NS
+|
+|       streaks_regular       | -2.61237 |  0.0000 |      ✓
+|
+|      streaks_irregular      | -1.41304 |  0.0000 |      ✓
+|
+|         pigmentation        | -2.31804 |  0.0000 |      ✓
+|
+|    regression_structures    | 0.20480  |  0.3100 |     * NS
+|
+|  dots_and_globules_regular  | 2.49170  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 0.69082  |  0.0300 |      ✓
+|
+|      blue_whitish_veil      | -2.05514 |  0.0000 |      ✓
+|
+|     vascular_structures     | -0.85776 |  0.0012 |      ✓
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: BKL
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | 0.98856  |  0.0006 |      ✓
+|
+|   pigment_network_atypical  | 1.03702  |  0.0007 |      ✓
+|
+|       streaks_regular       | -5.00920 |  0.0000 |      ✓
+|
+|      streaks_irregular      | -1.23870 |  0.0000 |      ✓
+|
+|         pigmentation        | -1.82553 |  0.0000 |      ✓
+|
+|    regression_structures    | 1.19115  |  0.0000 |      ✓
+|
+|  dots_and_globules_regular  | 3.30774  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 2.21764  |  0.0000 |      ✓
+|
+|      blue_whitish_veil      | -2.48870 |  0.0000 |      ✓
+|
+|     vascular_structures     | -0.46597 |  0.0690 |     * NS
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: DF
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | 0.65517  |  0.0371 |      ✓
+|
+|   pigment_network_atypical  | -0.42181 |  0.5587 |     * NS
+|
+|       streaks_regular       | -2.06066 |  0.0070 |      ✓
+|
+|      streaks_irregular      | -1.63220 |  0.0000 |      ✓
+|
+|         pigmentation        | -1.72978 |  0.0000 |      ✓
+|
+|    regression_structures    | -0.14491 |  0.9737 |     * NS
+|
+|  dots_and_globules_regular  | 2.80286  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 1.07008  |  0.0139 |      ✓
+|
+|      blue_whitish_veil      | -1.77661 |  0.0000 |      ✓
+|
+|     vascular_structures     | -1.02681 |  0.0094 |      ✓
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: VASC
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | -2.75744 |  0.0000 |      ✓
+|
+|   pigment_network_atypical  | -2.09959 |  0.0000 |      ✓
+|
+|       streaks_regular       | -1.67937 |  0.0092 |      ✓
+|
+|      streaks_irregular      | -0.66184 |  0.0187 |      ✓
+|
+|         pigmentation        | -0.05558 |  0.3222 |     * NS
+|
+|    regression_structures    | -0.99753 |  0.0259 |      ✓
+|
+|  dots_and_globules_regular  | 1.88384  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 2.09291  |  0.0001 |      ✓
+|
+|      blue_whitish_veil      | 1.00855  |  0.0231 |      ✓
+|
+|     vascular_structures     | -1.85756 |  0.0000 |      ✓
+|
++-----------------------------+----------+---------+-------------
++
+
+Class: SCC
++-----------------------------+----------+---------+-------------
++
+|           Concept           |   Mean   | p-value | Significant
+|
++-----------------------------+----------+---------+-------------
++
+|   pigment_network_typical   | -0.38615 |  0.4699 |     * NS
+|
+|   pigment_network_atypical  | -0.61894 |  0.2172 |     * NS
+|
+|       streaks_regular       | -2.82903 |  0.0000 |      ✓
+|
+|      streaks_irregular      | -1.35922 |  0.0000 |      ✓
+|
+|         pigmentation        | -2.16765 |  0.0000 |      ✓
+|
+|    regression_structures    | 0.62880  |  0.0301 |      ✓
+|
+|  dots_and_globules_regular  | 2.19523  |  0.0000 |      ✓
+|
+| dots_and_globules_irregular | 1.46155  |  0.0000 |      ✓
+|
+|      blue_whitish_veil      | -1.33407 |  0.0000 |      ✓
+|
+|     vascular_structures     | 0.36771  |  0.7812 |     * NS
+|
++-----------------------------+----------+---------+-------------
++
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_MEL.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_NV.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_BCC.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_AK.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_BKL.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_DF.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_VASC.png
+Saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Der
+matology/outputs/vtcav_ttest_run2/ttest_plot_SCC.png
+
+All done. Results in: /home/student/s/skakkar/scratch/dev-uos/pro

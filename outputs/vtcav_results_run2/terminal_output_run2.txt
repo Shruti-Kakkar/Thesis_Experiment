@@ -1,0 +1,939 @@
+atology/src$ python VisualTCAV_derma_global.py
+Labels file written: /home/student/s/skakkar/scratch/dev-uos/proj
+ects/VTCAV_Dermatology/outputs/vtcav/models/resnet50v2/isic2019_c
+lasses.txt
+2026-07-11 00:25:06.779462: E external/local_xla/xla/stream_execu
+tor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Atte
+mpting to register factory for plugin cuDNN when one has already
+been registered
+2026-07-11 00:25:06.779501: E external/local_xla/xla/stream_execu
+tor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attem
+pting to register factory for plugin cuFFT when one has already b
+een registered
+2026-07-11 00:25:06.780701: E external/local_xla/xla/stream_execu
+tor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: At
+tempting to register factory for plugin cuBLAS when one has alrea
+dy been registered
+VisualTCAV imported successfully.
+
+
+============================================================
+GlobalVisualTCAV — class: MEL (1327 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:37<00:00,  5.29it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:34<00:00,  5.82it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:34<00:00,  5.72it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:32<00:00,  6.14it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [02:27<00:00, 36.90s/it]
++----------------------------------------------------------------
+---------------------------------------+
+|                              Model: resnet50v2; Class: MEL; Exa
+mples: MEL                             |
++--------------------------------------+------------------+------
+--------------+------------------------+
+|               Concept                |      Layer       |    At
+trib. mean    |   Attrib. 95.45% CI    |
++--------------------------------------+------------------+------
+--------------+------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |  0.01
+23 +- 0.0104  |  ['0.0108', '0.0137']  |
+|                                      | conv5_block2_out | 0.004
+33 +- 0.00508 | ['0.00361', '0.00505'] |
+|                                      | conv5_block3_out | 0.007
+2 +- 0.00702  | ['0.00621', '0.00819'] |
+|                                      |    post_relu     |  0.02
+89 +- 0.0205  |  ['0.026', '0.0318']   |
+|  pigment_network_atypical/positive   | conv5_block1_out |  0.03
+2 +- 0.0185   |  ['0.0294', '0.0347']  |
+|                                      | conv5_block2_out |  0.03
+63 +- 0.0244  |  ['0.0328', '0.0398']  |
+|                                      | conv5_block3_out |   0.0
+42 +- 0.028   |  ['0.0381', '0.046']   |
+|                                      |    post_relu     |  0.02
+07 +- 0.0134  |  ['0.0188', '0.0226']  |
+|       streaks_regular/positive       | conv5_block1_out | 0.005
+46 +- 0.00988 | ['0.00407', '0.00686'] |
+|                                      | conv5_block2_out | 0.010
+1 +- 0.00762  | ['0.00898', '0.0111']  |
+|                                      | conv5_block3_out | 0.010
+3 +- 0.00755  | ['0.00926', '0.0114']  |
+|                                      |    post_relu     | 0.003
+21 +- 0.00699 | ['0.00222', '0.0042']  |
+|      streaks_irregular/positive      | conv5_block1_out |  0.05
+23 +- 0.0275  |  ['0.0485', '0.0562']  |
+|                                      | conv5_block2_out |  0.06
+26 +- 0.0385  |  ['0.0571', '0.068']   |
+|                                      | conv5_block3_out |  0.06
+71 +- 0.0412  |  ['0.0612', '0.0729']  |
+|                                      |    post_relu     |  0.02
+26 +- 0.0197  |  ['0.0198', '0.0254']  |
+|        pigmentation/positive         | conv5_block1_out |  0.05
+54 +- 0.0399  |  ['0.0498', '0.0611']  |
+|                                      | conv5_block2_out |  0.07
+01 +- 0.0439  |  ['0.0639', '0.0763']  |
+|                                      | conv5_block3_out |  0.07
+05 +- 0.0442  |  ['0.0643', '0.0768']  |
+|                                      |    post_relu     | 0.008
+11 +- 0.0117  | ['0.00646', '0.00976'] |
+|    regression_structures/positive    | conv5_block1_out |  0.01
+16 +- 0.009   |  ['0.0103', '0.0129']  |
+|                                      | conv5_block2_out |
+ 0 +- 0       |       ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |       ['0', '0']       |
+|                                      |    post_relu     |  0.02
+47 +- 0.0159  |  ['0.0224', '0.0269']  |
+|  dots_and_globules_regular/positive  | conv5_block1_out |  0.03
+72 +- 0.0214  |  ['0.0341', '0.0402']  |
+|                                      | conv5_block2_out |  0.05
+36 +- 0.0323  |  ['0.049', '0.0582']   |
+|                                      | conv5_block3_out |  0.05
+71 +- 0.0338  |  ['0.0524', '0.0619']  |
+|                                      |    post_relu     |  0.01
+44 +- 0.0131  |  ['0.0125', '0.0162']  |
+| dots_and_globules_irregular/positive | conv5_block1_out |  0.05
+21 +- 0.0276  |  ['0.0482', '0.056']   |
+|                                      | conv5_block2_out |  0.04
+99 +- 0.0344  |  ['0.045', '0.0547']   |
+|                                      | conv5_block3_out |  0.05
+38 +- 0.0378  |  ['0.0484', '0.0591']  |
+|                                      |    post_relu     |  0.01
+71 +- 0.0124  |  ['0.0154', '0.0189']  |
+|      blue_whitish_veil/positive      | conv5_block1_out |  0.03
+44 +- 0.0267  |  ['0.0307', '0.0382']  |
+|                                      | conv5_block2_out |  0.03
+78 +- 0.0293  |  ['0.0337', '0.042']   |
+|                                      | conv5_block3_out |  0.03
+8 +- 0.0298   |  ['0.0338', '0.0423']  |
+|                                      |    post_relu     |  0.01
+21 +- 0.0178  | ['0.00963', '0.0147']  |
+|     vascular_structures/positive     | conv5_block1_out | 0.001
+37 +- 0.00224 | ['0.00106', '0.00169'] |
+|                                      | conv5_block2_out |
+ 0 +- 0       |       ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |       ['0', '0']       |
+|                                      |    post_relu     |  0.01
+38 +- 0.0127  |  ['0.012', '0.0156']   |
++--------------------------------------+------------------+------
+--------------+------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_MEL.png
+
+============================================================
+GlobalVisualTCAV — class: NV (2495 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:31<00:00,  6.35it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:30<00:00,  6.60it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:30<00:00,  6.60it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:29<00:00,  6.77it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [02:08<00:00, 32.07s/it]
++----------------------------------------------------------------
+------------------------------------------+
+|                                Model: resnet50v2; Class: NV; Ex
+amples: NV                                |
++--------------------------------------+------------------+------
+---------------+--------------------------+
+|               Concept                |      Layer       |     A
+ttrib. mean    |    Attrib. 95.45% CI     |
++--------------------------------------+------------------+------
+---------------+--------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |   0.0
+08 +- 0.00566  |   ['0.0072', '0.0088']   |
+|                                      | conv5_block2_out |  0.00
+461 +- 0.00419 |  ['0.00402', '0.00521']  |
+|                                      | conv5_block3_out |  0.00
+824 +- 0.00561 |  ['0.00745', '0.00904']  |
+|                                      |    post_relu     |   0.0
+185 +- 0.013   |   ['0.0166', '0.0203']   |
+|  pigment_network_atypical/positive   | conv5_block1_out |   0.0
+13 +- 0.00746  |   ['0.0119', '0.014']    |
+|                                      | conv5_block2_out |   0.0
+283 +- 0.0147  |   ['0.0262', '0.0304']   |
+|                                      | conv5_block3_out |   0.0
+327 +- 0.0177  |   ['0.0302', '0.0352']   |
+|                                      |    post_relu     |  0.00
+679 +- 0.00479 |  ['0.00612', '0.00747']  |
+|       streaks_regular/positive       | conv5_block1_out |   0.0
+128 +- 0.0107  |   ['0.0113', '0.0143']   |
+|                                      | conv5_block2_out |   0.0
+313 +- 0.0125  |   ['0.0295', '0.0331']   |
+|                                      | conv5_block3_out |   0.0
+317 +- 0.0125  |    ['0.03', '0.0335']    |
+|                                      |    post_relu     |  0.00
+522 +- 0.0069  |  ['0.00424', '0.0062']   |
+|      streaks_irregular/positive      | conv5_block1_out |   0.0
+168 +- 0.0113  |   ['0.0152', '0.0184']   |
+|                                      | conv5_block2_out |   0.0
+539 +- 0.0248  |   ['0.0504', '0.0574']   |
+|                                      | conv5_block3_out |   0.0
+627 +- 0.0263  |   ['0.059', '0.0664']    |
+|                                      |    post_relu     |  0.00
+317 +- 0.00397 |  ['0.00261', '0.00373']  |
+|        pigmentation/positive         | conv5_block1_out |   0.0
+308 +- 0.0235  |   ['0.0275', '0.0341']   |
+|                                      | conv5_block2_out |    0.
+106 +- 0.039   |     ['0.1', '0.111']     |
+|                                      | conv5_block3_out |   0.1
+05 +- 0.0385   |    ['0.0996', '0.11']    |
+|                                      |    post_relu     |  0.00
+29 +- 0.00531  |  ['0.00215', '0.00365']  |
+|    regression_structures/positive    | conv5_block1_out |  0.00
+196 +- 0.00235 |  ['0.00163', '0.00229']  |
+|                                      | conv5_block2_out |
+  0 +- 0       |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0       |        ['0', '0']        |
+|                                      |    post_relu     |  0.00
+297 +- 0.00302 |  ['0.00254', '0.0034']   |
+|  dots_and_globules_regular/positive  | conv5_block1_out |   0.0
+305 +- 0.0191  |   ['0.0278', '0.0332']   |
+|                                      | conv5_block2_out |   0.0
+872 +- 0.0374  |   ['0.0819', '0.0925']   |
+|                                      | conv5_block3_out |   0.0
+948 +- 0.0381  |    ['0.0894', '0.1']     |
+|                                      |    post_relu     |   0.0
+124 +- 0.0107  |   ['0.0109', '0.0139']   |
+| dots_and_globules_irregular/positive | conv5_block1_out |   0.0
+23 +- 0.0132   |   ['0.0211', '0.0248']   |
+|                                      | conv5_block2_out |   0.0
+381 +- 0.0227  |   ['0.0349', '0.0413']   |
+|                                      | conv5_block3_out |   0.0
+439 +- 0.0256  |   ['0.0403', '0.0475']   |
+|                                      |    post_relu     |  0.00
+459 +- 0.00402 |  ['0.00402', '0.00516']  |
+|      blue_whitish_veil/positive      | conv5_block1_out |  0.00
+922 +- 0.00995 |  ['0.00782', '0.0106']   |
+|                                      | conv5_block2_out |   0.0
+323 +- 0.0184  |   ['0.0297', '0.0349']   |
+|                                      | conv5_block3_out |   0.0
+334 +- 0.0183  |   ['0.0308', '0.036']    |
+|                                      |    post_relu     | 0.000
+922 +- 0.00265 |  ['0.000546', '0.0013']  |
+|     vascular_structures/positive     | conv5_block1_out | 0.000
+11 +- 0.000366 | ['5.86e-05', '0.000162'] |
+|                                      | conv5_block2_out |
+  0 +- 0       |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0       |        ['0', '0']        |
+|                                      |    post_relu     |  0.00
+177 +- 0.00287 |  ['0.00136', '0.00217']  |
++--------------------------------------+------------------+------
+---------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_NV.png
+
+============================================================
+GlobalVisualTCAV — class: BCC (975 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:31<00:00,  6.35it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:34<00:00,  5.83it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:30<00:00,  6.50it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:29<00:00,  6.84it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [02:13<00:00, 33.39s/it]
++----------------------------------------------------------------
+-------------------------------------------+
+|                                Model: resnet50v2; Class: BCC; E
+xamples: BCC                               |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|               Concept                |      Layer       |     A
+ttrib. mean     |    Attrib. 95.45% CI     |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |  0.00
+176 +- 0.00269  |  ['0.00138', '0.00214']  |
+|                                      | conv5_block2_out | 7.19e
+-05 +- 0.000308 | ['2.83e-05', '0.000116'] |
+|                                      | conv5_block3_out | 0.000
+264 +- 0.000829 | ['0.000147', '0.000382'] |
+|                                      |    post_relu     |  0.00
+519 +- 0.00539  |  ['0.00442', '0.00595']  |
+|  pigment_network_atypical/positive   | conv5_block1_out |  0.00
+293 +- 0.00346  |  ['0.00244', '0.00342']  |
+|                                      | conv5_block2_out | 0.000
+773 +- 0.00242  | ['0.000431', '0.00112']  |
+|                                      | conv5_block3_out |  0.00
+129 +- 0.00383  | ['0.000744', '0.00183']  |
+|                                      |    post_relu     |  0.00
+187 +- 0.00229  |  ['0.00155', '0.0022']   |
+|       streaks_regular/positive       | conv5_block1_out |  0.00
+105 +- 0.00178  |  ['0.000798', '0.0013']  |
+|                                      | conv5_block2_out | 0.000
+177 +- 0.000651 | ['8.48e-05', '0.000269'] |
+|                                      | conv5_block3_out | 0.000
+276 +- 0.000881 | ['0.000152', '0.000401'] |
+|                                      |    post_relu     |  0.00
+41 +- 0.00793   |  ['0.00298', '0.00522']  |
+|      streaks_irregular/positive      | conv5_block1_out |  0.00
+934 +- 0.0103   |  ['0.00789', '0.0108']   |
+|                                      | conv5_block2_out |  0.00
+148 +- 0.0052   | ['0.000747', '0.00222']  |
+|                                      | conv5_block3_out |  0.00
+236 +- 0.00726  |  ['0.00133', '0.00338']  |
+|                                      |    post_relu     |   0.0
+087 +- 0.0114   |  ['0.00709', '0.0103']   |
+|        pigmentation/positive         | conv5_block1_out |  0.00
+942 +- 0.0104   |  ['0.00796', '0.0109']   |
+|                                      | conv5_block2_out |  0.00
+147 +- 0.00517  | ['0.000744', '0.00221']  |
+|                                      | conv5_block3_out |  0.00
+221 +- 0.00651  |  ['0.00129', '0.00313']  |
+|                                      |    post_relu     |  0.00
+336 +- 0.00752  |  ['0.0023', '0.00443']   |
+|    regression_structures/positive    | conv5_block1_out | 0.000
+877 +- 0.00149  | ['0.000667', '0.00109']  |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.01
+16 +- 0.00792   |   ['0.0104', '0.0127']   |
+|  dots_and_globules_regular/positive  | conv5_block1_out |  0.00
+205 +- 0.00252  |  ['0.00169', '0.0024']   |
+|                                      | conv5_block2_out | 0.000
+785 +- 0.00302  | ['0.000358', '0.00121']  |
+|                                      | conv5_block3_out |  0.00
+143 +- 0.00458  | ['0.000777', '0.00207']  |
+|                                      |    post_relu     | 0.000
+867 +- 0.00112  | ['0.000708', '0.00103']  |
+| dots_and_globules_irregular/positive | conv5_block1_out |  0.00
+563 +- 0.0063   |  ['0.00473', '0.00652']  |
+|                                      | conv5_block2_out | 0.000
+675 +- 0.00238  | ['0.000339', '0.00101']  |
+|                                      | conv5_block3_out |   0.0
+011 +- 0.0036   | ['0.000586', '0.00161']  |
+|                                      |    post_relu     |  0.00
+224 +- 0.00328  |  ['0.00177', '0.0027']   |
+|      blue_whitish_veil/positive      | conv5_block1_out |  0.00
+794 +- 0.00891  |  ['0.00668', '0.0092']   |
+|                                      | conv5_block2_out |  0.00
+095 +- 0.0034   | ['0.000469', '0.00143']  |
+|                                      | conv5_block3_out |  0.00
+142 +- 0.00439  | ['0.000796', '0.00204']  |
+|                                      |    post_relu     |  0.00
+811 +- 0.0147   |  ['0.00603', '0.0102']   |
+|     vascular_structures/positive     | conv5_block1_out |  0.00
+0807 +- 0.0016  | ['0.000581', '0.00103']  |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |   0.0
+214 +- 0.0125   |   ['0.0197', '0.0232']   |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_BCC.png
+
+============================================================
+GlobalVisualTCAV — class: AK (374 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:31<00:00,  6.35it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:30<00:00,  6.52it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:30<00:00,  6.52it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:29<00:00,  6.79it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [02:10<00:00, 32.70s/it]
++----------------------------------------------------------------
+----------------------------------------+
+|                               Model: resnet50v2; Class: AK; Exa
+mples: AK                               |
++--------------------------------------+------------------+------
+--------------+-------------------------+
+|               Concept                |      Layer       |    At
+trib. mean    |    Attrib. 95.45% CI    |
++--------------------------------------+------------------+------
+--------------+-------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.007
+77 +- 0.0086  |  ['0.00655', '0.00899'] |
+|  pigment_network_atypical/positive   | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.002
+39 +- 0.0041  |  ['0.00181', '0.00297'] |
+|       streaks_regular/positive       | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.005
+2 +- 0.00976  |  ['0.00382', '0.00658'] |
+|      streaks_irregular/positive      | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.002
+29 +- 0.00347 |  ['0.0018', '0.00278']  |
+|        pigmentation/positive         | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.000
+78 +- 0.00197 |  ['0.0005', '0.00106']  |
+|    regression_structures/positive    | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.010
+2 +- 0.00951  |  ['0.00887', '0.0116']  |
+|  dots_and_globules_regular/positive  | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.002
+47 +- 0.00303 |  ['0.00204', '0.0029']  |
+| dots_and_globules_irregular/positive | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.001
+24 +- 0.00239 | ['0.000897', '0.00157'] |
+|      blue_whitish_veil/positive      | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     | 0.002
+05 +- 0.0033  |  ['0.00158', '0.00252'] |
+|     vascular_structures/positive     | conv5_block1_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block2_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      | conv5_block3_out |
+ 0 +- 0       |        ['0', '0']       |
+|                                      |    post_relu     |  0.01
+45 +- 0.0101  |   ['0.0131', '0.016']   |
++--------------------------------------+------------------+------
+--------------+-------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_AK.png
+
+============================================================
+GlobalVisualTCAV — class: BKL (660 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:35<00:00,  5.68it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:34<00:00,  5.88it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:33<00:00,  5.88it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 200/200 [00:32<00:00,  6.12it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [02:22<00:00, 35.63s/it]
++----------------------------------------------------------------
+-------------------------------------------+
+|                                Model: resnet50v2; Class: BKL; E
+xamples: BKL                               |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|               Concept                |      Layer       |     A
+ttrib. mean     |    Attrib. 95.45% CI     |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out | 0.000
+403 +- 0.000966 | ['0.000266', '0.000539'] |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.01
+05 +- 0.00975   |  ['0.00912', '0.0119']   |
+|  pigment_network_atypical/positive   | conv5_block1_out |  0.00
+0779 +- 0.0015  | ['0.000567', '0.000992'] |
+|                                      | conv5_block2_out | 5.02e
+-07 +- 7.08e-06 |     ['0', '1.5e-06']     |
+|                                      | conv5_block3_out | 6.77e
+-06 +- 9.55e-05 |    ['0', '2.03e-05']     |
+|                                      |    post_relu     |  0.00
+525 +- 0.00518  |  ['0.00452', '0.00599']  |
+|       streaks_regular/positive       | conv5_block1_out | 0.000
+165 +- 0.000456 |  ['0.0001', '0.00023']   |
+|                                      | conv5_block2_out | 1.16e
+-07 +- 1.63e-06 |    ['0', '3.46e-07']     |
+|                                      | conv5_block3_out | 1.39e
+-06 +- 1.96e-05 |    ['0', '4.17e-06']     |
+|                                      |    post_relu     | 0.000
+966 +- 0.00171  | ['0.000725', '0.00121']  |
+|      streaks_irregular/positive      | conv5_block1_out |  0.00
+113 +- 0.00254  | ['0.000767', '0.00149']  |
+|                                      | conv5_block2_out | 1.58e
+-06 +- 2.23e-05 |    ['0', '4.74e-06']     |
+|                                      | conv5_block3_out | 1.68e
+-05 +- 0.000238 |    ['0', '5.04e-05']     |
+|                                      |    post_relu     |  0.00
+497 +- 0.00664  |  ['0.00403', '0.00591']  |
+|        pigmentation/positive         | conv5_block1_out |  0.00
+208 +- 0.00519  |  ['0.00135', '0.00281']  |
+|                                      | conv5_block2_out | 1.89e
+-06 +- 2.67e-05 |    ['0', '5.66e-06']     |
+|                                      | conv5_block3_out | 1.91e
+-05 +- 0.000269 |    ['0', '5.72e-05']     |
+|                                      |    post_relu     |   0.0
+0605 +- 0.011   |  ['0.00449', '0.00761']  |
+|    regression_structures/positive    | conv5_block1_out | 0.000
+165 +- 0.000447 | ['0.000102', '0.000228'] |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.01
+13 +- 0.00835   |   ['0.0101', '0.0125']   |
+|  dots_and_globules_regular/positive  | conv5_block1_out |  0.00
+167 +- 0.00341  |  ['0.00119', '0.00216']  |
+|                                      | conv5_block2_out | 1.35e
+-06 +- 1.9e-05  |    ['0', '4.04e-06']     |
+|                                      | conv5_block3_out | 1.58e
+-05 +- 0.000222 |    ['0', '4.72e-05']     |
+|                                      |    post_relu     |  0.00
+421 +- 0.00475  |  ['0.00354', '0.00488']  |
+| dots_and_globules_irregular/positive | conv5_block1_out |  0.00
+19 +- 0.00415   |  ['0.00132', '0.00249']  |
+|                                      | conv5_block2_out | 1.56e
+-06 +- 2.21e-05 |    ['0', '4.68e-06']     |
+|                                      | conv5_block3_out | 1.81e
+-05 +- 0.000255 |    ['0', '5.42e-05']     |
+|                                      |    post_relu     |  0.00
+489 +- 0.00472  |  ['0.00422', '0.00556']  |
+|      blue_whitish_veil/positive      | conv5_block1_out |  0.00
+142 +- 0.0039   | ['0.000868', '0.00197']  |
+|                                      | conv5_block2_out | 1.52e
+-06 +- 2.14e-05 |    ['0', '4.55e-06']     |
+|                                      | conv5_block3_out | 1.62e
+-05 +- 0.000228 |    ['0', '4.85e-05']     |
+|                                      |    post_relu     |  0.00
+506 +- 0.0091   |  ['0.00377', '0.00634']  |
+|     vascular_structures/positive     | conv5_block1_out | 3.39e
+-05 +- 0.00017  | ['9.77e-06', '5.79e-05'] |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.01
+14 +- 0.00988   |  ['0.00998', '0.0128']   |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_BKL.png
+
+============================================================
+GlobalVisualTCAV — class: DF (91 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+█████████████████████████| 91/91 [00:14<00:00,  6.29it/s]
+Attributions: 100%|██████████████████████████████████████████████
+█████████████████████████| 91/91 [00:13<00:00,  6.52it/s]
+Attributions: 100%|██████████████████████████████████████████████
+█████████████████████████| 91/91 [00:13<00:00,  6.53it/s]
+Attributions: 100%|██████████████████████████████████████████████
+█████████████████████████| 91/91 [00:13<00:00,  6.85it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [00:59<00:00, 14.95s/it]
++----------------------------------------------------------------
+-------------------------------------------+
+|                                 Model: resnet50v2; Class: DF; E
+xamples: DF                                |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|               Concept                |      Layer       |     A
+ttrib. mean     |    Attrib. 95.45% CI     |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.00
+154 +- 0.00485  | ['0.000522', '0.00256']  |
+|  pigment_network_atypical/positive   | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+168 +- 0.000797 | ['1.19e-06', '0.000335'] |
+|       streaks_regular/positive       | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+442 +- 0.00206  | ['9.09e-06', '0.000875'] |
+|      streaks_irregular/positive      | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 8.65e
+-05 +- 0.000456 |    ['0', '0.000182']     |
+|        pigmentation/positive         | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+146 +- 0.000838 |    ['0', '0.000322']     |
+|    regression_structures/positive    | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+441 +- 0.00173  | ['7.88e-05', '0.000803'] |
+|  dots_and_globules_regular/positive  | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+122 +- 0.000478 | ['2.15e-05', '0.000222'] |
+| dots_and_globules_irregular/positive | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+104 +- 0.000657 |    ['0', '0.000242']     |
+|      blue_whitish_veil/positive      | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+196 +- 0.00102  |    ['0', '0.000409']     |
+|     vascular_structures/positive     | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+684 +- 0.00243  | ['0.000173', '0.00119']  |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_DF.png
+
+============================================================
+GlobalVisualTCAV — class: VASC (104 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 104/104 [00:18<00:00,  5.65it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 104/104 [00:15<00:00,  6.53it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 104/104 [00:16<00:00,  6.48it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 104/104 [00:17<00:00,  6.05it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [01:12<00:00, 18.09s/it]
++----------------------------------------------------------------
+-------------------------------------------+
+|                               Model: resnet50v2; Class: VASC; E
+xamples: VASC                              |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|               Concept                |      Layer       |     A
+ttrib. mean     |    Attrib. 95.45% CI     |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+403 +- 0.00181  | ['4.77e-05', '0.000759'] |
+|  pigment_network_atypical/positive   | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out | 0.000
+142 +- 0.000855 |    ['0', '0.000309']     |
+|                                      | conv5_block3_out | 0.000
+227 +- 0.00136  |    ['0', '0.000494']     |
+|                                      |    post_relu     |  0.00
+035 +- 0.00129  | ['9.79e-05', '0.000602'] |
+|       streaks_regular/positive       | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out | 0.000
+312 +- 0.00194  |    ['0', '0.000693']     |
+|                                      | conv5_block3_out |  0.00
+0321 +- 0.002   |    ['0', '0.000713']     |
+|                                      |    post_relu     |  0.00
+129 +- 0.00359  |   ['0.00059', '0.002']   |
+|      streaks_irregular/positive      | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out | 0.000
+828 +- 0.00481  |     ['0', '0.00177']     |
+|                                      | conv5_block3_out | 0.000
+955 +- 0.00555  |     ['0', '0.00204']     |
+|                                      |    post_relu     |  0.00
+227 +- 0.00484  |  ['0.00132', '0.00322']  |
+|        pigmentation/positive         | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |  0.00
+156 +- 0.00906  |     ['0', '0.00333']     |
+|                                      | conv5_block3_out |  0.00
+156 +- 0.0091   |     ['0', '0.00335']     |
+|                                      |    post_relu     |  0.00
+433 +- 0.00745  |  ['0.00287', '0.00579']  |
+|    regression_structures/positive    | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     | 0.000
+277 +- 0.00079  | ['0.000123', '0.000432'] |
+|  dots_and_globules_regular/positive  | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out | 0.000
+829 +- 0.00484  |     ['0', '0.00178']     |
+|                                      | conv5_block3_out | 0.000
+998 +- 0.00584  |     ['0', '0.00214']     |
+|                                      |    post_relu     | 0.000
+996 +- 0.00271  | ['0.000465', '0.00153']  |
+| dots_and_globules_irregular/positive | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out | 0.000
+693 +- 0.00405  |     ['0', '0.00149']     |
+|                                      | conv5_block3_out | 0.000
+803 +- 0.00467  |     ['0', '0.00172']     |
+|                                      |    post_relu     |  0.00
+142 +- 0.00231  | ['0.000971', '0.00188']  |
+|      blue_whitish_veil/positive      | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |  0.00
+106 +- 0.00614  |     ['0', '0.00226']     |
+|                                      | conv5_block3_out |  0.00
+109 +- 0.00633  |     ['0', '0.00233']     |
+|                                      |    post_relu     |  0.00
+614 +- 0.0107   |  ['0.00404', '0.00823']  |
+|     vascular_structures/positive     | conv5_block1_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.00
+112 +- 0.00222  | ['0.000683', '0.00155']  |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_VASC.png
+
+============================================================
+GlobalVisualTCAV — class: SCC (165 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-mod
+el for layers
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out',
+ 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'con
+v4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_bl
+ock2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 165/165 [00:29<00:00,  5.59it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 165/165 [00:25<00:00,  6.51it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 165/165 [00:25<00:00,  6.50it/s]
+Attributions: 100%|██████████████████████████████████████████████
+███████████████████████| 165/165 [00:24<00:00,  6.76it/s]
+Layers: 100%|████████████████████████████████████████████████████
+███████████████████████████| 4/4 [01:52<00:00, 28.01s/it]
++----------------------------------------------------------------
+-------------------------------------------+
+|                                Model: resnet50v2; Class: SCC; E
+xamples: SCC                               |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|               Concept                |      Layer       |     A
+ttrib. mean     |    Attrib. 95.45% CI     |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+|   pigment_network_typical/positive   | conv5_block1_out |  0.00
+156 +- 0.00339  |  ['0.00103', '0.00209']  |
+|                                      | conv5_block2_out | 4.32e
+-05 +- 0.000283 |    ['0', '8.72e-05']     |
+|                                      | conv5_block3_out | 0.000
+133 +- 0.000757 | ['1.55e-05', '0.000251'] |
+|                                      |    post_relu     |  0.00
+486 +- 0.00568  |  ['0.00398', '0.00575']  |
+|  pigment_network_atypical/positive   | conv5_block1_out |  0.00
+155 +- 0.00342  |  ['0.00102', '0.00208']  |
+|                                      | conv5_block2_out | 0.000
+782 +- 0.00365  | ['0.000214', '0.00135']  |
+|                                      | conv5_block3_out | 0.000
+934 +- 0.00451  | ['0.000232', '0.00164']  |
+|                                      |    post_relu     |  0.00
+195 +- 0.00306  |  ['0.00147', '0.00243']  |
+|       streaks_regular/positive       | conv5_block1_out | 0.000
+325 +- 0.000954 | ['0.000176', '0.000473'] |
+|                                      | conv5_block2_out | 0.000
+131 +- 0.000821 | ['3.34e-06', '0.000259'] |
+|                                      | conv5_block3_out | 0.000
+13 +- 0.000833  | ['3.26e-07', '0.00026']  |
+|                                      |    post_relu     |  0.00
+362 +- 0.00577  |  ['0.00272', '0.00452']  |
+|      streaks_irregular/positive      | conv5_block1_out |  0.00
+379 +- 0.00846  |  ['0.00247', '0.0051']   |
+|                                      | conv5_block2_out |  0.00
+103 +- 0.0051   | ['0.000235', '0.00182']  |
+|                                      | conv5_block3_out |  0.00
+0943 +- 0.0046  | ['0.000226', '0.00166']  |
+|                                      |    post_relu     |  0.00
+269 +- 0.00471  |  ['0.00196', '0.00343']  |
+|        pigmentation/positive         | conv5_block1_out |  0.00
+492 +- 0.0118   |  ['0.00308', '0.00676']  |
+|                                      | conv5_block2_out | 0.000
+905 +- 0.00471  | ['0.000173', '0.00164']  |
+|                                      | conv5_block3_out | 0.000
+847 +- 0.00445  | ['0.000153', '0.00154']  |
+|                                      |    post_relu     |  0.00
+101 +- 0.00297  |  ['0.00055', '0.00147']  |
+|    regression_structures/positive    | conv5_block1_out | 0.000
+667 +- 0.00198  | ['0.000359', '0.000974'] |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |  0.00
+87 +- 0.00898   |   ['0.0073', '0.0101']   |
+|  dots_and_globules_regular/positive  | conv5_block1_out |  0.00
+124 +- 0.00292  |  ['0.000787', '0.0017']  |
+|                                      | conv5_block2_out | 0.000
+315 +- 0.00173  | ['4.6e-05', '0.000584']  |
+|                                      | conv5_block3_out | 0.000
+359 +- 0.00182  | ['7.56e-05', '0.000642'] |
+|                                      |    post_relu     | 0.000
+838 +- 0.00114  | ['0.000659', '0.00102']  |
+| dots_and_globules_irregular/positive | conv5_block1_out |  0.00
+364 +- 0.00829  |  ['0.00235', '0.00493']  |
+|                                      | conv5_block2_out | 0.000
+721 +- 0.00347  | ['0.000181', '0.00126']  |
+|                                      | conv5_block3_out | 0.000
+652 +- 0.00309  | ['0.000171', '0.00113']  |
+|                                      |    post_relu     |  0.00
+132 +- 0.00205  | ['0.000997', '0.00164']  |
+|      blue_whitish_veil/positive      | conv5_block1_out |  0.00
+734 +- 0.0182   |   ['0.0045', '0.0102']   |
+|                                      | conv5_block2_out |  0.00
+137 +- 0.00725  |  ['0.000245', '0.0025']  |
+|                                      | conv5_block3_out |  0.00
+127 +- 0.00683  | ['0.000205', '0.00233']  |
+|                                      |    post_relu     |  0.00
+311 +- 0.00681  |  ['0.00205', '0.00417']  |
+|     vascular_structures/positive     | conv5_block1_out | 0.000
+981 +- 0.00268  |  ['0.000563', '0.0014']  |
+|                                      | conv5_block2_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      | conv5_block3_out |
+  0 +- 0        |        ['0', '0']        |
+|                                      |    post_relu     |   0.0
+184 +- 0.0147   |   ['0.0162', '0.0207']   |
++--------------------------------------+------------------+------
+----------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCA
+V_Dermatology/outputs/vtcav_results_run2/vtcav_global_SCC.png
+
+============================================================
+All classes complete.
+Results: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_D
+ermatology/outputs/vtcav_results_run2
+Cache  : /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_D
+ermatology/outputs/vtcav/cache
+============================================================
+(vtcav_derma) skakkar@voxel:~/scratch/dev-uos/projects/VTCAV_Derm
