@@ -40,7 +40,7 @@ import matplotlib.pyplot as plt
 # ─────────────────────────────────────────────
 # 0. MODEL VARIANT TAG — drives every isolated path below
 # ─────────────────────────────────────────────
-MODEL_TAG = "padonly_seed2"
+MODEL_TAG = "padonly_seed2_hardneg"
 
 # ─────────────────────────────────────────────
 # 1. PATHS
@@ -152,7 +152,17 @@ LAYERS = [
     "conv5_block3_out",
     "post_relu",
 ]
-
+# ─────────────────────────────────────────────
+# EXTRA NEGATIVES
+# ─────────────────────────────────────────────
+EXTRA_NEGATIVES = {
+    "pigment_network_typical":  ["pigment_network_atypical/positive"],
+    "pigment_network_atypical": ["pigment_network_typical/positive"],
+    "streaks_regular":          ["streaks_irregular/positive"],
+    "streaks_irregular":        ["streaks_regular/positive"],
+    "dots_and_globules_regular":   ["dots_and_globules_irregular/positive"],
+    "dots_and_globules_irregular": ["dots_and_globules_regular/positive"],
+}
 # ─────────────────────────────────────────────
 # 6. RUN GLOBAL VISUAL-TCAV PER CLASS
 # ─────────────────────────────────────────────
@@ -181,6 +191,7 @@ for target_class in CLASSES:
         m_steps=50,
         batch_size=20,
         n_cav_runs=20,
+        extra_negative_concepts=EXTRA_NEGATIVES,
         model=Model(
             model_name="resnet50v2",
             graph_path_filename=GRAPH_FILENAME,
