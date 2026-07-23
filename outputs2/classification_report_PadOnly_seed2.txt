@@ -1,0 +1,16 @@
+Run seed: 2 | Data split seed: 42
+
+              precision    recall  f1-score   support
+
+         MEL       0.61      0.65      0.63      1327
+          NV       0.85      0.74      0.79      2495
+         BCC       0.56      0.67      0.61       975
+          AK       0.27      0.40      0.32       374
+         BKL       0.46      0.40      0.43       660
+          DF       0.56      0.38      0.46        91
+        VASC       0.39      0.33      0.36       104
+         SCC       0.37      0.38      0.37       165
+
+    accuracy                           0.63      6191
+   macro avg       0.51      0.49      0.50      6191
+weighted avg       0.65      0.63      0.64      6191
