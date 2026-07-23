@@ -223,6 +223,11 @@ models/
 concept_images/
 outputs/vtcav/
 
+# Padding-only line and any future MODEL_TAG variants under outputs2/ --
+# activation/CAV caches are regenerable, don't belong in git
+outputs2/*/cache/
+models2/
+
 *.h5
 *.keras
 *.zip

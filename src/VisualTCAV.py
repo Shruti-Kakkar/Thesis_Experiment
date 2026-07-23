@@ -26,7 +26,7 @@ sys.dont_write_bytecode = True
 import os
 import numpy as np
 from joblib import dump, load
-import PIL.Image, PIL.ImageFilter
+import PIL.Image, PIL.ImageFilter, PIL.ImageOps
 from tqdm import tqdm
 from multiprocessing import dummy as multiprocessing
 from prettytable import PrettyTable
@@ -47,6 +47,27 @@ preprocess_vgg16 = tf.keras.applications.vgg16.preprocess_input
 preprocess_convnext = tf.keras.applications.convnext.preprocess_input
 
 # Utils
+
+# MODIFICATION: aspect-ratio-preserving resize with zero-padding, as an
+# alternative to PIL's default non-aspect-preserving .resize() used
+# elsewhere in this file. Mirrors tf.image.resize_with_pad's algorithm:
+# scale to fit within `shape` preserving aspect ratio, then pad the
+# shorter side with black, centered. Used when resize_mode='pad' is
+# requested (see ImageActivationGenerator and LocalVisualTCAV), so that
+# concept/test images are preprocessed consistently with a model trained
+# using aspect-preserving resize+pad rather than naive stretch.
+def resize_with_pad_pil(img, shape):
+	target_w, target_h = shape
+	orig_w, orig_h = img.size
+	scale = min(target_w / orig_w, target_h / orig_h)
+	new_w, new_h = max(1, round(orig_w * scale)), max(1, round(orig_h * scale))
+	resized = img.resize((new_w, new_h), PIL.Image.BILINEAR)
+	canvas = PIL.Image.new('RGB', (target_w, target_h), (0, 0, 0))
+	pad_left = (target_w - new_w) // 2
+	pad_top  = (target_h - new_h) // 2
+	canvas.paste(resized, (pad_left, pad_top))
+	return canvas
+
 def cosine_similarity(vec1, vec2):
 	dot_product = np.dot(vec1, vec2)
 	norm_vec1 = np.linalg.norm(vec1)
@@ -174,7 +195,7 @@ class VisualTCAV():
 		model.label_path_dir = os.path.join(self.models_dir, model.model_name, model.label_path_filename)
 		
 		# Wrapper function
-		model.model_wrapper = model.model_wrapper(model.graph_path_dir, model.label_path_dir, self.batch_size)
+		model.model_wrapper = model.model_wrapper(model.graph_path_dir, model.label_path_dir, self.batch_size, model_name=model.model_name)
 
 		# Activate the model
 		model.activation_generator = model.activation_generator(
@@ -183,6 +204,7 @@ class VisualTCAV():
 			cache_dir=self.cache_dir,
 			preprocessing_function=model.preprocessing_function,
 			max_examples=model.max_examples,
+			resize_mode=model.resize_mode,
 		)
 		
 		# Model's cache dir
@@ -357,9 +379,10 @@ class VisualTCAV():
 			neg_scores = tf.reduce_sum(
 				tf.multiply(tf.constant(neg_val), direction[None, :]), axis=1
 			)
+			mid_point = (pos_scores + neg_scores) / 2.0
 			correct = (
-				tf.reduce_sum(tf.cast(pos_scores > 0, tf.float32)) +
-				tf.reduce_sum(tf.cast(neg_scores < 0, tf.float32))
+				tf.reduce_sum(tf.cast(pos_scores > mid_point, tf.float32)) +
+				tf.reduce_sum(tf.cast(neg_scores < mid_point, tf.float32))
 			)
 			val_acc = float(correct) / (len(pos_val) + len(neg_val))
 
@@ -451,8 +474,15 @@ class LocalVisualTCAV(VisualTCAV):
 		self.computations = {}
 
 		# Load and resize the image/images
+		# MODIFICATION: respect self.model.resize_mode (see ImageActivationGenerator
+		# for the same change and rationale). Default 'stretch' is unchanged behavior.
 		self.imgs = np.array([PIL.Image.open(tf.io.gfile.GFile(self.test_images_dir, 'rb')).convert('RGB')])
-		self.resized_imgs = np.array([PIL.Image.open(tf.io.gfile.GFile(self.test_images_dir, 'rb')).convert('RGB').resize(self.resized_imgs_size, PIL.Image.BILINEAR)])
+		_pil_img = PIL.Image.open(tf.io.gfile.GFile(self.test_images_dir, 'rb')).convert('RGB')
+		if getattr(self.model, 'resize_mode', 'stretch') == 'pad':
+			_pil_img = resize_with_pad_pil(_pil_img, self.resized_imgs_size)
+		else:
+			_pil_img = _pil_img.resize(self.resized_imgs_size, PIL.Image.BILINEAR)
+		self.resized_imgs = np.array([_pil_img])
 
 	##### Explain #####
 	def explain(self, cache_cav=True, cache_random=True, cav_only=False, n_cav_runs=1):
@@ -922,7 +952,7 @@ class GlobalVisualTCAV(VisualTCAV):
 class Model:
 
 	##### Init #####
-	def __init__(self, model_name, graph_path_filename, label_path_filename, preprocessing_function=lambda x: x / 255, binary_classification=False, max_examples=500):
+	def __init__(self, model_name, graph_path_filename, label_path_filename, preprocessing_function=lambda x: x / 255, binary_classification=False, max_examples=500, resize_mode='stretch'):
 		
 		self.model_name = model_name
 		self.max_examples = max_examples
@@ -934,6 +964,13 @@ class Model:
 		self.model_wrapper = KerasModelWrapper
 		self.activation_generator = ImageActivationGenerator
 		self.preprocessing_function = preprocessing_function
+		# MODIFICATION: 'stretch' (default) reproduces original behavior exactly
+		# (PIL .resize() with no aspect-ratio preservation). 'pad' uses
+		# aspect-preserving resize + zero-padding, matching models trained
+		# with tf.image.resize_with_pad. Must match what the target model
+		# was actually trained on, or train/inference preprocessing will
+		# mismatch.
+		self.resize_mode = resize_mode
 
 	##### Get layer names #####
 	def getLayerNames(self):
@@ -1089,9 +1126,9 @@ colormap = CustomColormap(
 class KerasModelWrapper():
 
 	##### Init #####
-	def __init__(self, model_path, labels_path, batch_size):
+	def __init__(self, model_path, labels_path, batch_size, model_name=None):
 		
-		self.model_name         = None
+		self.model_name         = model_name
 		self.layers             = []
 		self.layer_tensors      = None
 		self.simulated_layer_model   = {}
@@ -1131,7 +1168,7 @@ class KerasModelWrapper():
 			# so the graph is connected: sub-model input → target layer output
 			model_inputs = (
 				[self._submodel.inputs]
-				if hasattr(self, '_submodel')
+				if self._submodel is not None
 				else [self.model.inputs]
 			)
 			self.simulated_layer_model[layer_name] = tf.keras.models.Model(
@@ -1159,7 +1196,7 @@ class KerasModelWrapper():
 			# Build: target layer output → head layers → final logits
 			# When layers come from a nested sub-model, we need to route
 			# through the head layers of the outer model manually.
-			if hasattr(self, '_submodel'):
+			if self._submodel is not None:
 				inp = self.layer_tensors[layer_name]
 				x = inp
 				# Apply each head layer after the sub-model in order
@@ -1185,7 +1222,7 @@ class KerasModelWrapper():
 	def get_gradient_of_score(self, feature_maps, layer_name, target_class_index):
 
 		if layer_name not in self.simulated_logits_model:
-			if hasattr(self, '_submodel'):
+			if self._submodel is not None:
 				inp = self.layer_tensors[layer_name]
 				x = inp
 				in_head = False
@@ -1238,20 +1275,37 @@ class KerasModelWrapper():
 	# so the graph is connected correctly.
 	def _get_layer_tensors(self):
 		self.layer_tensors = {}
-		self.model_name = self.model.name
+		# MODIFICATION: previously this read self.model.name directly --
+		# the raw Keras auto-assigned name of the loaded model object.
+		# That's fragile: it only worked for models whose outer model had
+		# been manually renamed to match the architecture family string
+		# ('resnet50v2'). Any model saved without that manual step (e.g.
+		# freshly retrained variants) would silently fail here. We now
+		# prefer the architecture family explicitly declared by the caller
+		# (Model(model_name=...) in the wrapper script), and only fall
+		# back to the loaded model's raw name if none was declared, for
+		# backward compatibility with any code that doesn't pass it.
+		if self.model_name is None:
+			self.model_name = self.model.name
 
-		# Check if target layers are inside a nested sub-model
+		# Check if target layers are inside a nested sub-model.
+		# MODIFICATION: no longer requires the inner layer's name to
+		# literally equal self.model_name (that was the same fragile
+		# assumption as above). Any top-level layer that is itself a
+		# nested model with more than 5 sub-layers is treated as the
+		# architecture's sub-model -- this works regardless of what the
+		# outer model happens to be named, so no manual renaming is
+		# needed for any future model.
 		self._submodel = None
 		layers_to_search = self.model.layers
 		for layer in self.model.layers:
-			if (hasattr(layer, 'layers') and
-					layer.name == self.model_name and
-					len(layer.layers) > 5):
+			if hasattr(layer, 'layers') and len(layer.layers) > 5:
 				# Found nested sub-model — search its layers instead
 				self._submodel = layer
 				layers_to_search = layer.layers
 				print(f"  KerasModelWrapper: searching inside nested "
-				      f"'{layer.name}' sub-model for layers")
+				      f"'{layer.name}' sub-model for layers "
+				      f"(architecture family: '{self.model_name}')")
 				break
 
 		self.layers = layers_to_search
@@ -1298,12 +1352,14 @@ class ImageActivationGenerator():
 		cache_dir,
 		preprocessing_function=None,
 		max_examples=500,
+		resize_mode='stretch',
 	):
 		self.model_wrapper          = model_wrapper
 		self.concept_images_dir     = concept_images_dir
 		self.cache_dir              = cache_dir
 		self.max_examples           = max_examples
 		self.preprocessing_function = preprocessing_function
+		self.resize_mode            = resize_mode
 	
 	##### Get feature maps for a concept #####
 	def get_feature_maps_for_concept(self, concept, layer):
@@ -1364,11 +1420,18 @@ class ImageActivationGenerator():
 	# Util that, given a filename, loads an image
 	def _load_image_from_file(self, filename, shape, preprocess=True):
 		try:
-			img = np.array(
-				PIL.Image.open(
-					tf.io.gfile.GFile(filename, 'rb')
-				).convert('RGB').resize(shape, PIL.Image.BILINEAR),
-			)	
+			pil_img = PIL.Image.open(
+				tf.io.gfile.GFile(filename, 'rb')
+			).convert('RGB')
+			# MODIFICATION: resize_mode controls whether we reproduce the
+			# original naive stretch (no aspect preservation) or use
+			# aspect-preserving resize+pad, matching how the target model
+			# was trained. Default 'stretch' preserves exact original behavior.
+			if self.resize_mode == 'pad':
+				pil_img = resize_with_pad_pil(pil_img, shape)
+			else:
+				pil_img = pil_img.resize(shape, PIL.Image.BILINEAR)
+			img = np.array(pil_img)
 		except:
 			return None
 		if self.preprocessing_function is not None and preprocess:
