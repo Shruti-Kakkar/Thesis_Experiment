@@ -40,7 +40,7 @@ import matplotlib.pyplot as plt
 # ─────────────────────────────────────────────
 # 0. MODEL VARIANT TAG — drives every isolated path below
 # ─────────────────────────────────────────────
-MODEL_TAG = "padonly_seed2_hardneg"
+MODEL_TAG = "padonly_seed2_hardneg_logistic"
 
 # ─────────────────────────────────────────────
 # 1. PATHS
@@ -192,6 +192,7 @@ for target_class in CLASSES:
         batch_size=20,
         n_cav_runs=20,
         extra_negative_concepts=EXTRA_NEGATIVES,
+        cav_method='logistic',   # <-- new line
         model=Model(
             model_name="resnet50v2",
             graph_path_filename=GRAPH_FILENAME,

@@ -39,6 +39,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import tensorflow as tf
 import tensorflow_probability as tfp
+from sklearn.linear_model import LogisticRegression
 
 # Keras preprocessing functions
 preprocess_resnet_v2 = tf.keras.applications.inception_resnet_v2.preprocess_input
@@ -101,6 +102,7 @@ class VisualTCAV():
 		concept_images_dir=None, random_images_folder=None,
 		negative_suffix="negative",
 		extra_negative_concepts=None,
+		cav_method='centroid',
 	):
 
 		# Folders and directories
@@ -125,6 +127,17 @@ class VisualTCAV():
 		# negatives), so existing cached results for concepts not listed
 		# here stay valid and reproducible.
 		self.extra_negative_concepts = extra_negative_concepts or {}
+
+		# MODIFICATION: 'centroid' (default) reproduces the original
+		# difference-of-centroids direction exactly, for backward
+		# compatibility with any existing cached results. 'logistic' fits
+		# a regularized logistic regression classifier instead -- can
+		# down-weight channels that aren't actually discriminative,
+		# rather than treating all 2048 equally the way a raw mean-
+		# difference does. Only meaningful to test now that the negative-
+		# set fix (extra_negative_concepts) is already in place; testing
+		# it earlier would have confounded two separate problems.
+		self.cav_method = cav_method
 		
 		os.makedirs(self.models_dir, exist_ok=True)
 		os.makedirs(self.cache_base_dir, exist_ok=True)
@@ -423,31 +436,53 @@ class VisualTCAV():
 			neg_train = neg_run[:n_train]
 			neg_val   = neg_run[n_train:]
 
-			# CAV direction = centroid(positive_train) - centroid(negative_train)
-			# This is exactly the Visual-TCAV centroid subtraction approach
-			c0 = tf.reduce_mean(pos_train, axis=0)
-			c1 = tf.reduce_mean(neg_train, axis=0)
-			direction = tf.subtract(c0, c1)
+			if self.cav_method == 'logistic':
+				# MODIFICATION: fit a regularized logistic regression
+				# classifier instead of using the raw difference of class
+				# means. Direction = the classifier's learned weight
+				# vector (normal to the decision boundary), which can
+				# down-weight channels that aren't actually discriminative
+				# rather than treating all 2048 equally.
+				X_train = np.concatenate([pos_train, neg_train], axis=0)
+				y_train = np.concatenate([
+					np.ones(len(pos_train)), np.zeros(len(neg_train))
+				])
+				X_val = np.concatenate([pos_val, neg_val], axis=0)
+				y_val = np.concatenate([
+					np.ones(len(pos_val)), np.zeros(len(neg_val))
+				])
 
-			# Validation: single fixed threshold (nearest-centroid decision
-			# boundary), computed ONCE from the training centroids -- not
-			# per validation example. This replaces a per-pair midpoint
-			# that collapsed to an arbitrary, order-dependent comparison.
-			threshold = tf.reduce_sum(
-				tf.multiply((c0 + c1) / 2.0, direction)
-			)
+				clf = LogisticRegression(max_iter=2000, C=1.0)
+				clf.fit(X_train, y_train)
+				val_acc = float(clf.score(X_val, y_val))
+				direction = tf.constant(clf.coef_[0], dtype=tf.float32)
 
-			pos_scores = tf.reduce_sum(
-				tf.multiply(tf.constant(pos_val), direction[None, :]), axis=1
-			)
-			neg_scores = tf.reduce_sum(
-				tf.multiply(tf.constant(neg_val), direction[None, :]), axis=1
-			)
-			correct = (
-				tf.reduce_sum(tf.cast(pos_scores > threshold, tf.float32)) +
-				tf.reduce_sum(tf.cast(neg_scores < threshold, tf.float32))
-			)
-			val_acc = float(correct) / (len(pos_val) + len(neg_val))
+			else:
+				# CAV direction = centroid(positive_train) - centroid(negative_train)
+				# This is exactly the Visual-TCAV centroid subtraction approach
+				c0 = tf.reduce_mean(pos_train, axis=0)
+				c1 = tf.reduce_mean(neg_train, axis=0)
+				direction = tf.subtract(c0, c1)
+
+				# Validation: single fixed threshold (nearest-centroid decision
+				# boundary), computed ONCE from the training centroids -- not
+				# per validation example. This replaces a per-pair midpoint
+				# that collapsed to an arbitrary, order-dependent comparison.
+				threshold = tf.reduce_sum(
+					tf.multiply((c0 + c1) / 2.0, direction)
+				)
+
+				pos_scores = tf.reduce_sum(
+					tf.multiply(tf.constant(pos_val), direction[None, :]), axis=1
+				)
+				neg_scores = tf.reduce_sum(
+					tf.multiply(tf.constant(neg_val), direction[None, :]), axis=1
+				)
+				correct = (
+					tf.reduce_sum(tf.cast(pos_scores > threshold, tf.float32)) +
+					tf.reduce_sum(tf.cast(neg_scores < threshold, tf.float32))
+				)
+				val_acc = float(correct) / (len(pos_val) + len(neg_val))
 
 			directions.append(direction)
 			val_accs.append(val_acc)
