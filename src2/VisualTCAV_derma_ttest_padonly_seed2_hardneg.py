@@ -35,11 +35,12 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from prettytable import PrettyTable
+from sklearn.linear_model import LogisticRegression
 
 # ─────────────────────────────────────────────
 # 0. MODEL VARIANT TAG — must match the Global script's tag exactly
 # ─────────────────────────────────────────────
-MODEL_TAG = "padonly_seed2_hardneg"
+MODEL_TAG = "padonly_seed2_hardneg_logistic"
 
 # ─────────────────────────────────────────────
 # EXTRA NEGATIVES — must match the Global script's config exactly, or
@@ -253,9 +254,14 @@ for concept_name, concept_folder in CONCEPTS.items():
             n_train = int(n_min * 0.8)
             pos_train = pooled_pos[pos_idx[:n_train]]
             neg_train = pooled_neg[neg_idx[:n_train]]
-            c0 = np.mean(pos_train, axis=0)
-            c1 = np.mean(neg_train, axis=0)
-            real_directions.append(c0 - c1)
+
+            X_train = np.concatenate([pos_train, neg_train], axis=0)
+            y_train = np.concatenate([
+                np.ones(len(pos_train)), np.zeros(len(neg_train))
+            ])
+            clf = LogisticRegression(max_iter=2000, C=1.0)
+            clf.fit(X_train, y_train)
+            real_directions.append(clf.coef_[0])
 
         mean_real_direction = np.mean(real_directions, axis=0)
 
