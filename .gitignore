@@ -226,6 +226,7 @@ outputs/vtcav/
 # Padding-only line and any future MODEL_TAG variants under outputs2/ --
 # activation/CAV caches are regenerable, don't belong in git
 outputs2/*/cache/
+outputs2/*/ig_cache/
 outputs2/vtcav_local_results_*/
 outputs2/tmux_output.txt
 models2/
