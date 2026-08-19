@@ -49,8 +49,10 @@ PROJECT_ROOT = os.path.expanduser(
 )
 CLEAN_DIR = os.path.join(PROJECT_ROOT, "datasets", "ruler_sorted", "Clean_resorted")
 OUT_ROOT = os.path.join(PROJECT_ROOT, "concept_images_ruler_matched")
-OUT_POS = os.path.join(OUT_ROOT, "ruler_present")
-OUT_NEG = os.path.join(OUT_ROOT, "clean")
+# <root>/positive and <root>/<negative_suffix> -- the layout VisualTCAV's
+# concept_images_dir/concept_name convention expects (see ruler_bias_common.py)
+OUT_POS = os.path.join(OUT_ROOT, "ruler_present", "positive")
+OUT_NEG = os.path.join(OUT_ROOT, "ruler_present", "negative")
 MANIFEST_PATH = os.path.join(OUT_ROOT, "category_manifest.csv")
 
 BASE_SEED = 42
