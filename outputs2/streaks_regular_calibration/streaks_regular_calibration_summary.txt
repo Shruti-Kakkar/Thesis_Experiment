@@ -1,0 +1,24 @@
+
+streaks_regular Attribution Calibration Summary
+=====================================
+Sample: 204 held-out NV images (never used in CAV training)
+  streaks_regular present: 56
+  streaks_regular absent:  148
+
+Attribution stats:
+  Present: mean=0.0293, median=0.0249, std=0.0183
+  Absent:  mean=0.0110, median=0.0052, std=0.0124
+
+Mann-Whitney U test (present > absent): U=6765.00, p=1.65105e-12
+Rank-biserial correlation (effect size): 0.632
+
+ROC AUC: 0.816
+Youden's J optimal threshold (PRIMARY): 0.0083
+  Sensitivity: 0.946
+  Specificity: 0.622
+Bootstrap 95% CI on threshold: [0.0083, 0.0145] (median 0.0083)
+
+KDE crossing point(s) (secondary cross-check): [0.01288532]
+
+Fisher's exact test (did the correct-prediction filter bias the split?):
+  table=[[56, 3], [148, 66]], odds ratio=8.324, p=0.0000
