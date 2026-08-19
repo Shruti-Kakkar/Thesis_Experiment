@@ -7,8 +7,9 @@ marking/ruler and found specificity collapsed (84.1% -> 45.8%) once
 marked, even though sensitivity looked "better."
 
 DESIGN:
-  - Take N genuinely ruler-free NV images (ground truth from your Clean
-    folder -- true class NV, confirmed no ruler)
+  - Take N genuinely ruler-free NV images from the held-out ISIC 2019 test
+    set (NV_test_clean -- true class NV per the official test ground truth,
+    confirmed no ruler, and never seen during training)
   - For each: get the model's baseline P(MEL) on the clean image
   - Digitally add a synthetic ruler overlay (same image, edge placement
     randomized per image) -- following Winkler et al.'s own precedent of
@@ -51,9 +52,9 @@ PROJECT_ROOT = os.path.expanduser(
 SOURCE_MODEL_PATH = os.path.join(
     PROJECT_ROOT, "models2", "resnet50v2_isic2019_final_padonly_seed2.keras"
 )
-CLEAN_DIR = os.path.join(PROJECT_ROOT, "datasets", "ruler_sorted", "Clean")
-TRAIN_CSV = os.path.join(PROJECT_ROOT, "datasets", "ISIC_2019_Training_GroundTruth.csv")
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "outputs2", "ruler_bias_counterfactual")
+CLEAN_DIR = os.path.join(PROJECT_ROOT, "datasets", "ruler_sorted_test", "NV_test_clean")
+GT_CSV = os.path.join(PROJECT_ROOT, "datasets", "ISIC_2019_Test_GroundTruth.csv")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "outputs2", "ruler_bias_counterfactual_test_set")
 EXAMPLES_DIR = os.path.join(RESULTS_DIR, "example_images")
 
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -82,33 +83,84 @@ print(f"N images: {N_IMAGES} | Class tested: NV (checking P(MEL) shift)")
 print("=" * 60)
 
 # ─────────────────────────────────────────────
-# 1. SYNTHETIC RULER OVERLAY
+# 1. LESION LOCALIZATION (rough, for ruler placement only)
+# ISIC lesion images are framed with the lesion near center. We find the
+# darker/browner blob nearest the image center, remove thin hair-like
+# structures with a binary opening, and return its bounding box.
+# ─────────────────────────────────────────────
+from scipy import ndimage
+
+def find_lesion_bbox(pil_img):
+    img = np.array(pil_img.convert('RGB')).astype(np.float32)
+    h, w, _ = img.shape
+    gray = img.mean(axis=2)
+
+    mask = gray < np.percentile(gray, 35)
+    mask = ndimage.binary_opening(mask, structure=np.ones((5, 5)))
+    labeled, n_labels = ndimage.label(mask)
+
+    if n_labels == 0:
+        return (w // 4, h // 4, 3 * w // 4, 3 * h // 4)
+
+    center_label = labeled[h // 2, w // 2]
+    if center_label != 0:
+        best_label = center_label
+    else:
+        sizes = ndimage.sum(mask, labeled, range(1, n_labels + 1))
+        best_label = int(np.argmax(sizes)) + 1
+
+    y_slice, x_slice = ndimage.find_objects(labeled == best_label)[0]
+    return (x_slice.start, y_slice.start, x_slice.stop, y_slice.stop)
+
+# ─────────────────────────────────────────────
+# 2. SYNTHETIC RULER OVERLAY
+# A translucent ruler (tick marks only, no filled bar) placed flush against
+# one side of the lesion's bounding box, as if laid on the skin to measure
+# it -- rather than a solid strip pasted at the image edge.
 # Visually verified before building this script -- see conversation.
 # ─────────────────────────────────────────────
 def add_synthetic_ruler(pil_img, edge='right'):
-    img = pil_img.copy().convert('RGB')
-    w, h = img.size
-    draw = ImageDraw.Draw(img)
-    strip_width = max(8, w // 12)
+    base = pil_img.copy().convert('RGBA')
+    w, h = base.size
+    x0, y0, x1, y1 = find_lesion_bbox(pil_img)
+
+    overlay = Image.new('RGBA', base.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+
+    gap = max(2, min(w, h) // 60)
+    tick_len_major = max(6, min(w, h) // 18)
+    tick_len_minor = tick_len_major // 2
+    tick_color = (25, 25, 25, 190)
+    edge_color = (60, 60, 60, 130)
 
     if edge in ('left', 'right'):
-        x0 = 0 if edge == 'left' else w - strip_width
-        draw.rectangle([x0, 0, x0 + strip_width, h], fill=(15, 15, 15))
-        tick_spacing = max(6, h // 20)
-        for i, y in enumerate(range(0, h, tick_spacing)):
-            tick_len = strip_width if i % 5 == 0 else strip_width // 2
-            draw.line([x0, y, x0 + tick_len, y], fill=(230, 230, 230), width=2)
+        y_start, y_end = max(0, y0), min(h, y1)
+        if y_end <= y_start:
+            y_start, y_end = 0, h
+        rx = min(w - 1, x1 + gap) if edge == 'right' else max(0, x0 - gap)
+        sign = -1 if edge == 'right' else 1  # ticks point back toward the lesion
+        draw.line([rx, y_start, rx, y_end], fill=edge_color, width=2)
+        tick_spacing = max(6, (y_end - y_start) // 15)
+        for i, y in enumerate(range(y_start, y_end, tick_spacing)):
+            tick_len = tick_len_major if i % 5 == 0 else tick_len_minor
+            draw.line([rx, y, rx + sign * tick_len, y], fill=tick_color, width=2)
     else:
-        y0 = 0 if edge == 'top' else h - strip_width
-        draw.rectangle([0, y0, w, y0 + strip_width], fill=(15, 15, 15))
-        tick_spacing = max(6, w // 20)
-        for i, x in enumerate(range(0, w, tick_spacing)):
-            tick_len = strip_width if i % 5 == 0 else strip_width // 2
-            draw.line([x, y0, x, y0 + tick_len], fill=(230, 230, 230), width=2)
+        x_start, x_end = max(0, x0), min(w, x1)
+        if x_end <= x_start:
+            x_start, x_end = 0, w
+        ry = min(h - 1, y1 + gap) if edge == 'bottom' else max(0, y0 - gap)
+        sign = -1 if edge == 'bottom' else 1  # ticks point back toward the lesion
+        draw.line([x_start, ry, x_end, ry], fill=edge_color, width=2)
+        tick_spacing = max(6, (x_end - x_start) // 15)
+        for i, x in enumerate(range(x_start, x_end, tick_spacing)):
+            tick_len = tick_len_major if i % 5 == 0 else tick_len_minor
+            draw.line([x, ry, x, ry + sign * tick_len], fill=tick_color, width=2)
+
+    img = Image.alpha_composite(base, overlay).convert('RGB')
     return img
 
 # ─────────────────────────────────────────────
-# 2. LOAD MODEL
+# 3. LOAD MODEL
 # ─────────────────────────────────────────────
 MODEL_DIR = os.path.join(RESULTS_DIR, "model")
 MODEL_SUBDIR = os.path.join(MODEL_DIR, "resnet50v2")
@@ -127,9 +179,9 @@ mel_index = wrapper.label_to_id("MEL")
 print(f"Model loaded. MEL class index: {mel_index}\n")
 
 # ─────────────────────────────────────────────
-# 3. GROUND-TRUTH ID -> CLASS LOOKUP (same as elsewhere in this project)
+# 4. GROUND-TRUTH ID -> CLASS LOOKUP (same as elsewhere in this project)
 # ─────────────────────────────────────────────
-df = pd.read_csv(TRAIN_CSV)
+df = pd.read_csv(GT_CSV)
 df['label'] = df[CLASS_NAMES].values.argmax(axis=1)
 df['class'] = df['label'].apply(lambda i: CLASS_NAMES[i])
 
@@ -140,7 +192,7 @@ def normalize_id(filename):
 id_to_class = dict(zip(df['image'].apply(normalize_id), df['class']))
 
 # ─────────────────────────────────────────────
-# 4. PICK N CLEAN NV IMAGES
+# 5. PICK N CLEAN NV IMAGES
 # ─────────────────────────────────────────────
 nv_clean_files = []
 for fname in sorted(os.listdir(CLEAN_DIR)):
@@ -154,7 +206,7 @@ for fname in sorted(os.listdir(CLEAN_DIR)):
 print(f"Found {len(nv_clean_files)} clean, confirmed-NV images to test\n")
 
 # ─────────────────────────────────────────────
-# 5. PREDICTION HELPER — aspect-preserving pad resize (matches training),
+# 6. PREDICTION HELPER — aspect-preserving pad resize (matches training),
 # preprocess, run through model, return P(MEL)
 # ─────────────────────────────────────────────
 def resize_with_pad_pil(img, shape):
@@ -176,7 +228,7 @@ def get_mel_probability(pil_img):
     return float(predictions[0][mel_index])
 
 # ─────────────────────────────────────────────
-# 6. RUN THE COUNTERFACTUAL TEST
+# 7. RUN THE COUNTERFACTUAL TEST
 # ─────────────────────────────────────────────
 rng = random.Random(RANDOM_SEED)
 edges = ['left', 'right', 'top', 'bottom']
@@ -219,7 +271,7 @@ for i, fname in enumerate(nv_clean_files):
         plt.close(fig)
 
 # ─────────────────────────────────────────────
-# 7. AGGREGATE STATISTICS
+# 8. AGGREGATE STATISTICS
 # ─────────────────────────────────────────────
 shifts = np.array([r['shift'] for r in results])
 clean_probs = np.array([r['p_mel_clean'] for r in results])
@@ -243,7 +295,7 @@ print(f"Images that crossed the MEL decision boundary "
       f"(P<0.5 -> P>=0.5) purely from the overlay: {n_flipped_to_mel}/{len(results)}")
 
 # ─────────────────────────────────────────────
-# 8. SAVE FULL RESULTS
+# 9. SAVE FULL RESULTS
 # ─────────────────────────────────────────────
 results_df = pd.DataFrame(results)
 results_df.to_csv(os.path.join(RESULTS_DIR, "counterfactual_results.csv"), index=False)
