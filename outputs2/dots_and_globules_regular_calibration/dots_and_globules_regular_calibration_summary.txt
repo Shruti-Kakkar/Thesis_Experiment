@@ -1,0 +1,24 @@
+
+dots_and_globules_regular Attribution Calibration Summary
+=====================================
+Sample: 176 held-out NV images (never used in CAV training)
+  dots_and_globules_regular present: 122
+  dots_and_globules_regular absent:  54
+
+Attribution stats:
+  Present: mean=0.0360, median=0.0353, std=0.0189
+  Absent:  mean=0.0269, median=0.0251, std=0.0203
+
+Mann-Whitney U test (present > absent): U=4155.50, p=0.00287204
+Rank-biserial correlation (effect size): 0.262
+
+ROC AUC: 0.631
+Youden's J optimal threshold (PRIMARY): 0.0125
+  Sensitivity: 0.877
+  Specificity: 0.389
+Bootstrap 95% CI on threshold: [0.0089, 0.0461] (median 0.0143)
+
+KDE crossing point(s) (secondary cross-check): [0.02139087]
+
+Fisher's exact test (did the correct-prediction filter bias the split?):
+  table=[[122, 31], [54, 9]], odds ratio=0.656, p=0.3414

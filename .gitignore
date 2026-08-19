@@ -221,6 +221,7 @@ __marimo__/
 datasets/
 models/
 concept_images/
+concept_images_ruler_matched/
 outputs/vtcav/
 
 # Padding-only line and any future MODEL_TAG variants under outputs2/ --
