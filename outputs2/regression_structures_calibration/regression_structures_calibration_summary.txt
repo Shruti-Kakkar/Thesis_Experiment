@@ -1,0 +1,24 @@
+
+regression_structures Attribution Calibration Summary
+=====================================
+Sample: 113 held-out MEL images (never used in CAV training)
+  regression_structures present: 59
+  regression_structures absent:  54
+
+Attribution stats:
+  Present: mean=0.0541, median=0.0552, std=0.0138
+  Absent:  mean=0.0502, median=0.0468, std=0.0153
+
+Mann-Whitney U test (present > absent): U=1856.00, p=0.0656692
+Rank-biserial correlation (effect size): 0.165
+
+ROC AUC: 0.583
+Youden's J optimal threshold (PRIMARY): 0.0507
+  Sensitivity: 0.644
+  Specificity: 0.611
+Bootstrap 95% CI on threshold: [0.0455, 0.0574] (median 0.0506)
+
+KDE crossing point(s) (secondary cross-check): [0.04954108 0.06981226 0.08637714]
+
+Fisher's exact test (did the correct-prediction filter bias the split?):
+  table=[[59, 12], [54, 37]], odds ratio=3.369, p=0.0011
