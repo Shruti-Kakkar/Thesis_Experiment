@@ -48,7 +48,7 @@ chunk = targets[args.start:end]
 print(f"Screening images [{args.start}:{end}] of {len(targets)} total, "
       f"post_relu only\n")
 
-write_header = not os.path.exists(RESULTS_CSV)
+write_header = not os.path.exists(RESULTS_CSV) or os.path.getsize(RESULTS_CSV) == 0
 with open(RESULTS_CSV, 'a', newline='') as f:
     writer = csv.writer(f)
     if write_header:
