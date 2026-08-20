@@ -63,6 +63,17 @@ for ax, cls in zip(axes, ["MEL", "NV"]):
     print(f"  clean (n={len(clean_vals)}): mean={clean_vals.mean():.5f}  "
           f"median={np.median(clean_vals):.5f}  std={clean_vals.std():.5f}")
 
+    # Outlier-driven check on the ruler group specifically -- small n
+    # (11 for NV) means the mean/median above could be dominated by one
+    # or two images rather than reflecting a broad pattern.
+    if len(ruler_vals) > 0 and ruler_vals.max() > 0:
+        n_above_half_max = int(np.sum(ruler_vals > ruler_vals.max() / 2))
+        top_share = ruler_vals.max() / ruler_vals.sum() if ruler_vals.sum() > 0 else float('nan')
+        print(f"  ruler images above half of this group's max: "
+              f"{n_above_half_max}/{len(ruler_vals)} -- "
+              f"{'broad pattern' if n_above_half_max > len(ruler_vals) * 0.3 else 'looks outlier-driven'} "
+              f"(top image is {top_share:.1%} of the group's attribution sum)")
+
     if len(ruler_vals) >= 2 and len(clean_vals) >= 2:
         u_stat, p_value = stats.mannwhitneyu(
             ruler_vals, clean_vals, alternative='two-sided'
