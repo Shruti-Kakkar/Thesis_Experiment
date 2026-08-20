@@ -71,42 +71,50 @@ def build_gt_targets():
     return targets
 
 
-print("VisualTCAV imported successfully.\n")
+def _run():
+    print("VisualTCAV imported successfully.\n")
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--start', type=int, default=0)
-parser.add_argument('--end', type=int, default=None,
-                     help="exclusive; defaults to the full target list")
-args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--start', type=int, default=0)
+    parser.add_argument('--end', type=int, default=None,
+                         help="exclusive; defaults to the full target list")
+    args = parser.parse_args()
 
-targets = build_gt_targets()
-end = args.end if args.end is not None else len(targets)
-chunk = targets[args.start:end]
+    targets = build_gt_targets()
+    end = args.end if args.end is not None else len(targets)
+    chunk = targets[args.start:end]
 
-print(f"Ground-truth verification [{args.start}:{end}] of {len(targets)} total "
-      f"({sum(1 for _, _, r in targets if r)} ruler, "
-      f"{sum(1 for _, _, r in targets if not r)} clean), post_relu only\n")
+    print(f"Ground-truth verification [{args.start}:{end}] of {len(targets)} total "
+          f"({sum(1 for _, _, r in targets if r)} ruler, "
+          f"{sum(1 for _, _, r in targets if not r)} clean), post_relu only\n")
 
-write_header = not os.path.exists(RESULTS_CSV)
-with open(RESULTS_CSV, 'a', newline='') as f:
-    writer = csv.writer(f)
-    if write_header:
-        writer.writerow(['class', 'filename', 'has_ruler_gt', 'attribution'])
+    write_header = not os.path.exists(RESULTS_CSV)
+    with open(RESULTS_CSV, 'a', newline='') as f:
+        writer = csv.writer(f)
+        if write_header:
+            writer.writerow(['class', 'filename', 'has_ruler_gt', 'attribution'])
 
-    for i, (true_class, fname, has_ruler) in enumerate(chunk):
-        # same underlying file, addressed via test_images_by_class/<class>/
-        rel_path = os.path.join(true_class, fname)
+        for i, (true_class, fname, has_ruler) in enumerate(chunk):
+            # same underlying file, addressed via test_images_by_class/<class>/
+            rel_path = os.path.join(true_class, fname)
 
-        local_tcav = make_local_tcav(true_class, rel_path)
-        local_tcav.predict()
-        local_tcav.explain(cache_cav=True, cache_random=True, n_cav_runs=20)
+            local_tcav = make_local_tcav(true_class, rel_path)
+            local_tcav.predict()
+            local_tcav.explain(cache_cav=True, cache_random=True, n_cav_runs=20)
 
-        attribution = float(
-            local_tcav.computations["post_relu"]["ruler_present/positive"].attributions[0]
-        )
-        writer.writerow([true_class, fname, has_ruler, f"{attribution:.6f}"])
-        f.flush()
-        print(f"  [{args.start + i + 1}/{len(targets)}] {true_class}/{fname} "
-              f"(ruler_gt={has_ruler}): attribution={attribution:.5f}")
+            attribution = float(
+                local_tcav.computations["post_relu"]["ruler_present/positive"].attributions[0]
+            )
+            writer.writerow([true_class, fname, has_ruler, f"{attribution:.6f}"])
+            f.flush()
+            print(f"  [{args.start + i + 1}/{len(targets)}] {true_class}/{fname} "
+                  f"(ruler_gt={has_ruler}): attribution={attribution:.5f}")
 
-print(f"\nChunk done. Results appended to: {RESULTS_CSV}")
+    print(f"\nChunk done. Results appended to: {RESULTS_CSV}")
+
+
+# Guarded so ruler_bias_ground_truth_finalize_matched.py can import
+# build_gt_targets/RESULTS_CSV/RESULTS_DIR from this module without
+# re-running the entire scoring loop as a side effect of the import.
+if __name__ == "__main__":
+    _run()
