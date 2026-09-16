@@ -1,0 +1,24 @@
+
+streaks_irregular Attribution Calibration Summary
+=====================================
+Sample: 112 held-out MEL images (never used in CAV training)
+  streaks_irregular present: 70
+  streaks_irregular absent:  42
+
+Attribution stats:
+  Present: mean=0.0354, median=0.0343, std=0.0162
+  Absent:  mean=0.0192, median=0.0159, std=0.0155
+
+Mann-Whitney U test (present > absent): U=2250.00, p=1.39959e-06
+Rank-biserial correlation (effect size): 0.531
+
+ROC AUC: 0.765
+Youden's J optimal threshold (PRIMARY): 0.0231
+  Sensitivity: 0.814
+  Specificity: 0.667
+Bootstrap 95% CI on threshold: [0.0162, 0.0362] (median 0.0231)
+
+KDE crossing point(s) (secondary cross-check): [0.02367372]
+
+Fisher's exact test (did the correct-prediction filter bias the split?):
+  table=[[70, 26], [42, 21]], odds ratio=1.346, p=0.4777
