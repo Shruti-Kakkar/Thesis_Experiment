@@ -1,0 +1,275 @@
+=== chunk 0-10 ===
+2026-08-21 23:45:58.419786: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-21 23:45:58.419824: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-21 23:45:58.421036: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-21 23:45:58.427119: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-21 23:45:59.973417: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-21 23:46:04.138013: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-21 23:47:05.649556: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+VisualTCAV imported successfully.
+
+Screening images [0:10] of 50 total, post_relu only, vignette-matched concept set
+
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.72s/it]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.72s/it]
+  [1/50] MEL/ISIC_0034386.jpg: attribution=0.00042
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.88it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]
+  [2/50] MEL/ISIC_0034398.jpg: attribution=0.00051
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.86it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.85it/s]
+  [3/50] MEL/ISIC_0034472.jpg: attribution=0.00026
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.51it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.50it/s]
+  [4/50] MEL/ISIC_0054842.jpg: attribution=0.00984
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.85it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.84it/s]
+  [5/50] MEL/ISIC_0056133.jpg: attribution=0.01502
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.86it/s]
+  [6/50] MEL/ISIC_0056816.jpg: attribution=0.00579
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.84it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.83it/s]
+  [7/50] MEL/ISIC_0057838.jpg: attribution=0.02987
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.85it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.85it/s]
+  [8/50] MEL/ISIC_0057922.jpg: attribution=0.01701
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.44it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.43it/s]
+  [9/50] MEL/ISIC_0058818.jpg: attribution=0.00068
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.57it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.57it/s]
+  [10/50] MEL/ISIC_0059123.jpg: attribution=0.00065
+
+Chunk done. Results appended to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_local_screening_matched/attributions.csv
+=== chunk 10-20 ===
+2026-08-21 23:55:57.658974: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-21 23:55:57.659016: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-21 23:55:57.660263: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-21 23:55:57.666350: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-21 23:55:59.208625: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-21 23:56:03.409600: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-21 23:57:13.732584: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+VisualTCAV imported successfully.
+
+Screening images [10:20] of 50 total, post_relu only, vignette-matched concept set
+
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.63s/it]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.63s/it]
+  [11/50] MEL/ISIC_0059375.jpg: attribution=0.01874
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.59it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.59it/s]
+  [12/50] MEL/ISIC_0059957.jpg: attribution=0.03168
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.86it/s]
+  [13/50] MEL/ISIC_0060015.jpg: attribution=0.01749
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.53it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.52it/s]
+  [14/50] MEL/ISIC_0060836.jpg: attribution=0.02961
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.42it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.41it/s]
+  [15/50] MEL/ISIC_0062089.jpg: attribution=0.01294
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.91it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.90it/s]
+  [16/50] MEL/ISIC_0062988.jpg: attribution=0.01860
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.70it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.69it/s]
+  [17/50] MEL/ISIC_0064082.jpg: attribution=0.00000
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.20it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.19it/s]
+  [18/50] MEL/ISIC_0065781.jpg: attribution=0.02068
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.12it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.11it/s]
+  [19/50] MEL/ISIC_0067782.jpg: attribution=0.00259
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.93it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.93it/s]
+  [20/50] MEL/ISIC_0068513.jpg: attribution=0.00139
+
+Chunk done. Results appended to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_local_screening_matched/attributions.csv
+=== chunk 20-30 ===
+2026-08-22 00:05:17.385319: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-22 00:05:17.385354: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-22 00:05:17.386646: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-22 00:05:17.392783: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-22 00:05:18.975055: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-22 00:05:23.129953: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-22 00:06:25.156383: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+VisualTCAV imported successfully.
+
+Screening images [20:30] of 50 total, post_relu only, vignette-matched concept set
+
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.69s/it]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.69s/it]
+  [21/50] MEL/ISIC_0068730.jpg: attribution=0.03167
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.31it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.30it/s]
+  [22/50] MEL/ISIC_0070107.jpg: attribution=0.02042
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.16it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.15it/s]
+  [23/50] MEL/ISIC_0070837.jpg: attribution=0.01197
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.59it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.58it/s]
+  [24/50] MEL/ISIC_0070886.jpg: attribution=0.01115
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.24it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.24it/s]
+  [25/50] MEL/ISIC_0071534.jpg: attribution=0.01384
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.94it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.93it/s]
+  [26/50] NV/ISIC_0034742.jpg: attribution=0.00013
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.93it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.92it/s]
+  [27/50] NV/ISIC_0035246.jpg: attribution=0.00023
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.37it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.36it/s]
+  [28/50] NV/ISIC_0035311.jpg: attribution=0.00009
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.19it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.18it/s]
+  [29/50] NV/ISIC_0035410.jpg: attribution=0.00011
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.30it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.29it/s]
+  [30/50] NV/ISIC_0035507.jpg: attribution=0.00017
+
+Chunk done. Results appended to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_local_screening_matched/attributions.csv
+=== chunk 30-40 ===
+2026-08-22 00:12:11.200453: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-22 00:12:11.200482: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-22 00:12:11.201746: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-22 00:12:11.207818: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-22 00:12:12.762275: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-22 00:12:16.966160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-22 00:13:18.152620: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+VisualTCAV imported successfully.
+
+Screening images [30:40] of 50 total, post_relu only, vignette-matched concept set
+
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.66s/it]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.66s/it]
+  [31/50] NV/ISIC_0035548.jpg: attribution=0.00011
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.33it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.32it/s]
+  [32/50] NV/ISIC_0035965.jpg: attribution=0.00005
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.59it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.58it/s]
+  [33/50] NV/ISIC_0054187.jpg: attribution=0.00235
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.96it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.96it/s]
+  [34/50] NV/ISIC_0054397.jpg: attribution=0.00003
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.75it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.74it/s]
+  [35/50] NV/ISIC_0055864.jpg: attribution=0.00183
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.30it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.29it/s]
+  [36/50] NV/ISIC_0057282.jpg: attribution=0.00056
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.26it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.25it/s]
+  [37/50] NV/ISIC_0057649.jpg: attribution=0.00000
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.58it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.58it/s]
+  [38/50] NV/ISIC_0057866.jpg: attribution=0.00000
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.27it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.26it/s]
+  [39/50] NV/ISIC_0058217.jpg: attribution=0.00158
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.06it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.05it/s]
+  [40/50] NV/ISIC_0059857.jpg: attribution=0.00034
+
+Chunk done. Results appended to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_local_screening_matched/attributions.csv
+=== chunk 40-50 ===
+2026-08-22 00:20:44.106040: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-22 00:20:44.106078: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-22 00:20:44.107346: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-22 00:20:44.113641: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-22 00:20:45.704171: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-22 00:20:49.863659: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-22 00:21:50.841786: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+VisualTCAV imported successfully.
+
+Screening images [40:50] of 50 total, post_relu only, vignette-matched concept set
+
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.63s/it]Layers: 100%|██████████| 1/1 [00:01<00:00,  1.63s/it]
+  [41/50] NV/ISIC_0063554.jpg: attribution=0.00165
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.56it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.55it/s]
+  [42/50] NV/ISIC_0063837.jpg: attribution=0.00301
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.88it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]
+  [43/50] NV/ISIC_0064087.jpg: attribution=0.00024
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.58it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.58it/s]
+  [44/50] NV/ISIC_0065065.jpg: attribution=0.00192
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.89it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.88it/s]
+  [45/50] NV/ISIC_0065350.jpg: attribution=0.00000
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.81it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.81it/s]
+  [46/50] NV/ISIC_0066228.jpg: attribution=0.00302
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.10it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  6.10it/s]
+  [47/50] NV/ISIC_0066387.jpg: attribution=0.00000
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.56it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.56it/s]
+  [48/50] NV/ISIC_0067237.jpg: attribution=0.00341
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.69it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.68it/s]
+  [49/50] NV/ISIC_0069722.jpg: attribution=0.00001
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/1 [00:00<?, ?it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.68it/s]Layers: 100%|██████████| 1/1 [00:00<00:00,  5.67it/s]
+  [50/50] NV/ISIC_0070826.jpg: attribution=0.00002
+
+Chunk done. Results appended to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_local_screening_matched/attributions.csv
