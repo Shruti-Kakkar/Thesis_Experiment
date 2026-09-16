@@ -1,0 +1,77 @@
+2026-09-16 17:35:51.915602: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-09-16 17:35:51.915641: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-09-16 17:35:51.917926: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-09-16 17:35:51.925356: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-09-16 17:35:53.513481: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-09-16 17:35:58.490869: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-09-16 17:37:06.643153: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+============================================================
+CAV negative-pool sampling check [padonly_seed2_hardneg], layer=post_relu
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Model loaded: resnet50v2
+
+
+============================================================
+Concept: streaks_regular
+============================================================
+    [streaks_regular] 273 total negative images available; true-random seed=42 sample of 200 drawn
+  Cosine similarity (biased CAV vs. random-negative-sample CAV): 0.9908
+  [NV] mean attribution: biased=0.26959 corrected=0.29141 (+8.1%)
+
+============================================================
+Concept: streaks_irregular
+============================================================
+    [streaks_irregular] 273 total negative images available; true-random seed=42 sample of 200 drawn
+  Cosine similarity (biased CAV vs. random-negative-sample CAV): 0.9546
+  [MEL] mean attribution: biased=0.59114 corrected=0.70491 (+19.2%)
+
+============================================================
+Concept: blue_whitish_veil
+============================================================
+    [blue_whitish_veil] 339 total negative images available; true-random seed=42 sample of 200 drawn
+  Cosine similarity (biased CAV vs. random-negative-sample CAV): 0.9181
+  [MEL] mean attribution: biased=1.44271 corrected=1.47519 (+2.3%)
+
+============================================================
+Concept: pigmentation
+============================================================
+    [pigmentation] 253 total negative images available; true-random seed=42 sample of 200 drawn
+  Cosine similarity (biased CAV vs. random-negative-sample CAV): 0.9444
+  [MEL] mean attribution: biased=0.19156 corrected=0.18672 (-2.5%)
+
+============================================================
+Concept: regression_structures
+============================================================
+    [regression_structures] 317 total negative images available; true-random seed=42 sample of 200 drawn
+  Cosine similarity (biased CAV vs. random-negative-sample CAV): 0.9609
+  [MEL] mean attribution: biased=1.42709 corrected=1.42607 (-0.1%)
+
+============================================================
+Concept: vascular_structures
+============================================================
+    [vascular_structures] 347 total negative images available; true-random seed=42 sample of 200 drawn
+  Cosine similarity (biased CAV vs. random-negative-sample CAV): 0.9588
+  [MEL] mean attribution: biased=0.77514 corrected=0.69068 (-10.9%)
+  [NV] mean attribution: biased=0.16142 corrected=0.16997 (+5.3%)
+
+============================================================
+SUMMARY
+============================================================
+streaks_regular              cosine_sim=0.9908
+    [NV] 0.26959 -> 0.29141 (+8.1%)
+streaks_irregular            cosine_sim=0.9546
+    [MEL] 0.59114 -> 0.70491 (+19.2%)
+blue_whitish_veil            cosine_sim=0.9181
+    [MEL] 1.44271 -> 1.47519 (+2.3%)
+pigmentation                 cosine_sim=0.9444
+    [MEL] 0.19156 -> 0.18672 (-2.5%)
+regression_structures        cosine_sim=0.9609
+    [MEL] 1.42709 -> 1.42607 (-0.1%)
+vascular_structures          cosine_sim=0.9588
+    [MEL] 0.77514 -> 0.69068 (-10.9%)
+    [NV] 0.16142 -> 0.16997 (+5.3%)
+
+All done. Results in: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/cav_negative_pool_sampling_check
