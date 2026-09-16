@@ -23,6 +23,9 @@ lesion-adjacent placement isn't needed to balance ruler for this concept,
 and keeping ruler off the lesion border removes one extra degree of
 variation between the two scripts' outputs).
 
+Vignette circle size (radius_frac) is fixed at 0.58 for every image,
+rather than a continuous range.
+
 A manifest CSV records ruler status, category, and vignette params
 (radius_frac, feather_frac) per image for later spot-checks.
 
@@ -61,6 +64,8 @@ RULER_CATEGORIES = [
     ("ticks_edge", 0.55, dict(placement="edge", style="ticks")),
     ("short_ruler", 0.25, dict(placement="short_ruler")),
 ]
+
+VIGNETTE_RADIUS_FRAC = 0.58
 
 os.makedirs(OUT_POS, exist_ok=True)
 os.makedirs(OUT_NEG, exist_ok=True)
@@ -137,7 +142,7 @@ for i, (fname, has_ruler) in enumerate(zip(files, ruler_flags)):
     base.save(os.path.join(OUT_NEG, fname))
 
     # --- positive branch: vignette applied on top of the SAME base ---
-    radius_frac = np.random.default_rng(img_seed + 500000).uniform(0.46, 0.58)
+    radius_frac = VIGNETTE_RADIUS_FRAC
     feather_frac = np.random.default_rng(img_seed + 600000).uniform(0.04, 0.12)
     vign = add_vignette(base, radius_frac=radius_frac, feather_frac=feather_frac,
                          seed=img_seed)

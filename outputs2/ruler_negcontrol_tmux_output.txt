@@ -1,0 +1,83 @@
+2026-08-22 20:05:39.089634: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-22 20:05:39.089671: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-22 20:05:39.090918: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-22 20:05:39.097095: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-22 20:05:40.721716: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-22 20:05:43.721035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-22 20:06:46.473757: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+============================================================
+Ruler Bias -- NEGATIVE CONTROL Counterfactual Test (plain bar, no ticks)
+N images: 50 | Class tested: NV (checking P(MEL) shift)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Model loaded. MEL class index: 0
+
+Found 50 clean, confirmed-NV images to test
+
+  [1/50] ISIC_0034322.jpg: P(MEL) clean=0.0003 -> mark=0.0009 (shift=+0.0006)
+  [2/50] ISIC_0034324.jpg: P(MEL) clean=0.0111 -> mark=0.0411 (shift=+0.0300)
+  [3/50] ISIC_0034325.jpg: P(MEL) clean=0.0004 -> mark=0.0005 (shift=+0.0001)
+  [4/50] ISIC_0034328.jpg: P(MEL) clean=0.0187 -> mark=0.0318 (shift=+0.0130)
+  [5/50] ISIC_0034330.jpg: P(MEL) clean=0.0063 -> mark=0.1081 (shift=+0.1018)
+  [6/50] ISIC_0034331.jpg: P(MEL) clean=0.0017 -> mark=0.0017 (shift=-0.0001)
+  [7/50] ISIC_0034335.jpg: P(MEL) clean=0.2257 -> mark=0.2254 (shift=-0.0003)
+  [8/50] ISIC_0034336.jpg: P(MEL) clean=0.0030 -> mark=0.0032 (shift=+0.0002)
+  [9/50] ISIC_0034337.jpg: P(MEL) clean=0.0002 -> mark=0.0002 (shift=+0.0000)
+  [10/50] ISIC_0034339.jpg: P(MEL) clean=0.2196 -> mark=0.2182 (shift=-0.0014)
+  [11/50] ISIC_0034340.jpg: P(MEL) clean=0.0711 -> mark=0.0645 (shift=-0.0066)
+  [12/50] ISIC_0034341.jpg: P(MEL) clean=0.0588 -> mark=0.0663 (shift=+0.0074)
+  [13/50] ISIC_0034342.jpg: P(MEL) clean=0.0030 -> mark=0.0035 (shift=+0.0005)
+  [14/50] ISIC_0034347.jpg: P(MEL) clean=0.0016 -> mark=0.0020 (shift=+0.0004)
+  [15/50] ISIC_0034348.jpg: P(MEL) clean=0.0066 -> mark=0.0054 (shift=-0.0012)
+  [16/50] ISIC_0034349.jpg: P(MEL) clean=0.0008 -> mark=0.0008 (shift=+0.0000)
+  [17/50] ISIC_0034350.jpg: P(MEL) clean=0.0025 -> mark=0.0153 (shift=+0.0128)
+  [18/50] ISIC_0034351.jpg: P(MEL) clean=0.0004 -> mark=0.0014 (shift=+0.0010)
+  [19/50] ISIC_0034352.jpg: P(MEL) clean=0.0002 -> mark=0.0016 (shift=+0.0014)
+  [20/50] ISIC_0034355.jpg: P(MEL) clean=0.3561 -> mark=0.2487 (shift=-0.1075)
+  [21/50] ISIC_0034356.jpg: P(MEL) clean=0.0006 -> mark=0.0007 (shift=+0.0001)
+  [22/50] ISIC_0034357.jpg: P(MEL) clean=0.0163 -> mark=0.0103 (shift=-0.0060)
+  [23/50] ISIC_0034359.jpg: P(MEL) clean=0.4035 -> mark=0.3905 (shift=-0.0130)
+  [24/50] ISIC_0034364.jpg: P(MEL) clean=0.0030 -> mark=0.0116 (shift=+0.0085)
+  [25/50] ISIC_0034365.jpg: P(MEL) clean=0.0345 -> mark=0.0271 (shift=-0.0074)
+  [26/50] ISIC_0034367.jpg: P(MEL) clean=0.0001 -> mark=0.0001 (shift=+0.0001)
+  [27/50] ISIC_0034369.jpg: P(MEL) clean=0.0006 -> mark=0.0006 (shift=+0.0000)
+  [28/50] ISIC_0034372.jpg: P(MEL) clean=0.0050 -> mark=0.0141 (shift=+0.0091)
+  [29/50] ISIC_0034374.jpg: P(MEL) clean=0.0001 -> mark=0.0011 (shift=+0.0010)
+  [30/50] ISIC_0034377.jpg: P(MEL) clean=0.0000 -> mark=0.0000 (shift=+0.0000)
+  [31/50] ISIC_0034378.jpg: P(MEL) clean=0.4224 -> mark=0.5990 (shift=+0.1767)
+  [32/50] ISIC_0034379.jpg: P(MEL) clean=0.2355 -> mark=0.2823 (shift=+0.0468)
+  [33/50] ISIC_0034380.jpg: P(MEL) clean=0.0001 -> mark=0.0003 (shift=+0.0002)
+  [34/50] ISIC_0034385.jpg: P(MEL) clean=0.0000 -> mark=0.0000 (shift=+0.0000)
+  [35/50] ISIC_0034389.jpg: P(MEL) clean=0.0001 -> mark=0.0004 (shift=+0.0004)
+  [36/50] ISIC_0034391.jpg: P(MEL) clean=0.0050 -> mark=0.0051 (shift=+0.0001)
+  [37/50] ISIC_0034392.jpg: P(MEL) clean=0.1645 -> mark=0.3634 (shift=+0.1989)
+  [38/50] ISIC_0034393.jpg: P(MEL) clean=0.2562 -> mark=0.2442 (shift=-0.0120)
+  [39/50] ISIC_0034395.jpg: P(MEL) clean=0.0915 -> mark=0.0916 (shift=+0.0002)
+  [40/50] ISIC_0034397.jpg: P(MEL) clean=0.0097 -> mark=0.0103 (shift=+0.0006)
+  [41/50] ISIC_0034399.jpg: P(MEL) clean=0.0002 -> mark=0.0015 (shift=+0.0013)
+  [42/50] ISIC_0034400.jpg: P(MEL) clean=0.0621 -> mark=0.1333 (shift=+0.0712)
+  [43/50] ISIC_0034401.jpg: P(MEL) clean=0.0000 -> mark=0.0001 (shift=+0.0000)
+  [44/50] ISIC_0034403.jpg: P(MEL) clean=0.0000 -> mark=0.0000 (shift=+0.0000)
+  [45/50] ISIC_0034407.jpg: P(MEL) clean=0.0007 -> mark=0.0039 (shift=+0.0031)
+  [46/50] ISIC_0034408.jpg: P(MEL) clean=0.0001 -> mark=0.0001 (shift=-0.0000)
+  [47/50] ISIC_0034412.jpg: P(MEL) clean=0.0008 -> mark=0.0012 (shift=+0.0004)
+  [48/50] ISIC_0034414.jpg: P(MEL) clean=0.0224 -> mark=0.0547 (shift=+0.0323)
+  [49/50] ISIC_0034415.jpg: P(MEL) clean=0.0023 -> mark=0.0091 (shift=+0.0068)
+  [50/50] ISIC_0034417.jpg: P(MEL) clean=0.0005 -> mark=0.0011 (shift=+0.0006)
+
+============================================================
+RESULTS (NEGATIVE CONTROL -- plain bar, no tick marks)
+============================================================
+Mean P(MEL), clean:      0.0545
+Mean P(MEL), mark added: 0.0660
+Mean shift:              +0.0114  (std=0.0439)
+Paired t-test:           t=1.825, p=0.074086
+Significant at α=0.05?   no
+Images that crossed the MEL decision boundary (P<0.5 -> P>=0.5) purely from the overlay: 1/50
+
+Compare to the real ruler counterfactual test's mean shift (+0.037, p=0.0102) -- a smaller/non-significant shift here would confirm the real effect is tick-PATTERN-specific, not a generic edge artifact.
+
+Results saved to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/ruler_bias_counterfactual_negcontrol_test_set
+Example before/after image pairs: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/ruler_bias_counterfactual_negcontrol_test_set/example_images
