@@ -1,0 +1,205 @@
+2026-09-16 11:42:22.986059: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-09-16 11:42:22.986452: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-09-16 11:42:23.018279: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-09-16 11:42:23.160849: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-09-16 11:42:25.474203: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-09-16 11:42:31.224531: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-09-16 11:43:33.475852: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+============================================================
+Zero-attribution / significance re-check with TRUE-RANDOM test sample [padonly_seed2_hardneg]
+Classes: ['AK', 'BCC', 'BKL', 'MEL', 'NV'] | Layers: ['post_relu']
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Model loaded: resnet50v2
+
+
+============================================================
+Layer: post_relu
+============================================================
+
+  Class: AK (sample seed=42)
+    [AK] 374 total test images available; true-random seed=42 sample of 200 drawn
+  Computing/loading shared IG attributions (200 images)...
+    IG progress: 50/200 (5.3s elapsed)
+    IG progress: 100/200 (9.6s elapsed)
+    IG progress: 150/200 (13.9s elapsed)
+    IG progress: 200/200 (18.2s elapsed)
+    pigment_network_typical: mean=0.3409 (non-zero) p=0.0000 significant
+    pigment_network_atypical: mean=0.2679 (non-zero) p=0.0000 significant
+    streaks_regular: mean=0.1806 (non-zero) p=0.0003 significant
+    streaks_irregular: mean=0.1713 (non-zero) p=0.1611 NOT significant
+    pigmentation: mean=0.0803 (non-zero) p=0.1018 NOT significant
+    regression_structures: mean=0.9205 (non-zero) p=0.0000 significant
+    dots_and_globules_regular: mean=0.1154 (non-zero) p=0.3572 NOT significant
+    dots_and_globules_irregular: mean=0.4191 (non-zero) p=0.0000 significant
+    blue_whitish_veil: mean=0.8993 (non-zero) p=0.0000 significant
+    vascular_structures: mean=1.2451 (non-zero) p=0.0000 significant
+
+  Class: BCC (sample seed=43)
+    [BCC] 975 total test images available; true-random seed=43 sample of 200 drawn
+  Computing/loading shared IG attributions (200 images)...
+    IG progress: 50/200 (4.0s elapsed)
+    IG progress: 100/200 (8.2s elapsed)
+    IG progress: 150/200 (12.5s elapsed)
+    IG progress: 200/200 (16.8s elapsed)
+    pigment_network_typical: mean=0.1701 (non-zero) p=0.0001 significant
+    pigment_network_atypical: mean=0.1968 (non-zero) p=0.0000 significant
+    streaks_regular: mean=0.1019 (non-zero) p=0.0507 NOT significant
+    streaks_irregular: mean=0.2275 (non-zero) p=0.0000 significant
+    pigmentation: mean=0.0926 (non-zero) p=0.2895 NOT significant
+    regression_structures: mean=0.6523 (non-zero) p=0.0000 significant
+    dots_and_globules_regular: mean=0.0298 (non-zero) p=0.0000 significant
+    dots_and_globules_irregular: mean=0.4143 (non-zero) p=0.0000 significant
+    blue_whitish_veil: mean=0.8811 (non-zero) p=0.0000 significant
+    vascular_structures: mean=0.9296 (non-zero) p=0.0000 significant
+
+  Class: BKL (sample seed=44)
+    [BKL] 660 total test images available; true-random seed=44 sample of 200 drawn
+  Computing/loading shared IG attributions (200 images)...
+    IG progress: 50/200 (3.9s elapsed)
+    IG progress: 100/200 (8.3s elapsed)
+    IG progress: 150/200 (12.5s elapsed)
+    IG progress: 200/200 (16.9s elapsed)
+    pigment_network_typical: mean=0.2402 (non-zero) p=0.0000 significant
+    pigment_network_atypical: mean=0.2912 (non-zero) p=0.0000 significant
+    streaks_regular: mean=0.1008 (non-zero) p=0.0250 significant
+    streaks_irregular: mean=0.2266 (non-zero) p=0.0000 significant
+    pigmentation: mean=0.1244 (non-zero) p=0.0117 significant
+    regression_structures: mean=0.7162 (non-zero) p=0.0000 significant
+    dots_and_globules_regular: mean=0.1149 (non-zero) p=0.2388 NOT significant
+    dots_and_globules_irregular: mean=0.4141 (non-zero) p=0.0000 significant
+    blue_whitish_veil: mean=0.6517 (non-zero) p=0.0000 significant
+    vascular_structures: mean=0.6912 (non-zero) p=0.0000 significant
+
+  Class: MEL (sample seed=45)
+    [MEL] 1327 total test images available; true-random seed=45 sample of 200 drawn
+  Computing/loading shared IG attributions (200 images)...
+    IG progress: 50/200 (4.0s elapsed)
+    IG progress: 100/200 (8.3s elapsed)
+    IG progress: 150/200 (12.7s elapsed)
+    IG progress: 200/200 (17.0s elapsed)
+    pigment_network_typical: mean=0.5290 (non-zero) p=0.0000 significant
+    pigment_network_atypical: mean=0.8979 (non-zero) p=0.0000 significant
+    streaks_regular: mean=0.2537 (non-zero) p=0.0002 significant
+    streaks_irregular: mean=0.5911 (non-zero) p=0.0000 significant
+    pigmentation: mean=0.1916 (non-zero) p=0.0951 NOT significant
+    regression_structures: mean=1.4271 (non-zero) p=0.0000 significant
+    dots_and_globules_regular: mean=0.2310 (non-zero) p=0.0857 NOT significant
+    dots_and_globules_irregular: mean=0.9084 (non-zero) p=0.0000 significant
+    blue_whitish_veil: mean=1.4427 (non-zero) p=0.0000 significant
+    vascular_structures: mean=0.7751 (non-zero) p=0.0000 significant
+
+  Class: NV (sample seed=46)
+    [NV] 2495 total test images available; true-random seed=46 sample of 200 drawn
+  Computing/loading shared IG attributions (200 images)...
+    IG progress: 50/200 (3.2s elapsed)
+    IG progress: 100/200 (6.4s elapsed)
+    IG progress: 150/200 (9.6s elapsed)
+    IG progress: 200/200 (12.8s elapsed)
+    pigment_network_typical: mean=0.6298 (non-zero) p=0.0000 significant
+    pigment_network_atypical: mean=0.2977 (non-zero) p=0.0000 significant
+    streaks_regular: mean=0.2696 (non-zero) p=0.0000 significant
+    streaks_irregular: mean=0.1549 (non-zero) p=0.0003 significant
+    pigmentation: mean=0.0636 (non-zero) p=0.1602 NOT significant
+    regression_structures: mean=0.3482 (non-zero) p=0.0000 significant
+    dots_and_globules_regular: mean=0.3793 (non-zero) p=0.0000 significant
+    dots_and_globules_irregular: mean=0.1561 (non-zero) p=0.0000 significant
+    blue_whitish_veil: mean=0.2676 (non-zero) p=0.0000 significant
+    vascular_structures: mean=0.1614 (non-zero) p=0.0000 significant
+
+Total run time: 0.04 hours
+
+Results saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_zeroattrib_randomsample_check_padonly_seed2_hardneg/zeroattrib_randomsample_check_results.json
+
+============================================================
+ZERO-ATTRIBUTION CELL COUNT (post_relu) -- random sample vs. Table 5.3
+============================================================
+  AK: 0/10 concepts zero-attribution at post_relu
+  BCC: 0/10 concepts zero-attribution at post_relu
+  BKL: 0/10 concepts zero-attribution at post_relu
+  MEL: 0/10 concepts zero-attribution at post_relu
+  NV: 0/10 concepts zero-attribution at post_relu
+
+Class: AK
++-----------------------------+---------+-------+---------+-------------+
+|           Concept           |   Mean  | Zero? | p-value | Significant |
++-----------------------------+---------+-------+---------+-------------+
+|   pigment_network_typical   | 0.34085 |   no  |  0.0000 |     yes     |
+|   pigment_network_atypical  | 0.26791 |   no  |  0.0000 |     yes     |
+|       streaks_regular       | 0.18059 |   no  |  0.0003 |     yes     |
+|      streaks_irregular      | 0.17133 |   no  |  0.1611 |      no     |
+|         pigmentation        | 0.08027 |   no  |  0.1018 |      no     |
+|    regression_structures    | 0.92055 |   no  |  0.0000 |     yes     |
+|  dots_and_globules_regular  | 0.11538 |   no  |  0.3572 |      no     |
+| dots_and_globules_irregular | 0.41915 |   no  |  0.0000 |     yes     |
+|      blue_whitish_veil      | 0.89934 |   no  |  0.0000 |     yes     |
+|     vascular_structures     | 1.24511 |   no  |  0.0000 |     yes     |
++-----------------------------+---------+-------+---------+-------------+
+
+Class: BCC
++-----------------------------+---------+-------+---------+-------------+
+|           Concept           |   Mean  | Zero? | p-value | Significant |
++-----------------------------+---------+-------+---------+-------------+
+|   pigment_network_typical   | 0.17008 |   no  |  0.0001 |     yes     |
+|   pigment_network_atypical  | 0.19684 |   no  |  0.0000 |     yes     |
+|       streaks_regular       | 0.10189 |   no  |  0.0507 |      no     |
+|      streaks_irregular      | 0.22745 |   no  |  0.0000 |     yes     |
+|         pigmentation        | 0.09256 |   no  |  0.2895 |      no     |
+|    regression_structures    | 0.65231 |   no  |  0.0000 |     yes     |
+|  dots_and_globules_regular  | 0.02983 |   no  |  0.0000 |     yes     |
+| dots_and_globules_irregular | 0.41428 |   no  |  0.0000 |     yes     |
+|      blue_whitish_veil      | 0.88114 |   no  |  0.0000 |     yes     |
+|     vascular_structures     | 0.92962 |   no  |  0.0000 |     yes     |
++-----------------------------+---------+-------+---------+-------------+
+
+Class: BKL
++-----------------------------+---------+-------+---------+-------------+
+|           Concept           |   Mean  | Zero? | p-value | Significant |
++-----------------------------+---------+-------+---------+-------------+
+|   pigment_network_typical   | 0.24016 |   no  |  0.0000 |     yes     |
+|   pigment_network_atypical  | 0.29124 |   no  |  0.0000 |     yes     |
+|       streaks_regular       | 0.10077 |   no  |  0.0250 |     yes     |
+|      streaks_irregular      | 0.22665 |   no  |  0.0000 |     yes     |
+|         pigmentation        | 0.12444 |   no  |  0.0117 |     yes     |
+|    regression_structures    | 0.71622 |   no  |  0.0000 |     yes     |
+|  dots_and_globules_regular  | 0.11488 |   no  |  0.2388 |      no     |
+| dots_and_globules_irregular | 0.41408 |   no  |  0.0000 |     yes     |
+|      blue_whitish_veil      | 0.65173 |   no  |  0.0000 |     yes     |
+|     vascular_structures     | 0.69124 |   no  |  0.0000 |     yes     |
++-----------------------------+---------+-------+---------+-------------+
+
+Class: MEL
++-----------------------------+---------+-------+---------+-------------+
+|           Concept           |   Mean  | Zero? | p-value | Significant |
++-----------------------------+---------+-------+---------+-------------+
+|   pigment_network_typical   | 0.52899 |   no  |  0.0000 |     yes     |
+|   pigment_network_atypical  | 0.89789 |   no  |  0.0000 |     yes     |
+|       streaks_regular       | 0.25373 |   no  |  0.0002 |     yes     |
+|      streaks_irregular      | 0.59114 |   no  |  0.0000 |     yes     |
+|         pigmentation        | 0.19156 |   no  |  0.0951 |      no     |
+|    regression_structures    | 1.42709 |   no  |  0.0000 |     yes     |
+|  dots_and_globules_regular  | 0.23101 |   no  |  0.0857 |      no     |
+| dots_and_globules_irregular | 0.90843 |   no  |  0.0000 |     yes     |
+|      blue_whitish_veil      | 1.44271 |   no  |  0.0000 |     yes     |
+|     vascular_structures     | 0.77514 |   no  |  0.0000 |     yes     |
++-----------------------------+---------+-------+---------+-------------+
+
+Class: NV
++-----------------------------+---------+-------+---------+-------------+
+|           Concept           |   Mean  | Zero? | p-value | Significant |
++-----------------------------+---------+-------+---------+-------------+
+|   pigment_network_typical   | 0.62985 |   no  |  0.0000 |     yes     |
+|   pigment_network_atypical  | 0.29767 |   no  |  0.0000 |     yes     |
+|       streaks_regular       | 0.26959 |   no  |  0.0000 |     yes     |
+|      streaks_irregular      | 0.15491 |   no  |  0.0003 |     yes     |
+|         pigmentation        | 0.06364 |   no  |  0.1602 |      no     |
+|    regression_structures    | 0.34817 |   no  |  0.0000 |     yes     |
+|  dots_and_globules_regular  | 0.37927 |   no  |  0.0000 |     yes     |
+| dots_and_globules_irregular | 0.15608 |   no  |  0.0000 |     yes     |
+|      blue_whitish_veil      | 0.26763 |   no  |  0.0000 |     yes     |
+|     vascular_structures     | 0.16142 |   no  |  0.0000 |     yes     |
++-----------------------------+---------+-------+---------+-------------+
+
+All done. Results in: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_zeroattrib_randomsample_check_padonly_seed2_hardneg
