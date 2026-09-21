@@ -15,6 +15,9 @@ same concept_images directories the CAV pipeline trains on:
     short_ruler; Section~\ref{sec:rq3_results}), a real photograph
     genuinely exhibiting that style next to our synthetic overlay
     recreation of it.
+  - class_gallery.png: the 8 ISIC 2019 diagnostic classes the
+    classifier predicts (Section~\ref{sec:datasets}), 2 example test
+    images each, from datasets/test_images_by_class/.
 
 These are plain image galleries, no heatmap or model involved, so this
 script only needs PIL/matplotlib -- no TensorFlow, no VisualTCAV import,
@@ -45,6 +48,7 @@ THESIS_IMAGES_DIR = os.path.expanduser(
 DERM7PT_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images")
 RULER_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_ruler_matched")
 VIGNETTE_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_vignette_matched")
+CLASS_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
 
 N_EXEMPLARS = 2
 
@@ -119,6 +123,41 @@ def build_derm7pt_gallery(out_path):
         title_row, image_row = 2 * i, 2 * i + 1
         draw_concept_block(fig, gs, title_row, image_row, 0, left_concepts[i], exemplars[left_concepts[i]])
         draw_concept_block(fig, gs, title_row, image_row, 3, right_concepts[i], exemplars[right_concepts[i]])
+
+    fig.savefig(out_path, dpi=150, bbox_inches='tight')
+    plt.close('all')
+    print(f"Saved: {out_path}")
+
+
+CLASS_FULL_NAMES = {
+    "MEL": "melanoma", "NV": "melanocytic nevus", "BCC": "basal cell carcinoma",
+    "AK": "actinic keratosis", "BKL": "benign keratosis", "DF": "dermatofibroma",
+    "VASC": "vascular lesion", "SCC": "squamous cell carcinoma",
+}
+
+
+def build_class_gallery(out_path):
+    class_order = ["MEL", "NV", "BCC", "AK", "BKL", "DF", "VASC", "SCC"]
+    left_classes, right_classes = class_order[:4], class_order[4:]
+
+    used = set()
+    exemplars = {}
+    for cls in class_order:
+        exemplars[cls] = pick_exemplars(os.path.join(CLASS_IMAGES_DIR, cls), N_EXEMPLARS, used)
+
+    fig = plt.figure(figsize=(10, 7.2))
+    n_pairs = 4
+    height_ratios = [0.32, 1] * n_pairs
+    gs = GridSpec(
+        2 * n_pairs, 5, width_ratios=[1, 1, 0.2, 1, 1], height_ratios=height_ratios,
+        hspace=0.1, wspace=0.06, top=0.98, bottom=0.02, left=0.02, right=0.98,
+    )
+    for i in range(n_pairs):
+        title_row, image_row = 2 * i, 2 * i + 1
+        left_label = f"{left_classes[i]} ({CLASS_FULL_NAMES[left_classes[i]]})"
+        right_label = f"{right_classes[i]} ({CLASS_FULL_NAMES[right_classes[i]]})"
+        draw_concept_block(fig, gs, title_row, image_row, 0, left_label, exemplars[left_classes[i]])
+        draw_concept_block(fig, gs, title_row, image_row, 3, right_label, exemplars[right_classes[i]])
 
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     plt.close('all')
@@ -215,3 +254,4 @@ if __name__ == "__main__":
     build_derm7pt_gallery(os.path.join(THESIS_IMAGES_DIR, "concept_gallery_derm7pt.png"))
     build_artifact_gallery(os.path.join(THESIS_IMAGES_DIR, "concept_gallery_artifacts.png"))
     build_ruler_style_gallery(os.path.join(THESIS_IMAGES_DIR, "ruler_style_real_vs_synthetic.png"))
+    build_class_gallery(os.path.join(THESIS_IMAGES_DIR, "class_gallery.png"))
