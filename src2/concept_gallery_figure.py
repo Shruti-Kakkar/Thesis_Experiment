@@ -65,16 +65,23 @@ def pick_exemplars(positive_dir, n, used):
     return picks
 
 
-def draw_concept_block(fig, gs, row, col_start, concept_name, image_paths):
-    """One row of a block: concept-name label + its exemplar thumbnails."""
-    ax_label = fig.add_subplot(gs[row, col_start])
+def draw_concept_block(fig, gs, title_row, image_row, col_start, concept_name, image_paths):
+    """A concept's name, centered above its own pair of exemplar thumbnails.
+
+    The label sits in its own axes spanning exactly the two image columns
+    below it, rather than squeezed into a narrow side column: a long
+    concept name (e.g. dots_and_globules_irregular) previously overflowed
+    sideways into the neighbouring concept's thumbnails when right-aligned
+    in a cramped label column.
+    """
+    ax_label = fig.add_subplot(gs[title_row, col_start:col_start + 2])
     ax_label.axis('off')
     ax_label.text(
-        1.0, 0.5, concept_name, ha='right', va='center',
-        fontsize=9, fontfamily='monospace', wrap=True,
+        0.5, 0.0, concept_name, ha='center', va='bottom',
+        fontsize=9, fontfamily='monospace',
     )
     for i, path in enumerate(image_paths):
-        ax_img = fig.add_subplot(gs[row, col_start + 1 + i])
+        ax_img = fig.add_subplot(gs[image_row, col_start + i])
         ax_img.imshow(PIL.Image.open(path))
         ax_img.axis('off')
 
@@ -96,20 +103,18 @@ def build_derm7pt_gallery(out_path):
         positive_dir = os.path.join(DERM7PT_CONCEPT_DIR, concept, "positive")
         exemplars[concept] = pick_exemplars(positive_dir, N_EXEMPLARS, used)
 
-    fig = plt.figure(figsize=(11, 7.2))
+    fig = plt.figure(figsize=(10, 8.5))
+    n_pairs = 5
+    height_ratios = [0.28, 1] * n_pairs
     gs = GridSpec(
-        5, 7, width_ratios=[0.62, 1, 1, 0.18, 0.62, 1, 1],
-        hspace=0.15, wspace=0.06, top=0.90, bottom=0.02, left=0.02, right=0.98,
+        2 * n_pairs, 5, width_ratios=[1, 1, 0.2, 1, 1], height_ratios=height_ratios,
+        hspace=0.08, wspace=0.06, top=0.98, bottom=0.02, left=0.02, right=0.98,
     )
-    for row in range(5):
-        draw_concept_block(fig, gs, row, 0, left_concepts[row], exemplars[left_concepts[row]])
-        draw_concept_block(fig, gs, row, 4, right_concepts[row], exemplars[right_concepts[row]])
+    for i in range(n_pairs):
+        title_row, image_row = 2 * i, 2 * i + 1
+        draw_concept_block(fig, gs, title_row, image_row, 0, left_concepts[i], exemplars[left_concepts[i]])
+        draw_concept_block(fig, gs, title_row, image_row, 3, right_concepts[i], exemplars[right_concepts[i]])
 
-    fig.suptitle(
-        f"{N_EXEMPLARS} positive exemplars per concept, drawn directly from each "
-        "concept's own CAV training pool",
-        fontsize=10, style='italic', y=0.97,
-    )
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     plt.close('all')
     print(f"Saved: {out_path}")
@@ -124,16 +129,14 @@ def build_artifact_gallery(out_path):
         os.path.join(VIGNETTE_CONCEPT_DIR, "vignette_present", "positive"), N_EXEMPLARS, used_vignette
     )
 
-    fig = plt.figure(figsize=(6.4, 3.6))
-    gs = GridSpec(2, 3, width_ratios=[0.75, 1, 1], hspace=0.2, wspace=0.06)
-    draw_concept_block(fig, gs, 0, 0, "ruler_present", ruler_exemplars)
-    draw_concept_block(fig, gs, 1, 0, "vignette_present", vignette_exemplars)
-
-    fig.suptitle(
-        f"{N_EXEMPLARS} positive exemplars per artifact concept "
-        "(paired synthetic overlay, Section 4.4.3)",
-        fontsize=9, style='italic', y=1.02,
+    fig = plt.figure(figsize=(5, 4.4))
+    gs = GridSpec(
+        4, 2, height_ratios=[0.22, 1, 0.22, 1],
+        hspace=0.08, wspace=0.06, top=0.98, bottom=0.02, left=0.02, right=0.98,
     )
+    draw_concept_block(fig, gs, 0, 1, 0, "ruler_present", ruler_exemplars)
+    draw_concept_block(fig, gs, 2, 3, 0, "vignette_present", vignette_exemplars)
+
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     plt.close('all')
     print(f"Saved: {out_path}")
