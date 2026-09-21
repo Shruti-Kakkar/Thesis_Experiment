@@ -168,7 +168,7 @@ RULER_STYLE_EXAMPLES = [
     ),
     (
         "lesion_side", "Lesion-side",
-        "datasets/ruler_sorted/Normal_Ruler/ISIC_0000249.jpg",
+        "datasets/ruler_sorted/Normal_Ruler/ISIC_0012227_downsampled.jpg",
         "concept_images_ruler_matched/ruler_present/positive/ISIC_0000000.jpg",
     ),
     (
