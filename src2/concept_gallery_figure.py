@@ -159,7 +159,7 @@ RULER_STYLE_EXAMPLES = [
     (
         "thick_edge", "Thick",
         "datasets/ruler_sorted/Thick_Ruler/ISIC_0010077.jpg",
-        "concept_images_ruler_matched/ruler_present/positive/ISIC_0000010.jpg",
+        "concept_images_ruler_matched/ruler_present/positive/ISIC_0000081_downsampled.jpg",
     ),
     (
         "ticks_edge", "Normal",
