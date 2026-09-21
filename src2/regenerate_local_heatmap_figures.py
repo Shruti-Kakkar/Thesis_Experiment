@@ -92,11 +92,15 @@ def render_figure(local_tcav, concept_name, layer_name, out_path, n_exemplars=3)
     if np.max(heatmap) > 0 and np.max(heatmap) < max_value:
         heatmap = (heatmap / np.max(heatmap)) * max_value
 
-    fig = plt.figure(figsize=(9, 7.5))
-    gs = GridSpec(3, 2, height_ratios=[1.1, 5, 1.6], hspace=0.12, wspace=0.08)
+    fig = plt.figure(figsize=(9.6, 8.6))
+    gs = GridSpec(
+        4, 3, height_ratios=[1.0, 4.3, 2.6, 0.35], width_ratios=[1, 1, 0.06],
+        hspace=0.18, wspace=0.1,
+    )
 
-    # Row 0: Class / Attrib. table, spanning both columns
-    ax_table = fig.add_subplot(gs[0, :])
+    # Row 0: Class / Attrib. table, spanning the two image columns only
+    # (not the colorbar column), stretched wide
+    ax_table = fig.add_subplot(gs[0, :2])
     ax_table.axis('off')
     rows = []
     for c in range(local_tcav.n_classes):
@@ -109,12 +113,12 @@ def render_figure(local_tcav, concept_name, layer_name, out_path, n_exemplars=3)
         rows.append([class_name, attribution_str])
     table = ax_table.table(
         cellText=rows, colLabels=["Class", "Attrib."],
-        cellLoc='center', loc='center',
+        cellLoc='center', loc='center', bbox=[0.15, 0.0, 0.7, 1.0],
         colColours=["silver", "silver"],
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(11)
-    table.scale(0.6, 1.8)
+    table.set_fontsize(12)
+    table.scale(1.0, 2.2)
 
     # Row 1, col 0: clean original image
     ax_orig = fig.add_subplot(gs[1, 0])
@@ -122,28 +126,40 @@ def render_figure(local_tcav, concept_name, layer_name, out_path, n_exemplars=3)
     ax_orig.set_title("Original image", fontsize=10)
     ax_orig.axis('off')
 
-    # Row 1, col 1: heatmap overlay, with colorbar
+    # Row 1, col 1: heatmap overlay -- same size as the original-image
+    # panel, since no colorbar is attached to THIS axes (it gets its own
+    # dedicated column below instead of borrowing space from this one)
     ax_heat = fig.add_subplot(gs[1, 1])
     ax_heat.imshow(local_tcav.imgs[0])
     colormap.imshow(heatmap)
     ax_heat.set_title("Concept response overlay", fontsize=10)
     ax_heat.axis('off')
+
+    # Row 1, col 2: colorbar, in its own dedicated axes (cax=), so it
+    # cannot shrink ax_heat the way fig.colorbar(ax=ax_heat) would
+    cax = fig.add_subplot(gs[1, 2])
     sm = ScalarMappable(norm=Normalize(vmin=0, vmax=1), cmap=colormap.getLinearSegmentedColormap())
     sm.set_array([])
-    cbar = fig.colorbar(sm, ax=ax_heat, fraction=0.046, pad=0.04)
+    cbar = fig.colorbar(sm, cax=cax)
     cbar.set_label("Rescaled concept response\n(0 = none, 1 = strongest in image)", fontsize=8)
     cbar.ax.tick_params(labelsize=8)
 
-    # Row 2: exemplar thumbnails, spanning both columns
+    # Row 2: exemplar thumbnails, spanning the two image columns, enlarged
     concept_images = local_tcav.model.activation_generator.get_images_for_concept(concept_name, False)
     n_show = min(n_exemplars, len(concept_images))
-    gs_thumbs = gs[2, :].subgridspec(1, n_show, wspace=0.05)
+    gs_thumbs = gs[2, :2].subgridspec(1, n_show, wspace=0.06)
     for i in range(n_show):
         ax_t = fig.add_subplot(gs_thumbs[0, i])
         ax_t.imshow(concept_images[i])
         ax_t.axis('off')
-        if i == 0:
-            ax_t.set_title("Positive concept exemplars used to train this CAV", fontsize=8, loc='left', x=0)
+
+    # Row 3: caption for the thumbnail row, below instead of above it
+    ax_caption = fig.add_subplot(gs[3, :2])
+    ax_caption.axis('off')
+    ax_caption.text(
+        0.5, 0.5, "Positive concept exemplars used to train this CAV",
+        ha='center', va='center', fontsize=9, style='italic',
+    )
 
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     plt.close('all')
