@@ -10,6 +10,11 @@ same concept_images directories the CAV pipeline trains on:
   - concept_gallery_artifacts.png: the 2 synthetic artifact concepts
     (ruler_present, vignette_present; Section~\ref{sec:rq3_design}),
     2 exemplars each.
+  - ruler_style_real_vs_synthetic.png: for each of the 4 ruler styles
+    RQ3 decomposes ruler_present by (thick_edge, ticks_edge, lesion_side,
+    short_ruler; Section~\ref{sec:rq3_results}), a real photograph
+    genuinely exhibiting that style next to our synthetic overlay
+    recreation of it.
 
 These are plain image galleries, no heatmap or model involved, so this
 script only needs PIL/matplotlib -- no TensorFlow, no VisualTCAV import,
@@ -142,7 +147,71 @@ def build_artifact_gallery(out_path):
     print(f"Saved: {out_path}")
 
 
+# Real photograph paired with a synthetic overlay recreation, per ruler
+# style. The real image for thick_edge and ticks_edge comes from the
+# hand-sorted real-photo folder each synthetic style is explicitly named
+# after (Thick_Ruler, Normal_Ruler); lesion_side and short_ruler have no
+# such dedicated real-photo folder, so their real example was instead
+# picked by visual inspection of the closest-matching pattern in the
+# hand-labelled ground-truth ruler set (lesion_side) and the "Doubtful"
+# hand-sort bucket (short_ruler).
+RULER_STYLE_EXAMPLES = [
+    (
+        "thick_edge", "Thick",
+        "datasets/ruler_sorted/Thick_Ruler/ISIC_0000171.jpg",
+        "concept_images_ruler_matched/ruler_present/positive/ISIC_0000010.jpg",
+    ),
+    (
+        "ticks_edge", "Normal",
+        "datasets/ruler_sorted/Normal_Ruler/ISIC_0000407_downsampled.jpg",
+        "concept_images_ruler_matched/ruler_present/positive/ISIC_0000013.jpg",
+    ),
+    (
+        "lesion_side", "Lesion-side, no bar",
+        "datasets/ISIC_2019_Test_Input/ISIC_2019_Test_Input/ISIC_0034370.jpg",
+        "concept_images_ruler_matched/ruler_present/positive/ISIC_0000000.jpg",
+    ),
+    (
+        "short_ruler", "Short",
+        "datasets/ruler_sorted/Doubtful/ISIC_0000408_downsampled.jpg",
+        "concept_images_ruler_matched/ruler_present/positive/ISIC_0000003.jpg",
+    ),
+]
+
+
+def build_ruler_style_gallery(out_path):
+    n_styles = len(RULER_STYLE_EXAMPLES)
+    fig = plt.figure(figsize=(6.4, 11))
+    gs = GridSpec(
+        1 + 2 * n_styles, 2, height_ratios=[0.22] + [0.22, 1] * n_styles,
+        hspace=0.1, wspace=0.08, top=0.98, bottom=0.02, left=0.04, right=0.98,
+    )
+
+    for col, header in enumerate(["Real photograph", "Synthetic overlay"]):
+        ax_header = fig.add_subplot(gs[0, col])
+        ax_header.axis('off')
+        ax_header.text(0.5, 0.0, header, ha='center', va='bottom', fontsize=11, fontweight='bold')
+
+    for i, (concept_name, plain_name, real_rel_path, synth_rel_path) in enumerate(RULER_STYLE_EXAMPLES):
+        title_row, image_row = 1 + 2 * i, 1 + 2 * i + 1
+        ax_label = fig.add_subplot(gs[title_row, :])
+        ax_label.axis('off')
+        ax_label.text(
+            0.5, 0.0, f"{plain_name}  ({concept_name})", ha='center', va='bottom',
+            fontsize=10, fontfamily='monospace',
+        )
+        for col, rel_path in enumerate([real_rel_path, synth_rel_path]):
+            ax_img = fig.add_subplot(gs[image_row, col])
+            ax_img.imshow(PIL.Image.open(os.path.join(PROJECT_ROOT, rel_path)))
+            ax_img.axis('off')
+
+    fig.savefig(out_path, dpi=150, bbox_inches='tight')
+    plt.close('all')
+    print(f"Saved: {out_path}")
+
+
 if __name__ == "__main__":
     os.makedirs(THESIS_IMAGES_DIR, exist_ok=True)
     build_derm7pt_gallery(os.path.join(THESIS_IMAGES_DIR, "concept_gallery_derm7pt.png"))
     build_artifact_gallery(os.path.join(THESIS_IMAGES_DIR, "concept_gallery_artifacts.png"))
+    build_ruler_style_gallery(os.path.join(THESIS_IMAGES_DIR, "ruler_style_real_vs_synthetic.png"))
