@@ -153,27 +153,27 @@ def build_artifact_gallery(out_path):
 # after (Thick_Ruler, Normal_Ruler); lesion_side and short_ruler have no
 # such dedicated real-photo folder, so their real example was instead
 # picked by visual inspection of the closest-matching pattern in the
-# hand-labelled ground-truth ruler set (lesion_side) and the "Doubtful"
-# hand-sort bucket (short_ruler).
+# hand-labelled ground-truth ruler set used for the generalisation check
+# in Section~\ref{sec:rq3_results} (datasets/ruler_sorted_test/).
 RULER_STYLE_EXAMPLES = [
     (
         "thick_edge", "Thick",
-        "datasets/ruler_sorted/Thick_Ruler/ISIC_0000171.jpg",
+        "datasets/ruler_sorted/Thick_Ruler/ISIC_0010077.jpg",
         "concept_images_ruler_matched/ruler_present/positive/ISIC_0000010.jpg",
     ),
     (
         "ticks_edge", "Normal",
-        "datasets/ruler_sorted/Normal_Ruler/ISIC_0000407_downsampled.jpg",
+        "datasets/ruler_sorted/Normal_Ruler/ISIC_0000110_downsampled.jpg",
         "concept_images_ruler_matched/ruler_present/positive/ISIC_0000013.jpg",
     ),
     (
         "lesion_side", "Lesion-side, no bar",
-        "datasets/ISIC_2019_Test_Input/ISIC_2019_Test_Input/ISIC_0034370.jpg",
+        "datasets/ruler_sorted_test/MEL_test_ruler/ISIC_0034477.jpg",
         "concept_images_ruler_matched/ruler_present/positive/ISIC_0000000.jpg",
     ),
     (
         "short_ruler", "Short",
-        "datasets/ruler_sorted/Doubtful/ISIC_0000408_downsampled.jpg",
+        "datasets/ruler_sorted_test/MEL_test_ruler/ISIC_0034354.jpg",
         "concept_images_ruler_matched/ruler_present/positive/ISIC_0000003.jpg",
     ),
 ]
