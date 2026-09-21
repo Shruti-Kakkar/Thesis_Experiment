@@ -16,8 +16,10 @@ same concept_images directories the CAV pipeline trains on:
     genuinely exhibiting that style next to our synthetic overlay
     recreation of it.
   - class_gallery.png: the 8 ISIC 2019 diagnostic classes the
-    classifier predicts (Section~\ref{sec:datasets}), 2 example test
-    images each, from datasets/test_images_by_class/.
+    classifier predicts (Section~\ref{sec:datasets}), 2 example
+    training-set images each, picked via the one-hot
+    ISIC_2019_Training_GroundTruth.csv rather than a pre-sorted
+    per-class folder (no such folder exists for the training set).
 
 These are plain image galleries, no heatmap or model involved, so this
 script only needs PIL/matplotlib -- no TensorFlow, no VisualTCAV import,
@@ -32,6 +34,7 @@ directories.
 Author: Shruti Kakkar
 """
 
+import csv
 import os
 import matplotlib
 matplotlib.use('Agg')
@@ -48,7 +51,8 @@ THESIS_IMAGES_DIR = os.path.expanduser(
 DERM7PT_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images")
 RULER_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_ruler_matched")
 VIGNETTE_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_vignette_matched")
-CLASS_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
+TRAIN_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "ISIC_2019_Training_Input", "ISIC_2019_Training_Input")
+TRAIN_GROUND_TRUTH_CSV = os.path.join(PROJECT_ROOT, "datasets", "ISIC_2019_Training_GroundTruth.csv")
 
 N_EXEMPLARS = 2
 
@@ -136,14 +140,44 @@ CLASS_FULL_NAMES = {
 }
 
 
+def load_training_image_ids_by_class():
+    """image_id -> class, from the one-hot ISIC_2019_Training_GroundTruth.csv."""
+    class_order = ["MEL", "NV", "BCC", "AK", "BKL", "DF", "VASC", "SCC"]
+    ids_by_class = {cls: [] for cls in class_order}
+    with open(TRAIN_GROUND_TRUTH_CSV, newline="") as f:
+        for row in csv.DictReader(f):
+            for cls in class_order:
+                if row[cls] == "1.0":
+                    ids_by_class[cls].append(row["image"])
+                    break
+    return ids_by_class
+
+
+def pick_training_exemplars(image_ids, n, used):
+    """Same dedup logic as pick_exemplars, but over a list of training
+    image ids (from the ground-truth CSV) rather than a directory listing."""
+    picks = []
+    for image_id in sorted(image_ids):
+        if image_id in used:
+            continue
+        picks.append(os.path.join(TRAIN_IMAGES_DIR, image_id + ".jpg"))
+        used.add(image_id)
+        if len(picks) == n:
+            break
+    if len(picks) < n:
+        raise RuntimeError(f"Not enough unused training images for this class")
+    return picks
+
+
 def build_class_gallery(out_path):
     class_order = ["MEL", "NV", "BCC", "AK", "BKL", "DF", "VASC", "SCC"]
     left_classes, right_classes = class_order[:4], class_order[4:]
 
+    ids_by_class = load_training_image_ids_by_class()
     used = set()
     exemplars = {}
     for cls in class_order:
-        exemplars[cls] = pick_exemplars(os.path.join(CLASS_IMAGES_DIR, cls), N_EXEMPLARS, used)
+        exemplars[cls] = pick_training_exemplars(ids_by_class[cls], N_EXEMPLARS, used)
 
     fig = plt.figure(figsize=(10, 7.2))
     n_pairs = 4
