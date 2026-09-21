@@ -198,22 +198,67 @@ def build_class_gallery(out_path):
     print(f"Saved: {out_path}")
 
 
+def pick_pair_filenames(positive_dir, n, used):
+    """n filenames (sorted) present in `positive_dir`, not already in `used`.
+
+    Unlike pick_exemplars, this returns bare filenames rather than full
+    paths, since the caller needs to look the same filename up in both
+    the positive/ and negative/ subfolders of a paired concept set.
+    """
+    candidates = sorted(os.listdir(positive_dir))
+    picks = []
+    for fname in candidates:
+        if fname in used:
+            continue
+        picks.append(fname)
+        used.add(fname)
+        if len(picks) == n:
+            break
+    if len(picks) < n:
+        raise RuntimeError(f"Not enough unused images in {positive_dir}")
+    return picks
+
+
+def draw_pair_block(fig, gs, title_row, concept_name, concept_dir, filenames):
+    """Concept name above N rows of (clean negative | synthetic-overlay
+    positive) pairs, same base image on both sides of each row -- makes
+    the paired-construction claim (Section~\ref{sec:rq3_design}: positive
+    and negative examples are pixel-identical outside the injected
+    region) directly checkable by eye, not just asserted in text.
+    """
+    ax_label = fig.add_subplot(gs[title_row, :])
+    ax_label.axis('off')
+    ax_label.text(0.5, 0.0, concept_name, ha='center', va='bottom', fontsize=10, fontfamily='monospace')
+    for i, fname in enumerate(filenames):
+        image_row = title_row + 1 + i
+        for col, subdir in enumerate(["negative", "positive"]):
+            ax_img = fig.add_subplot(gs[image_row, col])
+            ax_img.imshow(PIL.Image.open(os.path.join(concept_dir, subdir, fname)))
+            ax_img.axis('off')
+
+
+N_PAIRS = 2
+
+
 def build_artifact_gallery(out_path):
     used_ruler, used_vignette = set(), set()
-    ruler_exemplars = pick_exemplars(
-        os.path.join(RULER_CONCEPT_DIR, "ruler_present", "positive"), N_EXEMPLARS, used_ruler
-    )
-    vignette_exemplars = pick_exemplars(
-        os.path.join(VIGNETTE_CONCEPT_DIR, "vignette_present", "positive"), N_EXEMPLARS, used_vignette
+    ruler_files = pick_pair_filenames(os.path.join(RULER_CONCEPT_DIR, "ruler_present", "positive"), N_PAIRS, used_ruler)
+    vignette_files = pick_pair_filenames(os.path.join(VIGNETTE_CONCEPT_DIR, "vignette_present", "positive"), N_PAIRS, used_vignette)
+
+    fig = plt.figure(figsize=(5.2, 8.6))
+    rows_per_concept = 1 + N_PAIRS
+    gs = GridSpec(
+        1 + 2 * rows_per_concept, 2, height_ratios=[0.22] + [0.28, 1, 1] * 2,
+        hspace=0.1, wspace=0.06, top=0.98, bottom=0.02, left=0.02, right=0.98,
     )
 
-    fig = plt.figure(figsize=(5, 4.4))
-    gs = GridSpec(
-        4, 2, height_ratios=[0.22, 1, 0.22, 1],
-        hspace=0.08, wspace=0.06, top=0.98, bottom=0.02, left=0.02, right=0.98,
-    )
-    draw_concept_block(fig, gs, 0, 1, 0, "ruler_present", ruler_exemplars)
-    draw_concept_block(fig, gs, 2, 3, 0, "vignette_present", vignette_exemplars)
+    for col, header in enumerate(["Clean (negative)", "Synthetic overlay (positive)"]):
+        ax_header = fig.add_subplot(gs[0, col])
+        ax_header.axis('off')
+        ax_header.text(0.5, 0.0, header, ha='center', va='bottom', fontsize=10, fontweight='bold')
+
+    draw_pair_block(fig, gs, 1, "ruler_present", os.path.join(RULER_CONCEPT_DIR, "ruler_present"), ruler_files)
+    draw_pair_block(fig, gs, 1 + rows_per_concept, "vignette_present", os.path.join(VIGNETTE_CONCEPT_DIR, "vignette_present"), vignette_files)
 
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     plt.close('all')
