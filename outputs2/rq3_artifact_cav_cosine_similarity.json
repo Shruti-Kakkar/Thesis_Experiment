@@ -1,0 +1,18 @@
+{
+  "conv5_block1_out": {
+    "cosine_similarity": 0.11203054338693619,
+    "angle_deg": 83.56761922838204
+  },
+  "conv5_block2_out": {
+    "cosine_similarity": 0.09517806023359299,
+    "angle_deg": 84.53843164922195
+  },
+  "conv5_block3_out": {
+    "cosine_similarity": 0.05029498040676117,
+    "angle_deg": 87.1170935935902
+  },
+  "post_relu": {
+    "cosine_similarity": 0.05828487128019333,
+    "angle_deg": 86.65862919900025
+  }
+}
