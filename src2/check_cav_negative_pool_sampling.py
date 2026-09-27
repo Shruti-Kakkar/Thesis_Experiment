@@ -125,7 +125,9 @@ def load_biased_direction(concept_root, extra_negatives, layer_name):
     path = cav_cache_path(concept_root, extra_negatives, layer_name)
     concept_layer = load(path)
     direction = concept_layer.cav.direction
-    return direction.numpy() if hasattr(direction, 'numpy') else np.asarray(direction)
+    emblem = concept_layer.cav.concept_emblem
+    emblem = emblem.numpy() if hasattr(emblem, 'numpy') else np.asarray(emblem)
+    return (direction.numpy() if hasattr(direction, 'numpy') else np.asarray(direction)), emblem
 
 
 def get_random_negative_activations(concept_root, extra_negatives, layer_name, seed):
@@ -217,10 +219,19 @@ def cosine_sim(a, b):
     return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))
 
 
-def apply_direction(attributions, feature_maps, direction):
-    """Same math as apply_directions_batched in the ttest scripts, for a
-    single direction instead of a stacked batch of 51."""
+def apply_direction(attributions, feature_maps, direction, eps_plus, eps_minus):
+    """Same math as apply_directions_batched in the ttest scripts (including
+    the emblem-check clip-and-rescale fix), for a single direction instead
+    of a stacked batch of 51. eps_plus/eps_minus come from the biased CAV's
+    own concept_emblem, applied to both the biased and the corrected
+    direction so the comparison stays apples-to-apples (same rationale as
+    the ttest script's fix)."""
     concept_map = tf.nn.relu(tf.tensordot(direction, feature_maps, axes=[[0], [2]]))  # (H,W)
+    if eps_plus > eps_minus:
+        concept_map = tf.clip_by_value(concept_map, eps_minus, eps_plus)
+        concept_map = (concept_map - eps_minus) / (eps_plus - eps_minus)
+    else:
+        concept_map = tf.zeros_like(concept_map)
     masked = attributions * concept_map[:, :, None]  # (H,W,C)
     pooled_masked = tf.reduce_sum(masked, axis=(0, 1))  # (C,)
 
@@ -233,7 +244,7 @@ def apply_direction(attributions, feature_maps, direction):
     return float(score.numpy())
 
 
-def mean_attribution_for_class(direction, target_class):
+def mean_attribution_for_class(direction, target_class, eps_plus, eps_minus):
     attrib_path = os.path.join(IG_CACHE_DIR, f"attrib_{target_class}_{LAYER}.joblib")
     seed = CLASS_SEED_MAP[target_class]
     fmap_path = os.path.join(FMAP_CACHE_DIR, f"test_fmaps_randomseed{seed}_{target_class}_{LAYER}.joblib")
@@ -245,7 +256,7 @@ def mean_attribution_for_class(direction, target_class):
     for i in range(len(test_fmaps)):
         fm_tf = tf.constant(test_fmaps[i], dtype=tf.float32)
         attrib_tf = tf.constant(attributions_all[i], dtype=tf.float32)
-        scores.append(apply_direction(attrib_tf, fm_tf, direction_tf))
+        scores.append(apply_direction(attrib_tf, fm_tf, direction_tf, eps_plus, eps_minus))
     return float(np.mean(scores))
 
 
@@ -257,7 +268,8 @@ results = {}
 for concept_root, cfg in CONCEPTS.items():
     print(f"\n{'='*60}\nConcept: {concept_root}\n{'='*60}")
 
-    biased_dir = load_biased_direction(concept_root, cfg["extra_negatives"], LAYER)
+    biased_dir, emblem = load_biased_direction(concept_root, cfg["extra_negatives"], LAYER)
+    eps_plus, eps_minus = float(emblem[0]), float(emblem[1])
     corrected_dir = build_corrected_cav(concept_root, cfg["extra_negatives"], LAYER)
 
     sim = cosine_sim(biased_dir, corrected_dir)
@@ -265,8 +277,8 @@ for concept_root, cfg in CONCEPTS.items():
 
     class_results = {}
     for target_class in cfg["target_classes"]:
-        mean_biased = mean_attribution_for_class(biased_dir, target_class)
-        mean_corrected = mean_attribution_for_class(corrected_dir, target_class)
+        mean_biased = mean_attribution_for_class(biased_dir, target_class, eps_plus, eps_minus)
+        mean_corrected = mean_attribution_for_class(corrected_dir, target_class, eps_plus, eps_minus)
         pct_change = 100 * (mean_corrected - mean_biased) / mean_biased if mean_biased != 0 else float('nan')
         print(f"  [{target_class}] mean attribution: biased={mean_biased:.5f} "
               f"corrected={mean_corrected:.5f} ({pct_change:+.1f}%)")
