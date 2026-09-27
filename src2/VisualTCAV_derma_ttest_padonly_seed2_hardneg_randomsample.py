@@ -184,7 +184,9 @@ def load_real_direction(concept_name, layer_name):
         )
     concept_layer = load(path)
     direction = concept_layer.cav.direction
-    return direction.numpy() if hasattr(direction, 'numpy') else np.asarray(direction)
+    emblem = concept_layer.cav.concept_emblem
+    emblem = emblem.numpy() if hasattr(emblem, 'numpy') else np.asarray(emblem)
+    return (direction.numpy() if hasattr(direction, 'numpy') else np.asarray(direction)), emblem
 
 def build_random_directions(concept_name, layer_name, seed_base=1000):
     concept_root = concept_name.split('/')[0]
@@ -267,12 +269,32 @@ def get_or_compute_class_layer_attributions(class_name, layer_name, test_fmaps):
 
 
 # ─────────────────────────────────────────────
-# 6. VECTORIZED 51-DIRECTION APPLICATION — unchanged.
+# 6. VECTORIZED 51-DIRECTION APPLICATION.
+#
+# FIX (2026-09-23): the original version of this function omitted the
+# emblem-check clip-and-rescale step that VisualTCAV.py's explain() applies
+# to every concept_map (Equation 4.3 / eps_plus, eps_minus). That omission
+# let concept_map values run up to ~ReLU(dot(direction, feature_maps))
+# unbounded, instead of clipped to the concept's own [eps_minus, eps_plus]
+# and rescaled to [0,1], which is what kept the final attribution score
+# bounded to <= 1 in the reference implementation. The clip below applies
+# the REAL concept's own eps_plus/eps_minus uniformly to all 51 directions
+# (the real one and all 50 random ones), so the null-distribution
+# comparison stays apples-to-apples: the same post-processing bound used to
+# certify the real concept's own map is the one the random baselines are
+# held to as well. When eps_plus <= eps_minus, the concept fails its own
+# emblem check and the whole map degenerates to zero, matching explain().
 # ─────────────────────────────────────────────
-def apply_directions_batched(attributions, feature_maps, directions_stacked):
+def apply_directions_batched(attributions, feature_maps, directions_stacked, eps_plus, eps_minus):
     concept_maps = tf.nn.relu(
         tf.tensordot(directions_stacked, feature_maps, axes=[[1], [2]])
     )  # (51,H,W)
+
+    if eps_plus > eps_minus:
+        concept_maps = tf.clip_by_value(concept_maps, eps_minus, eps_plus)
+        concept_maps = (concept_maps - eps_minus) / (eps_plus - eps_minus)
+    else:
+        concept_maps = tf.zeros_like(concept_maps)
 
     masked = attributions[None, :, :, :] * concept_maps[:, :, :, None]  # (51,H,W,C)
     pooled_masked_attributions = tf.reduce_sum(masked, axis=(1, 2))  # (51,C)
@@ -360,11 +382,13 @@ for layer_name in LAYERS:
 
         for concept_name, concept_folder in CONCEPTS.items():
             try:
-                real_direction = load_real_direction(concept_folder, layer_name)
+                real_direction, emblem = load_real_direction(concept_folder, layer_name)
                 random_dirs = build_random_directions(concept_folder, layer_name)
             except FileNotFoundError as e:
                 print(f"    [SKIP] {concept_name}: {e}")
                 continue
+
+            eps_plus, eps_minus = float(emblem[0]), float(emblem[1])
 
             directions_stacked = tf.constant(
                 np.stack([real_direction] + random_dirs, axis=0), dtype=tf.float32
@@ -374,7 +398,9 @@ for layer_name in LAYERS:
             for i in range(len(test_fmaps)):
                 fm_tf = tf.constant(test_fmaps[i], dtype=tf.float32)
                 attrib_tf = tf.constant(attributions_all[i], dtype=tf.float32)
-                all_scores[i] = apply_directions_batched(attrib_tf, fm_tf, directions_stacked)
+                all_scores[i] = apply_directions_batched(
+                    attrib_tf, fm_tf, directions_stacked, eps_plus, eps_minus
+                )
 
             real_scores = all_scores[:, 0]
             random_mean_scores = all_scores[:, 1:].mean(axis=0)  # (50,) -- mean per random direction

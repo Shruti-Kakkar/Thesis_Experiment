@@ -3,9 +3,9 @@
     "cosine_similarity": 0.9907919764518738,
     "class_results": {
       "NV": {
-        "mean_biased": 0.26959136980149195,
-        "mean_corrected": 0.2914081638047355,
-        "pct_change": 8.092541693492596
+        "mean_biased": 0.007179114718508117,
+        "mean_corrected": 0.007660044314652623,
+        "pct_change": 6.699009766547474
       }
     }
   },
@@ -13,9 +13,9 @@
     "cosine_similarity": 0.9546206593513489,
     "class_results": {
       "MEL": {
-        "mean_biased": 0.5911362751433625,
-        "mean_corrected": 0.7049068576004356,
-        "pct_change": 19.24608372739118
+        "mean_biased": 0.018835362995832838,
+        "mean_corrected": 0.022065555862209294,
+        "pct_change": 17.149618338075616
       }
     }
   },
@@ -23,9 +23,9 @@
     "cosine_similarity": 0.9181331396102905,
     "class_results": {
       "MEL": {
-        "mean_biased": 1.4427085599303247,
-        "mean_corrected": 1.475188216790557,
-        "pct_change": 2.251297161625003
+        "mean_biased": 0.030675536242633826,
+        "mean_corrected": 0.030020902527467114,
+        "pct_change": -2.1340579345989776
       }
     }
   },
@@ -33,9 +33,9 @@
     "cosine_similarity": 0.9443552494049072,
     "class_results": {
       "MEL": {
-        "mean_biased": 0.19155956595670431,
-        "mean_corrected": 0.18671673078322784,
-        "pct_change": -2.528109285114498
+        "mean_biased": 0.010162379940375103,
+        "mean_corrected": 0.009688701383929584,
+        "pct_change": -4.661098672010839
       }
     }
   },
@@ -43,9 +43,9 @@
     "cosine_similarity": 0.9609081149101257,
     "class_results": {
       "MEL": {
-        "mean_biased": 1.4270936525985598,
-        "mean_corrected": 1.4260741979256273,
-        "pct_change": -0.07143572330212654
+        "mean_biased": 0.03285802631857223,
+        "mean_corrected": 0.03186771324744768,
+        "pct_change": -3.0139152653998544
       }
     }
   },
@@ -53,14 +53,14 @@
     "cosine_similarity": 0.9588108658790588,
     "class_results": {
       "MEL": {
-        "mean_biased": 0.7751403908617794,
-        "mean_corrected": 0.6906808285601437,
-        "pct_change": -10.896034227778529
+        "mean_biased": 0.020444183138588413,
+        "mean_corrected": 0.01805355258687996,
+        "pct_change": -11.693451068710774
       },
       "NV": {
-        "mean_biased": 0.16141557464026846,
-        "mean_corrected": 0.16997160679398804,
-        "pct_change": 5.300623668309331
+        "mean_biased": 0.003368834849970881,
+        "mean_corrected": 0.0036339628141467983,
+        "pct_change": 7.870019635370643
       }
     }
   }
