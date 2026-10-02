@@ -23,9 +23,7 @@ import os
 import pandas as pd
 from PIL import Image
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
 OUTPUTS_DIR = os.path.join(PROJECT_ROOT, "outputs2")
 CLASSES = ["MEL", "NV"]

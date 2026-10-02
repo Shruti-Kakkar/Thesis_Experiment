@@ -44,9 +44,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ruler_overlay import add_ruler
 from vignette_overlay import add_vignette
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLEAN_DIR = os.path.join(PROJECT_ROOT, "datasets", "ruler_sorted", "Clean_resorted")
 OUT_ROOT = os.path.join(PROJECT_ROOT, "concept_images_vignette_matched")
 OUT_POS = os.path.join(OUT_ROOT, "vignette_present", "positive")

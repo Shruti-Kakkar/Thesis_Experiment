@@ -44,9 +44,7 @@ from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ruler_overlay import add_ruler
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLEAN_DIR = os.path.join(PROJECT_ROOT, "datasets", "ruler_sorted", "Clean_resorted")
 OUT_ROOT = os.path.join(PROJECT_ROOT, "concept_images_ruler_matched")
 # <root>/positive and <root>/<negative_suffix> -- the layout VisualTCAV's

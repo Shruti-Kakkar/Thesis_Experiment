@@ -31,9 +31,7 @@ import matplotlib.pyplot as plt
 # ─────────────────────────────────────────────
 # 1. PATHS — all inside VTCAV_Dermatology/
 # ─────────────────────────────────────────────
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 VTCAV_DIR       = os.path.join(PROJECT_ROOT, "outputs", "vtcav")
 MODELS_DIR      = os.path.join(VTCAV_DIR, "models")
