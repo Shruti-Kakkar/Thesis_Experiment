@@ -1,0 +1,67 @@
+{
+  "streaks_regular": {
+    "cosine_similarity": 0.9907919764518738,
+    "class_results": {
+      "NV": {
+        "mean_biased": 0.007179114718508117,
+        "mean_corrected": 0.007660044314652623,
+        "pct_change": 6.699009766547474
+      }
+    }
+  },
+  "streaks_irregular": {
+    "cosine_similarity": 0.9546206593513489,
+    "class_results": {
+      "MEL": {
+        "mean_biased": 0.018835362995832838,
+        "mean_corrected": 0.022065555862209294,
+        "pct_change": 17.149618338075616
+      }
+    }
+  },
+  "blue_whitish_veil": {
+    "cosine_similarity": 0.9181331396102905,
+    "class_results": {
+      "MEL": {
+        "mean_biased": 0.030675536242633826,
+        "mean_corrected": 0.030020902527467114,
+        "pct_change": -2.1340579345989776
+      }
+    }
+  },
+  "pigmentation": {
+    "cosine_similarity": 0.9443552494049072,
+    "class_results": {
+      "MEL": {
+        "mean_biased": 0.010162379940375103,
+        "mean_corrected": 0.009688701383929584,
+        "pct_change": -4.661098672010839
+      }
+    }
+  },
+  "regression_structures": {
+    "cosine_similarity": 0.9609081149101257,
+    "class_results": {
+      "MEL": {
+        "mean_biased": 0.03285802631857223,
+        "mean_corrected": 0.03186771324744768,
+        "pct_change": -3.0139152653998544
+      }
+    }
+  },
+  "vascular_structures": {
+    "cosine_similarity": 0.9588108658790588,
+    "class_results": {
+      "MEL": {
+        "mean_biased": 0.020444183138588413,
+        "mean_corrected": 0.01805355258687996,
+        "pct_change": -11.693451068710774
+      },
+      "NV": {
+        "mean_biased": 0.003368834849970881,
+        "mean_corrected": 0.0036339628141467983,
+        "pct_change": 7.870019635370643
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+
+pigment_network_typical Attribution Calibration Summary
+=====================================
+Sample: 209 held-out NV images (never used in CAV training)
+  pigment_network_typical present: 124
+  pigment_network_typical absent:  85
+
+Attribution stats:
+  Present: mean=0.0317, median=0.0311, std=0.0151
+  Absent:  mean=0.0188, median=0.0184, std=0.0124
+
+Mann-Whitney U test (present > absent): U=7776.50, p=2.68424e-09
+Rank-biserial correlation (effect size): 0.476
+
+ROC AUC: 0.738
+Youden's J optimal threshold (PRIMARY): 0.0237
+  Sensitivity: 0.694
+  Specificity: 0.671
+Bootstrap 95% CI on threshold: [0.0180, 0.0349] (median 0.0247)
+
+KDE crossing point(s) (secondary cross-check): [0.02684773]
+
+Fisher's exact test (did the correct-prediction filter bias the split?):
+  table=[[124, 48], [85, 22]], odds ratio=0.669, p=0.2016

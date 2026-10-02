@@ -1,0 +1,876 @@
+2026-10-02 09:59:29.233867: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-10-02 09:59:29.233905: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-10-02 09:59:29.235120: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Category 'short_ruler' concept set: 116 positive, 116 negative (from /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/concept_images_ruler_matched_short_ruler)
+Symlinked model to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_padonly_seed2_rulerbias_matched_short_ruler_cavseed123/models/resnet50v2/resnet50v2_isic2019_final.keras
+Labels file written: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_padonly_seed2_rulerbias_matched_short_ruler_cavseed123/models/resnet50v2/isic2019_classes.txt
+VisualTCAV imported successfully.
+
+
+============================================================
+GlobalVisualTCAV [padonly_seed2_rulerbias_matched_short_ruler] — class: MEL (1327 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/4 [00:00<?, ?it/s]    CAV val acc (20 runs): 0.465 +- 0.068
+
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   0%|          | 1/200 [00:00<03:10,  1.04it/s][A
+Attributions:   1%|          | 2/200 [00:01<01:30,  2.19it/s][A
+Attributions:   2%|▏         | 4/200 [00:01<00:44,  4.41it/s][A
+Attributions:   3%|▎         | 6/200 [00:01<00:31,  6.15it/s][A
+Attributions:   4%|▎         | 7/200 [00:01<00:28,  6.79it/s][A
+Attributions:   4%|▍         | 9/200 [00:01<00:23,  7.96it/s][A
+Attributions:   6%|▌         | 11/200 [00:01<00:21,  8.68it/s][A
+Attributions:   6%|▌         | 12/200 [00:02<00:21,  8.82it/s][A
+Attributions:   6%|▋         | 13/200 [00:02<00:20,  9.06it/s][A
+Attributions:   8%|▊         | 15/200 [00:02<00:19,  9.61it/s][A
+Attributions:   8%|▊         | 17/200 [00:02<00:18,  9.84it/s][A
+Attributions:  10%|▉         | 19/200 [00:02<00:18,  9.84it/s][A
+Attributions:  10%|█         | 21/200 [00:02<00:18,  9.92it/s][A
+Attributions:  12%|█▏        | 23/200 [00:03<00:18,  9.81it/s][A
+Attributions:  12%|█▏        | 24/200 [00:03<00:17,  9.80it/s][A
+Attributions:  13%|█▎        | 26/200 [00:03<00:17,  9.89it/s][A
+Attributions:  14%|█▎        | 27/200 [00:03<00:17,  9.88it/s][A
+Attributions:  14%|█▍        | 28/200 [00:03<00:17,  9.89it/s][A
+Attributions:  15%|█▌        | 30/200 [00:03<00:16, 10.02it/s][A
+Attributions:  16%|█▌        | 32/200 [00:04<00:16, 10.08it/s][A
+Attributions:  17%|█▋        | 34/200 [00:04<00:16, 10.28it/s][A
+Attributions:  18%|█▊        | 36/200 [00:04<00:15, 10.26it/s][A
+Attributions:  19%|█▉        | 38/200 [00:04<00:15, 10.46it/s][A
+Attributions:  20%|██        | 40/200 [00:04<00:15, 10.41it/s][A
+Attributions:  21%|██        | 42/200 [00:04<00:15, 10.21it/s][A
+Attributions:  22%|██▏       | 44/200 [00:05<00:15, 10.25it/s][A
+Attributions:  23%|██▎       | 46/200 [00:05<00:15, 10.24it/s][A
+Attributions:  24%|██▍       | 48/200 [00:05<00:14, 10.22it/s][A
+Attributions:  25%|██▌       | 50/200 [00:05<00:14, 10.09it/s][A
+Attributions:  26%|██▌       | 52/200 [00:05<00:14, 10.15it/s][A
+Attributions:  27%|██▋       | 54/200 [00:06<00:14, 10.16it/s][A
+Attributions:  28%|██▊       | 56/200 [00:06<00:14, 10.16it/s][A
+Attributions:  29%|██▉       | 58/200 [00:06<00:14, 10.07it/s][A
+Attributions:  30%|███       | 60/200 [00:06<00:13, 10.10it/s][A
+Attributions:  31%|███       | 62/200 [00:06<00:13, 10.16it/s][A
+Attributions:  32%|███▏      | 64/200 [00:07<00:13, 10.29it/s][A
+Attributions:  33%|███▎      | 66/200 [00:07<00:12, 10.33it/s][A
+Attributions:  34%|███▍      | 68/200 [00:07<00:12, 10.32it/s][A
+Attributions:  35%|███▌      | 70/200 [00:07<00:12, 10.14it/s][A
+Attributions:  36%|███▌      | 72/200 [00:07<00:12, 10.22it/s][A
+Attributions:  37%|███▋      | 74/200 [00:08<00:12, 10.05it/s][A
+Attributions:  38%|███▊      | 76/200 [00:08<00:12, 10.06it/s][A
+Attributions:  39%|███▉      | 78/200 [00:08<00:12, 10.03it/s][A
+Attributions:  40%|████      | 80/200 [00:08<00:11, 10.11it/s][A
+Attributions:  41%|████      | 82/200 [00:08<00:11, 10.14it/s][A
+Attributions:  42%|████▏     | 84/200 [00:09<00:11, 10.17it/s][A
+Attributions:  43%|████▎     | 86/200 [00:09<00:11, 10.28it/s][A
+Attributions:  44%|████▍     | 88/200 [00:09<00:10, 10.32it/s][A
+Attributions:  45%|████▌     | 90/200 [00:09<00:10, 10.08it/s][A
+Attributions:  46%|████▌     | 92/200 [00:09<00:10, 10.11it/s][A
+Attributions:  47%|████▋     | 94/200 [00:10<00:10, 10.27it/s][A
+Attributions:  48%|████▊     | 96/200 [00:10<00:10, 10.29it/s][A
+Attributions:  49%|████▉     | 98/200 [00:10<00:09, 10.28it/s][A
+Attributions:  50%|█████     | 100/200 [00:10<00:09, 10.21it/s][A
+Attributions:  51%|█████     | 102/200 [00:10<00:09, 10.14it/s][A
+Attributions:  52%|█████▏    | 104/200 [00:11<00:09, 10.24it/s][A
+Attributions:  53%|█████▎    | 106/200 [00:11<00:09, 10.21it/s][A
+Attributions:  54%|█████▍    | 108/200 [00:11<00:09, 10.16it/s][A
+Attributions:  55%|█████▌    | 110/200 [00:11<00:08, 10.08it/s][A
+Attributions:  56%|█████▌    | 112/200 [00:11<00:08, 10.22it/s][A
+Attributions:  57%|█████▋    | 114/200 [00:12<00:08, 10.16it/s][A
+Attributions:  58%|█████▊    | 116/200 [00:12<00:08, 10.23it/s][A
+Attributions:  59%|█████▉    | 118/200 [00:12<00:07, 10.34it/s][A
+Attributions:  60%|██████    | 120/200 [00:12<00:07, 10.09it/s][A
+Attributions:  61%|██████    | 122/200 [00:12<00:07, 10.19it/s][A
+Attributions:  62%|██████▏   | 124/200 [00:13<00:07, 10.32it/s][A
+Attributions:  63%|██████▎   | 126/200 [00:13<00:07, 10.50it/s][A
+Attributions:  64%|██████▍   | 128/200 [00:13<00:06, 10.67it/s][A
+Attributions:  65%|██████▌   | 130/200 [00:13<00:06, 10.54it/s][A
+Attributions:  66%|██████▌   | 132/200 [00:13<00:06, 10.46it/s][A
+Attributions:  67%|██████▋   | 134/200 [00:13<00:06, 10.47it/s][A
+Attributions:  68%|██████▊   | 136/200 [00:14<00:06, 10.37it/s][A
+Attributions:  69%|██████▉   | 138/200 [00:14<00:06, 10.19it/s][A
+Attributions:  70%|███████   | 140/200 [00:14<00:05, 10.18it/s][A
+Attributions:  71%|███████   | 142/200 [00:14<00:05, 10.32it/s][A
+Attributions:  72%|███████▏  | 144/200 [00:14<00:05, 10.33it/s][A
+Attributions:  73%|███████▎  | 146/200 [00:15<00:05, 10.35it/s][A
+Attributions:  74%|███████▍  | 148/200 [00:15<00:04, 10.47it/s][A
+Attributions:  75%|███████▌  | 150/200 [00:15<00:04, 10.33it/s][A
+Attributions:  76%|███████▌  | 152/200 [00:15<00:04, 10.42it/s][A
+Attributions:  77%|███████▋  | 154/200 [00:15<00:04, 10.48it/s][A
+Attributions:  78%|███████▊  | 156/200 [00:16<00:04, 10.46it/s][A
+Attributions:  79%|███████▉  | 158/200 [00:16<00:03, 10.78it/s][A
+Attributions:  80%|████████  | 160/200 [00:16<00:03, 10.69it/s][A
+Attributions:  81%|████████  | 162/200 [00:16<00:03, 10.62it/s][A
+Attributions:  82%|████████▏ | 164/200 [00:16<00:03, 10.54it/s][A
+Attributions:  83%|████████▎ | 166/200 [00:17<00:03, 10.50it/s][A
+Attributions:  84%|████████▍ | 168/200 [00:17<00:03, 10.52it/s][A
+Attributions:  85%|████████▌ | 170/200 [00:17<00:02, 10.56it/s][A
+Attributions:  86%|████████▌ | 172/200 [00:17<00:02, 10.51it/s][A
+Attributions:  87%|████████▋ | 174/200 [00:17<00:02, 10.46it/s][A
+Attributions:  88%|████████▊ | 176/200 [00:17<00:02, 10.50it/s][A
+Attributions:  89%|████████▉ | 178/200 [00:18<00:02, 10.44it/s][A
+Attributions:  90%|█████████ | 180/200 [00:18<00:01, 10.43it/s][A
+Attributions:  91%|█████████ | 182/200 [00:18<00:01, 10.39it/s][A
+Attributions:  92%|█████████▏| 184/200 [00:18<00:01, 10.29it/s][A
+Attributions:  93%|█████████▎| 186/200 [00:18<00:01, 10.38it/s][A
+Attributions:  94%|█████████▍| 188/200 [00:19<00:01, 10.34it/s][A
+Attributions:  95%|█████████▌| 190/200 [00:19<00:00, 10.45it/s][A
+Attributions:  96%|█████████▌| 192/200 [00:19<00:00, 10.26it/s][A
+Attributions:  97%|█████████▋| 194/200 [00:19<00:00, 10.34it/s][A
+Attributions:  98%|█████████▊| 196/200 [00:19<00:00, 10.25it/s][A
+Attributions:  99%|█████████▉| 198/200 [00:20<00:00, 10.34it/s][A
+Attributions: 100%|██████████| 200/200 [00:20<00:00, 10.21it/s][AAttributions: 100%|██████████| 200/200 [00:20<00:00,  9.85it/s]
+Layers:  25%|██▌       | 1/4 [00:28<01:25, 28.62s/it]    CAV val acc (20 runs): 0.452 +- 0.068
+
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   1%|          | 2/200 [00:00<00:17, 11.58it/s][A
+Attributions:   2%|▏         | 4/200 [00:00<00:16, 12.13it/s][A
+Attributions:   3%|▎         | 6/200 [00:00<00:16, 11.70it/s][A
+Attributions:   4%|▍         | 8/200 [00:00<00:16, 11.41it/s][A
+Attributions:   5%|▌         | 10/200 [00:00<00:16, 11.42it/s][A
+Attributions:   6%|▌         | 12/200 [00:01<00:16, 11.22it/s][A
+Attributions:   7%|▋         | 14/200 [00:01<00:16, 11.05it/s][A
+Attributions:   8%|▊         | 16/200 [00:01<00:17, 10.70it/s][A
+Attributions:   9%|▉         | 18/200 [00:01<00:17, 10.67it/s][A
+Attributions:  10%|█         | 20/200 [00:01<00:16, 10.67it/s][A
+Attributions:  11%|█         | 22/200 [00:01<00:16, 10.75it/s][A
+Attributions:  12%|█▏        | 24/200 [00:02<00:16, 10.63it/s][A
+Attributions:  13%|█▎        | 26/200 [00:02<00:16, 10.65it/s][A
+Attributions:  14%|█▍        | 28/200 [00:02<00:16, 10.60it/s][A
+Attributions:  15%|█▌        | 30/200 [00:02<00:15, 10.70it/s][A
+Attributions:  16%|█▌        | 32/200 [00:02<00:15, 10.77it/s][A
+Attributions:  17%|█▋        | 34/200 [00:03<00:15, 10.82it/s][A
+Attributions:  18%|█▊        | 36/200 [00:03<00:15, 10.76it/s][A
+Attributions:  19%|█▉        | 38/200 [00:03<00:15, 10.57it/s][A
+Attributions:  20%|██        | 40/200 [00:03<00:15, 10.57it/s][A
+Attributions:  21%|██        | 42/200 [00:03<00:14, 10.55it/s][A
+Attributions:  22%|██▏       | 44/200 [00:04<00:14, 10.67it/s][A
+Attributions:  23%|██▎       | 46/200 [00:04<00:14, 10.77it/s][A
+Attributions:  24%|██▍       | 48/200 [00:04<00:14, 10.82it/s][A
+Attributions:  25%|██▌       | 50/200 [00:04<00:13, 10.86it/s][A
+Attributions:  26%|██▌       | 52/200 [00:04<00:13, 10.79it/s][A
+Attributions:  27%|██▋       | 54/200 [00:04<00:13, 10.87it/s][A
+Attributions:  28%|██▊       | 56/200 [00:05<00:13, 10.64it/s][A
+Attributions:  29%|██▉       | 58/200 [00:05<00:13, 10.67it/s][A
+Attributions:  30%|███       | 60/200 [00:05<00:13, 10.32it/s][A
+Attributions:  31%|███       | 62/200 [00:05<00:13, 10.48it/s][A
+Attributions:  32%|███▏      | 64/200 [00:05<00:13, 10.46it/s][A
+Attributions:  33%|███▎      | 66/200 [00:06<00:12, 10.47it/s][A
+Attributions:  34%|███▍      | 68/200 [00:06<00:12, 10.41it/s][A
+Attributions:  35%|███▌      | 70/200 [00:06<00:12, 10.39it/s][A
+Attributions:  36%|███▌      | 72/200 [00:06<00:12, 10.47it/s][A
+Attributions:  37%|███▋      | 74/200 [00:06<00:11, 10.61it/s][A
+Attributions:  38%|███▊      | 76/200 [00:07<00:11, 10.64it/s][A
+Attributions:  39%|███▉      | 78/200 [00:07<00:11, 10.55it/s][A
+Attributions:  40%|████      | 80/200 [00:07<00:11, 10.58it/s][A
+Attributions:  41%|████      | 82/200 [00:07<00:11, 10.47it/s][A
+Attributions:  42%|████▏     | 84/200 [00:07<00:11, 10.38it/s][A
+Attributions:  43%|████▎     | 86/200 [00:08<00:10, 10.37it/s][A
+Attributions:  44%|████▍     | 88/200 [00:08<00:10, 10.19it/s][A
+Attributions:  45%|████▌     | 90/200 [00:08<00:10, 10.13it/s][A
+Attributions:  46%|████▌     | 92/200 [00:08<00:10, 10.30it/s][A
+Attributions:  47%|████▋     | 94/200 [00:08<00:10, 10.44it/s][A
+Attributions:  48%|████▊     | 96/200 [00:09<00:09, 10.59it/s][A
+Attributions:  49%|████▉     | 98/200 [00:09<00:09, 10.61it/s][A
+Attributions:  50%|█████     | 100/200 [00:09<00:09, 10.53it/s][A
+Attributions:  51%|█████     | 102/200 [00:09<00:09, 10.57it/s][A
+Attributions:  52%|█████▏    | 104/200 [00:09<00:09, 10.54it/s][A
+Attributions:  53%|█████▎    | 106/200 [00:09<00:08, 10.46it/s][A
+Attributions:  54%|█████▍    | 108/200 [00:10<00:08, 10.52it/s][A
+Attributions:  55%|█████▌    | 110/200 [00:10<00:08, 10.42it/s][A
+Attributions:  56%|█████▌    | 112/200 [00:10<00:08, 10.51it/s][A
+Attributions:  57%|█████▋    | 114/200 [00:10<00:08, 10.66it/s][A
+Attributions:  58%|█████▊    | 116/200 [00:10<00:07, 10.61it/s][A
+Attributions:  59%|█████▉    | 118/200 [00:11<00:07, 10.62it/s][A
+Attributions:  60%|██████    | 120/200 [00:11<00:07, 10.59it/s][A
+Attributions:  61%|██████    | 122/200 [00:11<00:07, 10.66it/s][A
+Attributions:  62%|██████▏   | 124/200 [00:11<00:07, 10.51it/s][A
+Attributions:  63%|██████▎   | 126/200 [00:11<00:06, 10.59it/s][A
+Attributions:  64%|██████▍   | 128/200 [00:12<00:06, 10.71it/s][A
+Attributions:  65%|██████▌   | 130/200 [00:12<00:06, 10.73it/s][A
+Attributions:  66%|██████▌   | 132/200 [00:12<00:06, 10.74it/s][A
+Attributions:  67%|██████▋   | 134/200 [00:12<00:06, 10.82it/s][A
+Attributions:  68%|██████▊   | 136/200 [00:12<00:05, 10.72it/s][A
+Attributions:  69%|██████▉   | 138/200 [00:12<00:05, 10.78it/s][A
+Attributions:  70%|███████   | 140/200 [00:13<00:05, 10.83it/s][A
+Attributions:  71%|███████   | 142/200 [00:13<00:05, 10.75it/s][A
+Attributions:  72%|███████▏  | 144/200 [00:13<00:05, 10.78it/s][A
+Attributions:  73%|███████▎  | 146/200 [00:13<00:05, 10.76it/s][A
+Attributions:  74%|███████▍  | 148/200 [00:13<00:04, 10.71it/s][A
+Attributions:  75%|███████▌  | 150/200 [00:14<00:04, 10.73it/s][A
+Attributions:  76%|███████▌  | 152/200 [00:14<00:04, 10.80it/s][A
+Attributions:  77%|███████▋  | 154/200 [00:14<00:04, 10.75it/s][A
+Attributions:  78%|███████▊  | 156/200 [00:14<00:04, 10.77it/s][A
+Attributions:  79%|███████▉  | 158/200 [00:14<00:03, 10.61it/s][A
+Attributions:  80%|████████  | 160/200 [00:15<00:03, 10.63it/s][A
+Attributions:  81%|████████  | 162/200 [00:15<00:03, 10.59it/s][A
+Attributions:  82%|████████▏ | 164/200 [00:15<00:03, 10.52it/s][A
+Attributions:  83%|████████▎ | 166/200 [00:15<00:03, 10.37it/s][A
+Attributions:  84%|████████▍ | 168/200 [00:15<00:03, 10.42it/s][A
+Attributions:  85%|████████▌ | 170/200 [00:15<00:02, 10.57it/s][A
+Attributions:  86%|████████▌ | 172/200 [00:16<00:02, 10.58it/s][A
+Attributions:  87%|████████▋ | 174/200 [00:16<00:02, 10.65it/s][A
+Attributions:  88%|████████▊ | 176/200 [00:16<00:02, 10.66it/s][A
+Attributions:  89%|████████▉ | 178/200 [00:16<00:02, 10.35it/s][A
+Attributions:  90%|█████████ | 180/200 [00:16<00:01, 10.35it/s][A
+Attributions:  91%|█████████ | 182/200 [00:17<00:01, 10.43it/s][A
+Attributions:  92%|█████████▏| 184/200 [00:17<00:01, 10.53it/s][A
+Attributions:  93%|█████████▎| 186/200 [00:17<00:01, 10.53it/s][A
+Attributions:  94%|█████████▍| 188/200 [00:17<00:01, 10.53it/s][A
+Attributions:  95%|█████████▌| 190/200 [00:17<00:00, 10.64it/s][A
+Attributions:  96%|█████████▌| 192/200 [00:18<00:00, 10.64it/s][A
+Attributions:  97%|█████████▋| 194/200 [00:18<00:00, 10.65it/s][A
+Attributions:  98%|█████████▊| 196/200 [00:18<00:00, 10.49it/s][A
+Attributions:  99%|█████████▉| 198/200 [00:18<00:00, 10.54it/s][A
+Attributions: 100%|██████████| 200/200 [00:18<00:00, 10.35it/s][AAttributions: 100%|██████████| 200/200 [00:18<00:00, 10.62it/s]
+Layers:  50%|█████     | 2/4 [00:53<00:52, 26.16s/it]    CAV val acc (20 runs): 0.453 +- 0.076
+
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   0%|          | 1/200 [00:00<00:24,  8.25it/s][A
+Attributions:   2%|▏         | 3/200 [00:00<00:20,  9.65it/s][A
+Attributions:   2%|▎         | 5/200 [00:00<00:19,  9.99it/s][A
+Attributions:   4%|▎         | 7/200 [00:00<00:19, 10.00it/s][A
+Attributions:   4%|▍         | 9/200 [00:00<00:18, 10.28it/s][A
+Attributions:   6%|▌         | 11/200 [00:01<00:18, 10.36it/s][A
+Attributions:   6%|▋         | 13/200 [00:01<00:18, 10.19it/s][A
+Attributions:   8%|▊         | 15/200 [00:01<00:18, 10.19it/s][A
+Attributions:   8%|▊         | 17/200 [00:01<00:17, 10.24it/s][A
+Attributions:  10%|▉         | 19/200 [00:01<00:17, 10.08it/s][A
+Attributions:  10%|█         | 21/200 [00:02<00:17, 10.10it/s][A
+Attributions:  12%|█▏        | 23/200 [00:02<00:17, 10.28it/s][A
+Attributions:  12%|█▎        | 25/200 [00:02<00:16, 10.38it/s][A
+Attributions:  14%|█▎        | 27/200 [00:02<00:16, 10.45it/s][A
+Attributions:  14%|█▍        | 29/200 [00:02<00:16, 10.53it/s][A
+Attributions:  16%|█▌        | 31/200 [00:03<00:16, 10.42it/s][A
+Attributions:  16%|█▋        | 33/200 [00:03<00:16, 10.40it/s][A
+Attributions:  18%|█▊        | 35/200 [00:03<00:15, 10.41it/s][A
+Attributions:  18%|█▊        | 37/200 [00:03<00:15, 10.41it/s][A
+Attributions:  20%|█▉        | 39/200 [00:03<00:15, 10.49it/s][A
+Attributions:  20%|██        | 41/200 [00:03<00:15, 10.38it/s][A
+Attributions:  22%|██▏       | 43/200 [00:04<00:15, 10.25it/s][A
+Attributions:  22%|██▎       | 45/200 [00:04<00:14, 10.37it/s][A
+Attributions:  24%|██▎       | 47/200 [00:04<00:14, 10.37it/s][A
+Attributions:  24%|██▍       | 49/200 [00:04<00:14, 10.42it/s][A
+Attributions:  26%|██▌       | 51/200 [00:04<00:14, 10.39it/s][A
+Attributions:  26%|██▋       | 53/200 [00:05<00:14, 10.42it/s][A
+Attributions:  28%|██▊       | 55/200 [00:05<00:13, 10.56it/s][A
+Attributions:  28%|██▊       | 57/200 [00:05<00:13, 10.54it/s][A
+Attributions:  30%|██▉       | 59/200 [00:05<00:13, 10.49it/s][A
+Attributions:  30%|███       | 61/200 [00:05<00:13, 10.35it/s][A
+Attributions:  32%|███▏      | 63/200 [00:06<00:13, 10.32it/s][A
+Attributions:  32%|███▎      | 65/200 [00:06<00:13, 10.36it/s][A
+Attributions:  34%|███▎      | 67/200 [00:06<00:12, 10.46it/s][A
+Attributions:  34%|███▍      | 69/200 [00:06<00:12, 10.44it/s][A
+Attributions:  36%|███▌      | 71/200 [00:06<00:12, 10.52it/s][A
+Attributions:  36%|███▋      | 73/200 [00:07<00:12, 10.56it/s][A
+Attributions:  38%|███▊      | 75/200 [00:07<00:11, 10.59it/s][A
+Attributions:  38%|███▊      | 77/200 [00:07<00:11, 10.56it/s][A
+Attributions:  40%|███▉      | 79/200 [00:07<00:11, 10.37it/s][A
+Attributions:  40%|████      | 81/200 [00:07<00:11, 10.25it/s][A
+Attributions:  42%|████▏     | 83/200 [00:08<00:11, 10.33it/s][A
+Attributions:  42%|████▎     | 85/200 [00:08<00:11, 10.12it/s][A
+Attributions:  44%|████▎     | 87/200 [00:08<00:11, 10.22it/s][A
+Attributions:  44%|████▍     | 89/200 [00:08<00:10, 10.34it/s][A
+Attributions:  46%|████▌     | 91/200 [00:08<00:10, 10.45it/s][A
+Attributions:  46%|████▋     | 93/200 [00:08<00:10, 10.53it/s][A
+Attributions:  48%|████▊     | 95/200 [00:09<00:10, 10.46it/s][A
+Attributions:  48%|████▊     | 97/200 [00:09<00:09, 10.50it/s][A
+Attributions:  50%|████▉     | 99/200 [00:09<00:09, 10.57it/s][A
+Attributions:  50%|█████     | 101/200 [00:09<00:09, 10.31it/s][A
+Attributions:  52%|█████▏    | 103/200 [00:09<00:09, 10.34it/s][A
+Attributions:  52%|█████▎    | 105/200 [00:10<00:09, 10.35it/s][A
+Attributions:  54%|█████▎    | 107/200 [00:10<00:09, 10.31it/s][A
+Attributions:  55%|█████▍    | 109/200 [00:10<00:08, 10.28it/s][A
+Attributions:  56%|█████▌    | 111/200 [00:10<00:08, 10.14it/s][A
+Attributions:  56%|█████▋    | 113/200 [00:10<00:08, 10.28it/s][A
+Attributions:  57%|█████▊    | 115/200 [00:11<00:08, 10.23it/s][A
+Attributions:  58%|█████▊    | 117/200 [00:11<00:08, 10.21it/s][A
+Attributions:  60%|█████▉    | 119/200 [00:11<00:07, 10.46it/s][A
+Attributions:  60%|██████    | 121/200 [00:11<00:07, 10.51it/s][A
+Attributions:  62%|██████▏   | 123/200 [00:11<00:07, 10.43it/s][A
+Attributions:  62%|██████▎   | 125/200 [00:12<00:07, 10.50it/s][A
+Attributions:  64%|██████▎   | 127/200 [00:12<00:06, 10.53it/s][A
+Attributions:  64%|██████▍   | 129/200 [00:12<00:06, 10.50it/s][A
+Attributions:  66%|██████▌   | 131/200 [00:12<00:06, 10.63it/s][A
+Attributions:  66%|██████▋   | 133/200 [00:12<00:06, 10.37it/s][A
+Attributions:  68%|██████▊   | 135/200 [00:13<00:06, 10.48it/s][A
+Attributions:  68%|██████▊   | 137/200 [00:13<00:05, 10.54it/s][A
+Attributions:  70%|██████▉   | 139/200 [00:13<00:05, 10.50it/s][A
+Attributions:  70%|███████   | 141/200 [00:13<00:05, 10.53it/s][A
+Attributions:  72%|███████▏  | 143/200 [00:13<00:05, 10.43it/s][A
+Attributions:  72%|███████▎  | 145/200 [00:13<00:05, 10.22it/s][A
+Attributions:  74%|███████▎  | 147/200 [00:14<00:05, 10.30it/s][A
+Attributions:  74%|███████▍  | 149/200 [00:14<00:04, 10.28it/s][A
+Attributions:  76%|███████▌  | 151/200 [00:14<00:04, 10.27it/s][A
+Attributions:  76%|███████▋  | 153/200 [00:14<00:04, 10.40it/s][A
+Attributions:  78%|███████▊  | 155/200 [00:14<00:04, 10.32it/s][A
+Attributions:  78%|███████▊  | 157/200 [00:15<00:04, 10.35it/s][A
+Attributions:  80%|███████▉  | 159/200 [00:15<00:03, 10.26it/s][A
+Attributions:  80%|████████  | 161/200 [00:15<00:03, 10.40it/s][A
+Attributions:  82%|████████▏ | 163/200 [00:15<00:03, 10.48it/s][A
+Attributions:  82%|████████▎ | 165/200 [00:15<00:03, 10.44it/s][A
+Attributions:  84%|████████▎ | 167/200 [00:16<00:03, 10.66it/s][A
+Attributions:  84%|████████▍ | 169/200 [00:16<00:02, 10.44it/s][A
+Attributions:  86%|████████▌ | 171/200 [00:16<00:02, 10.35it/s][A
+Attributions:  86%|████████▋ | 173/200 [00:16<00:02, 10.22it/s][A
+Attributions:  88%|████████▊ | 175/200 [00:16<00:02, 10.26it/s][A
+Attributions:  88%|████████▊ | 177/200 [00:17<00:02, 10.25it/s][A
+Attributions:  90%|████████▉ | 179/200 [00:17<00:02, 10.18it/s][A
+Attributions:  90%|█████████ | 181/200 [00:17<00:01, 10.26it/s][A
+Attributions:  92%|█████████▏| 183/200 [00:17<00:01, 10.31it/s][A
+Attributions:  92%|█████████▎| 185/200 [00:17<00:01, 10.21it/s][A
+Attributions:  94%|█████████▎| 187/200 [00:18<00:01, 10.24it/s][A
+Attributions:  94%|█████████▍| 189/200 [00:18<00:01, 10.29it/s][A
+Attributions:  96%|█████████▌| 191/200 [00:18<00:00, 10.33it/s][A
+Attributions:  96%|█████████▋| 193/200 [00:18<00:00, 10.32it/s][A
+Attributions:  98%|█████████▊| 195/200 [00:18<00:00, 10.38it/s][A
+Attributions:  98%|█████████▊| 197/200 [00:19<00:00, 10.20it/s][A
+Attributions: 100%|█████████▉| 199/200 [00:19<00:00, 10.24it/s][AAttributions: 100%|██████████| 200/200 [00:19<00:00, 10.35it/s]
+Layers:  75%|███████▌  | 3/4 [01:18<00:25, 25.63s/it]    CAV val acc (20 runs): 0.386 +- 0.049
+
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   0%|          | 1/200 [00:00<00:24,  8.01it/s][A
+Attributions:   1%|          | 2/200 [00:00<00:22,  8.95it/s][A
+Attributions:   2%|▏         | 4/200 [00:00<00:19,  9.95it/s][A
+Attributions:   3%|▎         | 6/200 [00:00<00:18, 10.29it/s][A
+Attributions:   4%|▍         | 8/200 [00:00<00:18, 10.35it/s][A
+Attributions:   5%|▌         | 10/200 [00:00<00:18, 10.24it/s][A
+Attributions:   6%|▌         | 12/200 [00:01<00:18, 10.32it/s][A
+Attributions:   7%|▋         | 14/200 [00:01<00:18, 10.18it/s][A
+Attributions:   8%|▊         | 16/200 [00:01<00:18, 10.14it/s][A
+Attributions:   9%|▉         | 18/200 [00:01<00:18, 10.07it/s][A
+Attributions:  10%|█         | 20/200 [00:01<00:17, 10.21it/s][A
+Attributions:  11%|█         | 22/200 [00:02<00:17, 10.35it/s][A
+Attributions:  12%|█▏        | 24/200 [00:02<00:17, 10.24it/s][A
+Attributions:  13%|█▎        | 26/200 [00:02<00:16, 10.39it/s][A
+Attributions:  14%|█▍        | 28/200 [00:02<00:16, 10.45it/s][A
+Attributions:  15%|█▌        | 30/200 [00:02<00:16, 10.53it/s][A
+Attributions:  16%|█▌        | 32/200 [00:03<00:16, 10.43it/s][A
+Attributions:  17%|█▋        | 34/200 [00:03<00:15, 10.47it/s][A
+Attributions:  18%|█▊        | 36/200 [00:03<00:15, 10.40it/s][A
+Attributions:  19%|█▉        | 38/200 [00:03<00:15, 10.43it/s][A
+Attributions:  20%|██        | 40/200 [00:03<00:15, 10.42it/s][A
+Attributions:  21%|██        | 42/200 [00:04<00:15, 10.40it/s][A
+Attributions:  22%|██▏       | 44/200 [00:04<00:15, 10.40it/s][A
+Attributions:  23%|██▎       | 46/200 [00:04<00:14, 10.31it/s][A
+Attributions:  24%|██▍       | 48/200 [00:04<00:14, 10.38it/s][A
+Attributions:  25%|██▌       | 50/200 [00:04<00:14, 10.31it/s][A
+Attributions:  26%|██▌       | 52/200 [00:05<00:14, 10.27it/s][A
+Attributions:  27%|██▋       | 54/200 [00:05<00:14, 10.27it/s][A
+Attributions:  28%|██▊       | 56/200 [00:05<00:13, 10.31it/s][A
+Attributions:  29%|██▉       | 58/200 [00:05<00:13, 10.34it/s][A
+Attributions:  30%|███       | 60/200 [00:05<00:13, 10.16it/s][A
+Attributions:  31%|███       | 62/200 [00:06<00:13, 10.24it/s][A
+Attributions:  32%|███▏      | 64/200 [00:06<00:13, 10.33it/s][A
+Attributions:  33%|███▎      | 66/200 [00:06<00:12, 10.37it/s][A
+Attributions:  34%|███▍      | 68/200 [00:06<00:12, 10.45it/s][A
+Attributions:  35%|███▌      | 70/200 [00:06<00:12, 10.33it/s][A
+Attributions:  36%|███▌      | 72/200 [00:06<00:12, 10.36it/s][A
+Attributions:  37%|███▋      | 74/200 [00:07<00:11, 10.51it/s][A
+Attributions:  38%|███▊      | 76/200 [00:07<00:11, 10.46it/s][A
+Attributions:  39%|███▉      | 78/200 [00:07<00:11, 10.31it/s][A
+Attributions:  40%|████      | 80/200 [00:07<00:11, 10.10it/s][A
+Attributions:  41%|████      | 82/200 [00:07<00:11, 10.15it/s][A
+Attributions:  42%|████▏     | 84/200 [00:08<00:11, 10.20it/s][A
+Attributions:  43%|████▎     | 86/200 [00:08<00:11, 10.33it/s][A
+Attributions:  44%|████▍     | 88/200 [00:08<00:10, 10.50it/s][A
+Attributions:  45%|████▌     | 90/200 [00:08<00:10, 10.42it/s][A
+Attributions:  46%|████▌     | 92/200 [00:08<00:10, 10.30it/s][A
+Attributions:  47%|████▋     | 94/200 [00:09<00:10, 10.31it/s][A
+Attributions:  48%|████▊     | 96/200 [00:09<00:10, 10.35it/s][A
+Attributions:  49%|████▉     | 98/200 [00:09<00:09, 10.23it/s][A
+Attributions:  50%|█████     | 100/200 [00:09<00:09, 10.29it/s][A
+Attributions:  51%|█████     | 102/200 [00:09<00:09, 10.25it/s][A
+Attributions:  52%|█████▏    | 104/200 [00:10<00:09, 10.38it/s][A
+Attributions:  53%|█████▎    | 106/200 [00:10<00:09, 10.39it/s][A
+Attributions:  54%|█████▍    | 108/200 [00:10<00:08, 10.28it/s][A
+Attributions:  55%|█████▌    | 110/200 [00:10<00:08, 10.16it/s][A
+Attributions:  56%|█████▌    | 112/200 [00:10<00:08, 10.23it/s][A
+Attributions:  57%|█████▋    | 114/200 [00:11<00:08, 10.36it/s][A
+Attributions:  58%|█████▊    | 116/200 [00:11<00:08, 10.30it/s][A
+Attributions:  59%|█████▉    | 118/200 [00:11<00:07, 10.32it/s][A
+Attributions:  60%|██████    | 120/200 [00:11<00:07, 10.35it/s][A
+Attributions:  61%|██████    | 122/200 [00:11<00:07, 10.51it/s][A
+Attributions:  62%|██████▏   | 124/200 [00:12<00:07, 10.55it/s][A
+Attributions:  63%|██████▎   | 126/200 [00:12<00:07, 10.33it/s][A
+Attributions:  64%|██████▍   | 128/200 [00:12<00:06, 10.33it/s][A
+Attributions:  65%|██████▌   | 130/200 [00:12<00:06, 10.29it/s][A
+Attributions:  66%|██████▌   | 132/200 [00:12<00:06, 10.21it/s][A
+Attributions:  67%|██████▋   | 134/200 [00:13<00:06, 10.18it/s][A
+Attributions:  68%|██████▊   | 136/200 [00:13<00:06, 10.23it/s][A
+Attributions:  69%|██████▉   | 138/200 [00:13<00:05, 10.37it/s][A
+Attributions:  70%|███████   | 140/200 [00:13<00:05, 10.38it/s][A
+Attributions:  71%|███████   | 142/200 [00:13<00:05, 10.20it/s][A
+Attributions:  72%|███████▏  | 144/200 [00:13<00:05, 10.28it/s][A
+Attributions:  73%|███████▎  | 146/200 [00:14<00:05, 10.27it/s][A
+Attributions:  74%|███████▍  | 148/200 [00:14<00:05, 10.39it/s][A
+Attributions:  75%|███████▌  | 150/200 [00:14<00:04, 10.27it/s][A
+Attributions:  76%|███████▌  | 152/200 [00:14<00:04, 10.31it/s][A
+Attributions:  77%|███████▋  | 154/200 [00:14<00:04, 10.25it/s][A
+Attributions:  78%|███████▊  | 156/200 [00:15<00:04, 10.37it/s][A
+Attributions:  79%|███████▉  | 158/200 [00:15<00:04, 10.33it/s][A
+Attributions:  80%|████████  | 160/200 [00:15<00:03, 10.29it/s][A
+Attributions:  81%|████████  | 162/200 [00:15<00:03, 10.38it/s][A
+Attributions:  82%|████████▏ | 164/200 [00:15<00:03, 10.39it/s][A
+Attributions:  83%|████████▎ | 166/200 [00:16<00:03, 10.44it/s][A
+Attributions:  84%|████████▍ | 168/200 [00:16<00:03, 10.52it/s][A
+Attributions:  85%|████████▌ | 170/200 [00:16<00:02, 10.56it/s][A
+Attributions:  86%|████████▌ | 172/200 [00:16<00:02, 10.50it/s][A
+Attributions:  87%|████████▋ | 174/200 [00:16<00:02, 10.41it/s][A
+Attributions:  88%|████████▊ | 176/200 [00:17<00:02, 10.40it/s][A
+Attributions:  89%|████████▉ | 178/200 [00:17<00:02, 10.39it/s][A
+Attributions:  90%|█████████ | 180/200 [00:17<00:01, 10.44it/s][A
+Attributions:  91%|█████████ | 182/200 [00:17<00:01, 10.42it/s][A
+Attributions:  92%|█████████▏| 184/200 [00:17<00:01, 10.31it/s][A
+Attributions:  93%|█████████▎| 186/200 [00:18<00:01, 10.26it/s][A
+Attributions:  94%|█████████▍| 188/200 [00:18<00:01, 10.22it/s][A
+Attributions:  95%|█████████▌| 190/200 [00:18<00:00, 10.19it/s][A
+Attributions:  96%|█████████▌| 192/200 [00:18<00:00, 10.14it/s][A
+Attributions:  97%|█████████▋| 194/200 [00:18<00:00, 10.32it/s][A
+Attributions:  98%|█████████▊| 196/200 [00:19<00:00, 10.26it/s][A
+Attributions:  99%|█████████▉| 198/200 [00:19<00:00, 10.28it/s][A
+Attributions: 100%|██████████| 200/200 [00:19<00:00, 10.38it/s][AAttributions: 100%|██████████| 200/200 [00:19<00:00, 10.32it/s]
+Layers: 100%|██████████| 4/4 [01:41<00:00, 24.83s/it]Layers: 100%|██████████| 4/4 [01:41<00:00, 25.41s/it]
++------------------------------------------------------------------------------------------+
+|                       Model: resnet50v2; Class: MEL; Examples: MEL                       |
++------------------------+------------------+---------------------+------------------------+
+|        Concept         |      Layer       |     Attrib. mean    |   Attrib. 95.45% CI    |
++------------------------+------------------+---------------------+------------------------+
+| ruler_present/positive | conv5_block1_out | 0.000855 +- 0.00733 |    ['0', '0.00189']    |
+|                        | conv5_block2_out |        0 +- 0       |       ['0', '0']       |
+|                        | conv5_block3_out |        0 +- 0       |       ['0', '0']       |
+|                        |    post_relu     |  0.00458 +- 0.0061  | ['0.00372', '0.00545'] |
++------------------------+------------------+---------------------+------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched_short_ruler_cavseed123/vtcav_global_ruler_short_ruler_MEL.png
+
+============================================================
+GlobalVisualTCAV [padonly_seed2_rulerbias_matched_short_ruler] — class: NV (2495 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|          | 0/4 [00:00<?, ?it/s]
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   0%|          | 1/200 [00:00<00:20,  9.53it/s][A
+Attributions:   2%|▏         | 3/200 [00:00<00:15, 12.36it/s][A
+Attributions:   2%|▎         | 5/200 [00:00<00:15, 12.76it/s][A
+Attributions:   4%|▎         | 7/200 [00:00<00:14, 13.39it/s][A
+Attributions:   4%|▍         | 9/200 [00:00<00:14, 13.16it/s][A
+Attributions:   6%|▌         | 11/200 [00:00<00:14, 13.25it/s][A
+Attributions:   6%|▋         | 13/200 [00:00<00:13, 13.37it/s][A
+Attributions:   8%|▊         | 15/200 [00:01<00:13, 13.46it/s][A
+Attributions:   8%|▊         | 17/200 [00:01<00:13, 13.71it/s][A
+Attributions:  10%|▉         | 19/200 [00:01<00:13, 13.70it/s][A
+Attributions:  10%|█         | 21/200 [00:01<00:13, 13.47it/s][A
+Attributions:  12%|█▏        | 23/200 [00:01<00:13, 13.48it/s][A
+Attributions:  12%|█▎        | 25/200 [00:01<00:12, 13.50it/s][A
+Attributions:  14%|█▎        | 27/200 [00:02<00:12, 13.72it/s][A
+Attributions:  14%|█▍        | 29/200 [00:02<00:12, 13.76it/s][A
+Attributions:  16%|█▌        | 31/200 [00:02<00:12, 13.79it/s][A
+Attributions:  16%|█▋        | 33/200 [00:02<00:12, 13.74it/s][A
+Attributions:  18%|█▊        | 35/200 [00:02<00:11, 13.76it/s][A
+Attributions:  18%|█▊        | 37/200 [00:02<00:12, 13.41it/s][A
+Attributions:  20%|█▉        | 39/200 [00:02<00:11, 13.55it/s][A
+Attributions:  20%|██        | 41/200 [00:03<00:11, 13.49it/s][A
+Attributions:  22%|██▏       | 43/200 [00:03<00:11, 13.51it/s][A
+Attributions:  22%|██▎       | 45/200 [00:03<00:11, 13.56it/s][A
+Attributions:  24%|██▎       | 47/200 [00:03<00:11, 13.60it/s][A
+Attributions:  24%|██▍       | 49/200 [00:03<00:11, 13.60it/s][A
+Attributions:  26%|██▌       | 51/200 [00:03<00:11, 13.48it/s][A
+Attributions:  26%|██▋       | 53/200 [00:03<00:10, 13.41it/s][A
+Attributions:  28%|██▊       | 55/200 [00:04<00:10, 13.48it/s][A
+Attributions:  28%|██▊       | 57/200 [00:04<00:10, 13.70it/s][A
+Attributions:  30%|██▉       | 59/200 [00:04<00:10, 13.71it/s][A
+Attributions:  30%|███       | 61/200 [00:04<00:10, 13.80it/s][A
+Attributions:  32%|███▏      | 63/200 [00:04<00:09, 13.79it/s][A
+Attributions:  32%|███▎      | 65/200 [00:04<00:10, 13.32it/s][A
+Attributions:  34%|███▎      | 67/200 [00:04<00:09, 13.55it/s][A
+Attributions:  34%|███▍      | 69/200 [00:05<00:09, 13.62it/s][A
+Attributions:  36%|███▌      | 71/200 [00:05<00:09, 13.40it/s][A
+Attributions:  36%|███▋      | 73/200 [00:05<00:09, 13.36it/s][A
+Attributions:  38%|███▊      | 75/200 [00:05<00:09, 13.12it/s][A
+Attributions:  38%|███▊      | 77/200 [00:05<00:09, 13.27it/s][A
+Attributions:  40%|███▉      | 79/200 [00:05<00:08, 13.55it/s][A
+Attributions:  40%|████      | 81/200 [00:05<00:08, 13.74it/s][A
+Attributions:  42%|████▏     | 83/200 [00:06<00:08, 13.33it/s][A
+Attributions:  42%|████▎     | 85/200 [00:06<00:08, 13.29it/s][A
+Attributions:  44%|████▎     | 87/200 [00:06<00:08, 13.35it/s][A
+Attributions:  44%|████▍     | 89/200 [00:06<00:08, 13.55it/s][A
+Attributions:  46%|████▌     | 91/200 [00:06<00:07, 13.75it/s][A
+Attributions:  46%|████▋     | 93/200 [00:06<00:07, 13.58it/s][A
+Attributions:  48%|████▊     | 95/200 [00:07<00:07, 13.40it/s][A
+Attributions:  48%|████▊     | 97/200 [00:07<00:07, 13.39it/s][A
+Attributions:  50%|████▉     | 99/200 [00:07<00:07, 13.62it/s][A
+Attributions:  50%|█████     | 101/200 [00:07<00:07, 13.62it/s][A
+Attributions:  52%|█████▏    | 103/200 [00:07<00:07, 13.63it/s][A
+Attributions:  52%|█████▎    | 105/200 [00:07<00:07, 13.45it/s][A
+Attributions:  54%|█████▎    | 107/200 [00:07<00:07, 13.25it/s][A
+Attributions:  55%|█████▍    | 109/200 [00:08<00:06, 13.27it/s][A
+Attributions:  56%|█████▌    | 111/200 [00:08<00:06, 13.53it/s][A
+Attributions:  56%|█████▋    | 113/200 [00:08<00:06, 13.45it/s][A
+Attributions:  57%|█████▊    | 115/200 [00:08<00:06, 12.95it/s][A
+Attributions:  58%|█████▊    | 117/200 [00:08<00:06, 13.14it/s][A
+Attributions:  60%|█████▉    | 119/200 [00:08<00:06, 13.29it/s][A
+Attributions:  60%|██████    | 121/200 [00:08<00:05, 13.50it/s][A
+Attributions:  62%|██████▏   | 123/200 [00:09<00:05, 13.68it/s][A
+Attributions:  62%|██████▎   | 125/200 [00:09<00:05, 13.64it/s][A
+Attributions:  64%|██████▎   | 127/200 [00:09<00:05, 13.70it/s][A
+Attributions:  64%|██████▍   | 129/200 [00:09<00:05, 13.76it/s][A
+Attributions:  66%|██████▌   | 131/200 [00:09<00:05, 13.56it/s][A
+Attributions:  66%|██████▋   | 133/200 [00:09<00:04, 13.46it/s][A
+Attributions:  68%|██████▊   | 135/200 [00:10<00:04, 13.68it/s][A
+Attributions:  68%|██████▊   | 137/200 [00:10<00:04, 13.43it/s][A
+Attributions:  70%|██████▉   | 139/200 [00:10<00:04, 13.55it/s][A
+Attributions:  70%|███████   | 141/200 [00:10<00:04, 13.60it/s][A
+Attributions:  72%|███████▏  | 143/200 [00:10<00:04, 13.73it/s][A
+Attributions:  72%|███████▎  | 145/200 [00:10<00:04, 13.48it/s][A
+Attributions:  74%|███████▎  | 147/200 [00:10<00:03, 13.62it/s][A
+Attributions:  74%|███████▍  | 149/200 [00:11<00:03, 13.13it/s][A
+Attributions:  76%|███████▌  | 151/200 [00:11<00:03, 13.44it/s][A
+Attributions:  76%|███████▋  | 153/200 [00:11<00:03, 13.66it/s][A
+Attributions:  78%|███████▊  | 155/200 [00:11<00:03, 13.61it/s][A
+Attributions:  78%|███████▊  | 157/200 [00:11<00:03, 13.57it/s][A
+Attributions:  80%|███████▉  | 159/200 [00:11<00:03, 13.63it/s][A
+Attributions:  80%|████████  | 161/200 [00:11<00:02, 13.78it/s][A
+Attributions:  82%|████████▏ | 163/200 [00:12<00:02, 13.89it/s][A
+Attributions:  82%|████████▎ | 165/200 [00:12<00:02, 13.82it/s][A
+Attributions:  84%|████████▎ | 167/200 [00:12<00:02, 13.73it/s][A
+Attributions:  84%|████████▍ | 169/200 [00:12<00:02, 13.54it/s][A
+Attributions:  86%|████████▌ | 171/200 [00:12<00:02, 13.54it/s][A
+Attributions:  86%|████████▋ | 173/200 [00:12<00:01, 13.70it/s][A
+Attributions:  88%|████████▊ | 175/200 [00:12<00:01, 13.68it/s][A
+Attributions:  88%|████████▊ | 177/200 [00:13<00:01, 13.69it/s][A
+Attributions:  90%|████████▉ | 179/200 [00:13<00:01, 13.72it/s][A
+Attributions:  90%|█████████ | 181/200 [00:13<00:01, 13.62it/s][A
+Attributions:  92%|█████████▏| 183/200 [00:13<00:01, 13.63it/s][A
+Attributions:  92%|█████████▎| 185/200 [00:13<00:01, 13.46it/s][A
+Attributions:  94%|█████████▎| 187/200 [00:13<00:00, 13.43it/s][A
+Attributions:  94%|█████████▍| 189/200 [00:13<00:00, 13.50it/s][A
+Attributions:  96%|█████████▌| 191/200 [00:14<00:00, 13.22it/s][A
+Attributions:  96%|█████████▋| 193/200 [00:14<00:00, 13.18it/s][A
+Attributions:  98%|█████████▊| 195/200 [00:14<00:00, 13.32it/s][A
+Attributions:  98%|█████████▊| 197/200 [00:14<00:00, 13.36it/s][A
+Attributions: 100%|█████████▉| 199/200 [00:14<00:00, 13.36it/s][AAttributions: 100%|██████████| 200/200 [00:14<00:00, 13.50it/s]
+Layers:  25%|██▌       | 1/4 [00:16<00:49, 16.35s/it]
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   0%|          | 1/200 [00:00<00:23,  8.51it/s][A
+Attributions:   2%|▏         | 3/200 [00:00<00:20,  9.76it/s][A
+Attributions:   2%|▎         | 5/200 [00:00<00:18, 10.32it/s][A
+Attributions:   4%|▎         | 7/200 [00:00<00:18, 10.55it/s][A
+Attributions:   4%|▍         | 9/200 [00:00<00:18, 10.49it/s][A
+Attributions:   6%|▌         | 11/200 [00:01<00:18, 10.47it/s][A
+Attributions:   6%|▋         | 13/200 [00:01<00:17, 10.51it/s][A
+Attributions:   8%|▊         | 15/200 [00:01<00:17, 10.51it/s][A
+Attributions:   8%|▊         | 17/200 [00:01<00:17, 10.57it/s][A
+Attributions:  10%|▉         | 19/200 [00:01<00:17, 10.57it/s][A
+Attributions:  10%|█         | 21/200 [00:02<00:17, 10.51it/s][A
+Attributions:  12%|█▏        | 23/200 [00:02<00:16, 10.60it/s][A
+Attributions:  12%|█▎        | 25/200 [00:02<00:16, 10.53it/s][A
+Attributions:  14%|█▎        | 27/200 [00:02<00:16, 10.57it/s][A
+Attributions:  14%|█▍        | 29/200 [00:02<00:16, 10.59it/s][A
+Attributions:  16%|█▌        | 31/200 [00:02<00:16, 10.51it/s][A
+Attributions:  16%|█▋        | 33/200 [00:03<00:15, 10.51it/s][A
+Attributions:  18%|█▊        | 35/200 [00:03<00:15, 10.48it/s][A
+Attributions:  18%|█▊        | 37/200 [00:03<00:15, 10.52it/s][A
+Attributions:  20%|█▉        | 39/200 [00:03<00:15, 10.47it/s][A
+Attributions:  20%|██        | 41/200 [00:03<00:15, 10.52it/s][A
+Attributions:  22%|██▏       | 43/200 [00:04<00:14, 10.51it/s][A
+Attributions:  22%|██▎       | 45/200 [00:04<00:14, 10.52it/s][A
+Attributions:  24%|██▎       | 47/200 [00:04<00:14, 10.51it/s][A
+Attributions:  24%|██▍       | 49/200 [00:04<00:14, 10.55it/s][A
+Attributions:  26%|██▌       | 51/200 [00:04<00:14, 10.59it/s][A
+Attributions:  26%|██▋       | 53/200 [00:05<00:13, 10.52it/s][A
+Attributions:  28%|██▊       | 55/200 [00:05<00:13, 10.59it/s][A
+Attributions:  28%|██▊       | 57/200 [00:05<00:13, 10.49it/s][A
+Attributions:  30%|██▉       | 59/200 [00:05<00:13, 10.48it/s][A
+Attributions:  30%|███       | 61/200 [00:05<00:13, 10.44it/s][A
+Attributions:  32%|███▏      | 63/200 [00:06<00:13, 10.38it/s][A
+Attributions:  32%|███▎      | 65/200 [00:06<00:12, 10.49it/s][A
+Attributions:  34%|███▎      | 67/200 [00:06<00:12, 10.66it/s][A
+Attributions:  34%|███▍      | 69/200 [00:06<00:12, 10.71it/s][A
+Attributions:  36%|███▌      | 71/200 [00:06<00:12, 10.71it/s][A
+Attributions:  36%|███▋      | 73/200 [00:06<00:11, 10.77it/s][A
+Attributions:  38%|███▊      | 75/200 [00:07<00:11, 10.84it/s][A
+Attributions:  38%|███▊      | 77/200 [00:07<00:11, 10.87it/s][A
+Attributions:  40%|███▉      | 79/200 [00:07<00:11, 10.68it/s][A
+Attributions:  40%|████      | 81/200 [00:07<00:11, 10.72it/s][A
+Attributions:  42%|████▏     | 83/200 [00:07<00:10, 10.77it/s][A
+Attributions:  42%|████▎     | 85/200 [00:08<00:10, 10.56it/s][A
+Attributions:  44%|████▎     | 87/200 [00:08<00:10, 10.57it/s][A
+Attributions:  44%|████▍     | 89/200 [00:08<00:10, 10.64it/s][A
+Attributions:  46%|████▌     | 91/200 [00:08<00:10, 10.65it/s][A
+Attributions:  46%|████▋     | 93/200 [00:08<00:09, 10.73it/s][A
+Attributions:  48%|████▊     | 95/200 [00:08<00:09, 10.79it/s][A
+Attributions:  48%|████▊     | 97/200 [00:09<00:09, 10.50it/s][A
+Attributions:  50%|████▉     | 99/200 [00:09<00:09, 10.57it/s][A
+Attributions:  50%|█████     | 101/200 [00:09<00:09, 10.46it/s][A
+Attributions:  52%|█████▏    | 103/200 [00:09<00:09, 10.42it/s][A
+Attributions:  52%|█████▎    | 105/200 [00:09<00:09, 10.47it/s][A
+Attributions:  54%|█████▎    | 107/200 [00:10<00:08, 10.50it/s][A
+Attributions:  55%|█████▍    | 109/200 [00:10<00:08, 10.58it/s][A
+Attributions:  56%|█████▌    | 111/200 [00:10<00:08, 10.60it/s][A
+Attributions:  56%|█████▋    | 113/200 [00:10<00:08, 10.52it/s][A
+Attributions:  57%|█████▊    | 115/200 [00:10<00:08, 10.47it/s][A
+Attributions:  58%|█████▊    | 117/200 [00:11<00:08, 10.34it/s][A
+Attributions:  60%|█████▉    | 119/200 [00:11<00:07, 10.37it/s][A
+Attributions:  60%|██████    | 121/200 [00:11<00:07, 10.44it/s][A
+Attributions:  62%|██████▏   | 123/200 [00:11<00:07, 10.50it/s][A
+Attributions:  62%|██████▎   | 125/200 [00:11<00:07, 10.55it/s][A
+Attributions:  64%|██████▎   | 127/200 [00:12<00:07, 10.41it/s][A
+Attributions:  64%|██████▍   | 129/200 [00:12<00:06, 10.39it/s][A
+Attributions:  66%|██████▌   | 131/200 [00:12<00:06, 10.38it/s][A
+Attributions:  66%|██████▋   | 133/200 [00:12<00:06, 10.38it/s][A
+Attributions:  68%|██████▊   | 135/200 [00:12<00:06, 10.54it/s][A
+Attributions:  68%|██████▊   | 137/200 [00:13<00:05, 10.57it/s][A
+Attributions:  70%|██████▉   | 139/200 [00:13<00:05, 10.53it/s][A
+Attributions:  70%|███████   | 141/200 [00:13<00:05, 10.56it/s][A
+Attributions:  72%|███████▏  | 143/200 [00:13<00:05, 10.56it/s][A
+Attributions:  72%|███████▎  | 145/200 [00:13<00:05, 10.53it/s][A
+Attributions:  74%|███████▎  | 147/200 [00:13<00:04, 10.62it/s][A
+Attributions:  74%|███████▍  | 149/200 [00:14<00:04, 10.69it/s][A
+Attributions:  76%|███████▌  | 151/200 [00:14<00:04, 10.66it/s][A
+Attributions:  76%|███████▋  | 153/200 [00:14<00:04, 10.72it/s][A
+Attributions:  78%|███████▊  | 155/200 [00:14<00:04, 10.73it/s][A
+Attributions:  78%|███████▊  | 157/200 [00:14<00:04, 10.71it/s][A
+Attributions:  80%|███████▉  | 159/200 [00:15<00:03, 10.74it/s][A
+Attributions:  80%|████████  | 161/200 [00:15<00:03, 10.37it/s][A
+Attributions:  82%|████████▏ | 163/200 [00:15<00:03, 10.52it/s][A
+Attributions:  82%|████████▎ | 165/200 [00:15<00:03, 10.46it/s][A
+Attributions:  84%|████████▎ | 167/200 [00:15<00:03, 10.47it/s][A
+Attributions:  84%|████████▍ | 169/200 [00:16<00:02, 10.48it/s][A
+Attributions:  86%|████████▌ | 171/200 [00:16<00:02, 10.56it/s][A
+Attributions:  86%|████████▋ | 173/200 [00:16<00:02, 10.68it/s][A
+Attributions:  88%|████████▊ | 175/200 [00:16<00:02, 10.67it/s][A
+Attributions:  88%|████████▊ | 177/200 [00:16<00:02, 10.36it/s][A
+Attributions:  90%|████████▉ | 179/200 [00:16<00:02, 10.44it/s][A
+Attributions:  90%|█████████ | 181/200 [00:17<00:01, 10.50it/s][A
+Attributions:  92%|█████████▏| 183/200 [00:17<00:01, 10.44it/s][A
+Attributions:  92%|█████████▎| 185/200 [00:17<00:01, 10.40it/s][A
+Attributions:  94%|█████████▎| 187/200 [00:17<00:01, 10.40it/s][A
+Attributions:  94%|█████████▍| 189/200 [00:17<00:01, 10.43it/s][A
+Attributions:  96%|█████████▌| 191/200 [00:18<00:00, 10.47it/s][A
+Attributions:  96%|█████████▋| 193/200 [00:18<00:00, 10.45it/s][A
+Attributions:  98%|█████████▊| 195/200 [00:18<00:00, 10.58it/s][A
+Attributions:  98%|█████████▊| 197/200 [00:18<00:00, 10.48it/s][A
+Attributions: 100%|█████████▉| 199/200 [00:18<00:00, 10.57it/s][AAttributions: 100%|██████████| 200/200 [00:18<00:00, 10.54it/s]
+Layers:  50%|█████     | 2/4 [00:36<00:37, 18.82s/it]
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   1%|          | 2/200 [00:00<00:15, 12.88it/s][A
+Attributions:   2%|▏         | 4/200 [00:00<00:14, 13.77it/s][A
+Attributions:   3%|▎         | 6/200 [00:00<00:14, 13.40it/s][A
+Attributions:   4%|▍         | 8/200 [00:00<00:14, 13.46it/s][A
+Attributions:   5%|▌         | 10/200 [00:00<00:14, 13.43it/s][A
+Attributions:   6%|▌         | 12/200 [00:00<00:13, 13.76it/s][A
+Attributions:   7%|▋         | 14/200 [00:01<00:13, 14.03it/s][A
+Attributions:   8%|▊         | 16/200 [00:01<00:12, 14.29it/s][A
+Attributions:   9%|▉         | 18/200 [00:01<00:12, 14.11it/s][A
+Attributions:  10%|█         | 20/200 [00:01<00:12, 14.17it/s][A
+Attributions:  11%|█         | 22/200 [00:01<00:12, 13.92it/s][A
+Attributions:  12%|█▏        | 24/200 [00:01<00:12, 13.89it/s][A
+Attributions:  13%|█▎        | 26/200 [00:01<00:12, 13.94it/s][A
+Attributions:  14%|█▍        | 28/200 [00:02<00:12, 14.01it/s][A
+Attributions:  15%|█▌        | 30/200 [00:02<00:12, 14.07it/s][A
+Attributions:  16%|█▌        | 32/200 [00:02<00:12, 13.72it/s][A
+Attributions:  17%|█▋        | 34/200 [00:02<00:12, 13.47it/s][A
+Attributions:  18%|█▊        | 36/200 [00:02<00:12, 13.59it/s][A
+Attributions:  19%|█▉        | 38/200 [00:02<00:11, 13.77it/s][A
+Attributions:  20%|██        | 40/200 [00:02<00:11, 13.74it/s][A
+Attributions:  21%|██        | 42/200 [00:03<00:11, 13.80it/s][A
+Attributions:  22%|██▏       | 44/200 [00:03<00:11, 13.93it/s][A
+Attributions:  23%|██▎       | 46/200 [00:03<00:11, 13.82it/s][A
+Attributions:  24%|██▍       | 48/200 [00:03<00:11, 13.81it/s][A
+Attributions:  25%|██▌       | 50/200 [00:03<00:10, 13.69it/s][A
+Attributions:  26%|██▌       | 52/200 [00:03<00:10, 13.79it/s][A
+Attributions:  27%|██▋       | 54/200 [00:03<00:10, 13.48it/s][A
+Attributions:  28%|██▊       | 56/200 [00:04<00:10, 13.66it/s][A
+Attributions:  29%|██▉       | 58/200 [00:04<00:10, 13.51it/s][A
+Attributions:  30%|███       | 60/200 [00:04<00:10, 13.54it/s][A
+Attributions:  31%|███       | 62/200 [00:04<00:10, 13.73it/s][A
+Attributions:  32%|███▏      | 64/200 [00:04<00:10, 13.30it/s][A
+Attributions:  33%|███▎      | 66/200 [00:04<00:10, 13.40it/s][A
+Attributions:  34%|███▍      | 68/200 [00:04<00:09, 13.32it/s][A
+Attributions:  35%|███▌      | 70/200 [00:05<00:09, 13.31it/s][A
+Attributions:  36%|███▌      | 72/200 [00:05<00:09, 13.53it/s][A
+Attributions:  37%|███▋      | 74/200 [00:05<00:09, 13.56it/s][A
+Attributions:  38%|███▊      | 76/200 [00:05<00:09, 13.70it/s][A
+Attributions:  39%|███▉      | 78/200 [00:05<00:08, 13.78it/s][A
+Attributions:  40%|████      | 80/200 [00:05<00:08, 13.72it/s][A
+Attributions:  41%|████      | 82/200 [00:05<00:08, 13.73it/s][A
+Attributions:  42%|████▏     | 84/200 [00:06<00:08, 13.66it/s][A
+Attributions:  43%|████▎     | 86/200 [00:06<00:08, 13.68it/s][A
+Attributions:  44%|████▍     | 88/200 [00:06<00:08, 13.85it/s][A
+Attributions:  45%|████▌     | 90/200 [00:06<00:07, 13.94it/s][A
+Attributions:  46%|████▌     | 92/200 [00:06<00:07, 14.10it/s][A
+Attributions:  47%|████▋     | 94/200 [00:06<00:07, 13.90it/s][A
+Attributions:  48%|████▊     | 96/200 [00:06<00:07, 13.81it/s][A
+Attributions:  49%|████▉     | 98/200 [00:07<00:07, 13.67it/s][A
+Attributions:  50%|█████     | 100/200 [00:07<00:07, 13.54it/s][A
+Attributions:  51%|█████     | 102/200 [00:07<00:07, 13.32it/s][A
+Attributions:  52%|█████▏    | 104/200 [00:07<00:07, 13.51it/s][A
+Attributions:  53%|█████▎    | 106/200 [00:07<00:07, 13.29it/s][A
+Attributions:  54%|█████▍    | 108/200 [00:07<00:06, 13.45it/s][A
+Attributions:  55%|█████▌    | 110/200 [00:08<00:06, 13.48it/s][A
+Attributions:  56%|█████▌    | 112/200 [00:08<00:06, 13.53it/s][A
+Attributions:  57%|█████▋    | 114/200 [00:08<00:06, 13.73it/s][A
+Attributions:  58%|█████▊    | 116/200 [00:08<00:06, 13.80it/s][A
+Attributions:  59%|█████▉    | 118/200 [00:08<00:05, 13.92it/s][A
+Attributions:  60%|██████    | 120/200 [00:08<00:05, 14.03it/s][A
+Attributions:  61%|██████    | 122/200 [00:08<00:05, 13.96it/s][A
+Attributions:  62%|██████▏   | 124/200 [00:09<00:05, 13.92it/s][A
+Attributions:  63%|██████▎   | 126/200 [00:09<00:05, 13.98it/s][A
+Attributions:  64%|██████▍   | 128/200 [00:09<00:05, 14.04it/s][A
+Attributions:  65%|██████▌   | 130/200 [00:09<00:05, 13.81it/s][A
+Attributions:  66%|██████▌   | 132/200 [00:09<00:04, 13.69it/s][A
+Attributions:  67%|██████▋   | 134/200 [00:09<00:04, 13.45it/s][A
+Attributions:  68%|██████▊   | 136/200 [00:09<00:04, 13.29it/s][A
+Attributions:  69%|██████▉   | 138/200 [00:10<00:04, 13.30it/s][A
+Attributions:  70%|███████   | 140/200 [00:10<00:04, 13.51it/s][A
+Attributions:  71%|███████   | 142/200 [00:10<00:04, 13.56it/s][A
+Attributions:  72%|███████▏  | 144/200 [00:10<00:04, 13.49it/s][A
+Attributions:  73%|███████▎  | 146/200 [00:10<00:03, 13.54it/s][A
+Attributions:  74%|███████▍  | 148/200 [00:10<00:03, 13.41it/s][A
+Attributions:  75%|███████▌  | 150/200 [00:10<00:03, 13.61it/s][A
+Attributions:  76%|███████▌  | 152/200 [00:11<00:03, 13.52it/s][A
+Attributions:  77%|███████▋  | 154/200 [00:11<00:03, 13.64it/s][A
+Attributions:  78%|███████▊  | 156/200 [00:11<00:03, 13.50it/s][A
+Attributions:  79%|███████▉  | 158/200 [00:11<00:03, 13.39it/s][A
+Attributions:  80%|████████  | 160/200 [00:11<00:03, 13.21it/s][A
+Attributions:  81%|████████  | 162/200 [00:11<00:02, 13.51it/s][A
+Attributions:  82%|████████▏ | 164/200 [00:12<00:02, 13.46it/s][A
+Attributions:  83%|████████▎ | 166/200 [00:12<00:02, 13.71it/s][A
+Attributions:  84%|████████▍ | 168/200 [00:12<00:02, 13.70it/s][A
+Attributions:  85%|████████▌ | 170/200 [00:12<00:02, 13.65it/s][A
+Attributions:  86%|████████▌ | 172/200 [00:12<00:02, 13.63it/s][A
+Attributions:  87%|████████▋ | 174/200 [00:12<00:01, 13.52it/s][A
+Attributions:  88%|████████▊ | 176/200 [00:12<00:01, 13.75it/s][A
+Attributions:  89%|████████▉ | 178/200 [00:13<00:01, 13.61it/s][A
+Attributions:  90%|█████████ | 180/200 [00:13<00:01, 13.70it/s][A
+Attributions:  91%|█████████ | 182/200 [00:13<00:01, 13.69it/s][A
+Attributions:  92%|█████████▏| 184/200 [00:13<00:01, 13.60it/s][A
+Attributions:  93%|█████████▎| 186/200 [00:13<00:01, 13.64it/s][A
+Attributions:  94%|█████████▍| 188/200 [00:13<00:00, 13.56it/s][A
+Attributions:  95%|█████████▌| 190/200 [00:13<00:00, 13.44it/s][A
+Attributions:  96%|█████████▌| 192/200 [00:14<00:00, 13.34it/s][A
+Attributions:  97%|█████████▋| 194/200 [00:14<00:00, 13.27it/s][A
+Attributions:  98%|█████████▊| 196/200 [00:14<00:00, 13.44it/s][A
+Attributions:  99%|█████████▉| 198/200 [00:14<00:00, 13.47it/s][A
+Attributions: 100%|██████████| 200/200 [00:14<00:00, 13.57it/s][AAttributions: 100%|██████████| 200/200 [00:14<00:00, 13.65it/s]
+Layers:  75%|███████▌  | 3/4 [00:53<00:17, 17.65s/it]
+Attributions:   0%|          | 0/200 [00:00<?, ?it/s][A
+Attributions:   1%|          | 2/200 [00:00<00:16, 11.96it/s][A
+Attributions:   2%|▏         | 4/200 [00:00<00:15, 12.81it/s][A
+Attributions:   3%|▎         | 6/200 [00:00<00:14, 13.42it/s][A
+Attributions:   4%|▍         | 8/200 [00:00<00:14, 13.68it/s][A
+Attributions:   5%|▌         | 10/200 [00:00<00:13, 13.88it/s][A
+Attributions:   6%|▌         | 12/200 [00:00<00:13, 13.87it/s][A
+Attributions:   7%|▋         | 14/200 [00:01<00:13, 14.03it/s][A
+Attributions:   8%|▊         | 16/200 [00:01<00:13, 13.77it/s][A
+Attributions:   9%|▉         | 18/200 [00:01<00:13, 13.92it/s][A
+Attributions:  10%|█         | 20/200 [00:01<00:12, 14.11it/s][A
+Attributions:  11%|█         | 22/200 [00:01<00:12, 13.88it/s][A
+Attributions:  12%|█▏        | 24/200 [00:01<00:12, 14.04it/s][A
+Attributions:  13%|█▎        | 26/200 [00:01<00:12, 13.99it/s][A
+Attributions:  14%|█▍        | 28/200 [00:02<00:12, 13.88it/s][A
+Attributions:  15%|█▌        | 30/200 [00:02<00:12, 13.99it/s][A
+Attributions:  16%|█▌        | 32/200 [00:02<00:12, 13.89it/s][A
+Attributions:  17%|█▋        | 34/200 [00:02<00:12, 13.66it/s][A
+Attributions:  18%|█▊        | 36/200 [00:02<00:11, 13.73it/s][A
+Attributions:  19%|█▉        | 38/200 [00:02<00:12, 13.32it/s][A
+Attributions:  20%|██        | 40/200 [00:02<00:11, 13.46it/s][A
+Attributions:  21%|██        | 42/200 [00:03<00:11, 13.49it/s][A
+Attributions:  22%|██▏       | 44/200 [00:03<00:11, 13.66it/s][A
+Attributions:  23%|██▎       | 46/200 [00:03<00:11, 13.62it/s][A
+Attributions:  24%|██▍       | 48/200 [00:03<00:11, 13.70it/s][A
+Attributions:  25%|██▌       | 50/200 [00:03<00:11, 13.35it/s][A
+Attributions:  26%|██▌       | 52/200 [00:03<00:10, 13.52it/s][A
+Attributions:  27%|██▋       | 54/200 [00:03<00:10, 13.58it/s][A
+Attributions:  28%|██▊       | 56/200 [00:04<00:10, 13.73it/s][A
+Attributions:  29%|██▉       | 58/200 [00:04<00:10, 13.90it/s][A
+Attributions:  30%|███       | 60/200 [00:04<00:10, 13.72it/s][A
+Attributions:  31%|███       | 62/200 [00:04<00:10, 13.41it/s][A
+Attributions:  32%|███▏      | 64/200 [00:04<00:10, 13.41it/s][A
+Attributions:  33%|███▎      | 66/200 [00:04<00:09, 13.42it/s][A
+Attributions:  34%|███▍      | 68/200 [00:04<00:09, 13.73it/s][A
+Attributions:  35%|███▌      | 70/200 [00:05<00:09, 13.51it/s][A
+Attributions:  36%|███▌      | 72/200 [00:05<00:09, 13.72it/s][A
+Attributions:  37%|███▋      | 74/200 [00:05<00:09, 13.46it/s][A
+Attributions:  38%|███▊      | 76/200 [00:05<00:09, 13.31it/s][A
+Attributions:  39%|███▉      | 78/200 [00:05<00:09, 13.36it/s][A
+Attributions:  40%|████      | 80/200 [00:05<00:08, 13.58it/s][A
+Attributions:  41%|████      | 82/200 [00:06<00:08, 13.28it/s][A
+Attributions:  42%|████▏     | 84/200 [00:06<00:08, 13.61it/s][A
+Attributions:  43%|████▎     | 86/200 [00:06<00:08, 13.83it/s][A
+Attributions:  44%|████▍     | 88/200 [00:06<00:08, 13.79it/s][A
+Attributions:  45%|████▌     | 90/200 [00:06<00:07, 13.88it/s][A
+Attributions:  46%|████▌     | 92/200 [00:06<00:07, 13.79it/s][A
+Attributions:  47%|████▋     | 94/200 [00:06<00:07, 13.92it/s][A
+Attributions:  48%|████▊     | 96/200 [00:07<00:07, 14.05it/s][A
+Attributions:  49%|████▉     | 98/200 [00:07<00:07, 14.17it/s][A
+Attributions:  50%|█████     | 100/200 [00:07<00:07, 14.24it/s][A
+Attributions:  51%|█████     | 102/200 [00:07<00:06, 14.09it/s][A
+Attributions:  52%|█████▏    | 104/200 [00:07<00:06, 13.97it/s][A
+Attributions:  53%|█████▎    | 106/200 [00:07<00:06, 13.98it/s][A
+Attributions:  54%|█████▍    | 108/200 [00:07<00:06, 13.93it/s][A
+Attributions:  55%|█████▌    | 110/200 [00:08<00:06, 13.87it/s][A
+Attributions:  56%|█████▌    | 112/200 [00:08<00:06, 14.01it/s][A
+Attributions:  57%|█████▋    | 114/200 [00:08<00:06, 14.01it/s][A
+Attributions:  58%|█████▊    | 116/200 [00:08<00:05, 14.07it/s][A
+Attributions:  59%|█████▉    | 118/200 [00:08<00:05, 14.09it/s][A
+Attributions:  60%|██████    | 120/200 [00:08<00:05, 14.14it/s][A
+Attributions:  61%|██████    | 122/200 [00:08<00:05, 13.80it/s][A
+Attributions:  62%|██████▏   | 124/200 [00:09<00:05, 13.67it/s][A
+Attributions:  63%|██████▎   | 126/200 [00:09<00:05, 13.93it/s][A
+Attributions:  64%|██████▍   | 128/200 [00:09<00:05, 13.98it/s][A
+Attributions:  65%|██████▌   | 130/200 [00:09<00:04, 14.12it/s][A
+Attributions:  66%|██████▌   | 132/200 [00:09<00:04, 13.88it/s][A
+Attributions:  67%|██████▋   | 134/200 [00:09<00:04, 13.70it/s][A
+Attributions:  68%|██████▊   | 136/200 [00:09<00:04, 13.72it/s][A
+Attributions:  69%|██████▉   | 138/200 [00:10<00:04, 13.63it/s][A
+Attributions:  70%|███████   | 140/200 [00:10<00:04, 13.71it/s][A
+Attributions:  71%|███████   | 142/200 [00:10<00:04, 13.60it/s][A
+Attributions:  72%|███████▏  | 144/200 [00:10<00:04, 13.65it/s][A
+Attributions:  73%|███████▎  | 146/200 [00:10<00:03, 13.89it/s][A
+Attributions:  74%|███████▍  | 148/200 [00:10<00:03, 13.76it/s][A
+Attributions:  75%|███████▌  | 150/200 [00:10<00:03, 13.70it/s][A
+Attributions:  76%|███████▌  | 152/200 [00:11<00:03, 13.62it/s][A
+Attributions:  77%|███████▋  | 154/200 [00:11<00:03, 13.71it/s][A
+Attributions:  78%|███████▊  | 156/200 [00:11<00:03, 13.45it/s][A
+Attributions:  79%|███████▉  | 158/200 [00:11<00:03, 13.46it/s][A
+Attributions:  80%|████████  | 160/200 [00:11<00:02, 13.50it/s][A
+Attributions:  81%|████████  | 162/200 [00:11<00:02, 13.77it/s][A
+Attributions:  82%|████████▏ | 164/200 [00:11<00:02, 13.87it/s][A
+Attributions:  83%|████████▎ | 166/200 [00:12<00:02, 13.94it/s][A
+Attributions:  84%|████████▍ | 168/200 [00:12<00:02, 13.94it/s][A
+Attributions:  85%|████████▌ | 170/200 [00:12<00:02, 13.91it/s][A
+Attributions:  86%|████████▌ | 172/200 [00:12<00:01, 14.01it/s][A
+Attributions:  87%|████████▋ | 174/200 [00:12<00:01, 13.61it/s][A
+Attributions:  88%|████████▊ | 176/200 [00:12<00:01, 13.42it/s][A
+Attributions:  89%|████████▉ | 178/200 [00:12<00:01, 13.35it/s][A
+Attributions:  90%|█████████ | 180/200 [00:13<00:01, 13.24it/s][A
+Attributions:  91%|█████████ | 182/200 [00:13<00:01, 13.37it/s][A
+Attributions:  92%|█████████▏| 184/200 [00:13<00:01, 13.38it/s][A
+Attributions:  93%|█████████▎| 186/200 [00:13<00:01, 13.41it/s][A
+Attributions:  94%|█████████▍| 188/200 [00:13<00:00, 13.51it/s][A
+Attributions:  95%|█████████▌| 190/200 [00:13<00:00, 13.70it/s][A
+Attributions:  96%|█████████▌| 192/200 [00:13<00:00, 13.88it/s][A
+Attributions:  97%|█████████▋| 194/200 [00:14<00:00, 13.75it/s][A
+Attributions:  98%|█████████▊| 196/200 [00:14<00:00, 13.88it/s][A
+Attributions:  99%|█████████▉| 198/200 [00:14<00:00, 13.90it/s][A
+Attributions: 100%|██████████| 200/200 [00:14<00:00, 13.93it/s][AAttributions: 100%|██████████| 200/200 [00:14<00:00, 13.73it/s]
+Layers: 100%|██████████| 4/4 [01:09<00:00, 17.09s/it]Layers: 100%|██████████| 4/4 [01:09<00:00, 17.34s/it]
++----------------------------------------------------------------------------------------+
+|                       Model: resnet50v2; Class: NV; Examples: NV                       |
++------------------------+------------------+--------------------+-----------------------+
+|        Concept         |      Layer       |    Attrib. mean    |   Attrib. 95.45% CI   |
++------------------------+------------------+--------------------+-----------------------+
+| ruler_present/positive | conv5_block1_out | 0.0103 +- 0.00909  | ['0.00906', '0.0116'] |
+|                        | conv5_block2_out |       0 +- 0       |       ['0', '0']      |
+|                        | conv5_block3_out |       0 +- 0       |       ['0', '0']      |
+|                        |    post_relu     | 0.00141 +- 0.00205 | ['0.00112', '0.0017'] |
++------------------------+------------------+--------------------+-----------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched_short_ruler_cavseed123/vtcav_global_ruler_short_ruler_NV.png
+Results JSON saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched_short_ruler_cavseed123/results.json
+
+============================================================
+All classes complete. [padonly_seed2_rulerbias_matched_short_ruler, cavseed123]
+Results: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched_short_ruler_cavseed123
+Cache  : /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_padonly_seed2_rulerbias_matched_short_ruler_cavseed123/cache
+============================================================

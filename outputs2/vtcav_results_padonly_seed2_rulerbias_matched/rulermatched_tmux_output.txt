@@ -1,0 +1,102 @@
+skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$ conda init
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/condabin/conda
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/bin/conda
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/bin/conda-env
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/bin/activate
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/bin/deactivate
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/etc/profile.d/conda.sh
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/etc/fish/conf.d/conda.fish
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/shell/condabin/Conda.psm1
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/shell/condabin/conda-hook.ps1
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/lib/python3.13/site-packages/xontrib/conda.xsh
+no change     /home/student/s/skakkar/scratch/dev-uos/miniconda/etc/profile.d/conda.csh
+no change     /home/student/s/skakkar/.bashrc
+No action taken.
+skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$ conda activate vtcav
+_derma
+
+CondaError: Run 'conda init' before 'conda activate'
+
+skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$ source ~/.bashrc
+(base) skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$ conda activat
+e vtcav_derma
+(vtcav_derma) skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$
+(vtcav_derma) skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$ python
+ VisualTCAV_derma_global_ruler_bias_matched.py
+Corrected concept set: 580 positive, 580 negative (paired, from /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/concept_i
+mages_ruler_matched)
+Symlinked model to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_padonly_seed2_rulerbias_matched/models
+/resnet50v2/resnet50v2_isic2019_final.keras
+Labels file written: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_padonly_seed2_rulerbias_matched/model
+s/resnet50v2/isic2019_classes.txt
+2026-08-20 01:58:27.611793: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to
+register factory for plugin cuDNN when one has already been registered
+2026-08-20 01:58:27.611839: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to r
+egister factory for plugin cuFFT when one has already been registered
+2026-08-20 01:58:27.613047: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting t
+o register factory for plugin cuBLAS when one has already been registered
+VisualTCAV imported successfully.
+
+
+============================================================
+GlobalVisualTCAV [padonly_seed2_rulerbias_matched] — class: MEL (1327 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_
+out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Layers:   0%|                                                                                                         | 0/4 [00:00<?, ?it/s]
+    CAV val acc (20 runs): 0.716 +- 0.070
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:20<00:00,  9.84it/s]
+Layers:  25%|████████████████████████▎                                                                        | 1/4 [00:30<01:32, 30.83s/it]
+    CAV val acc (20 runs): 0.693 +- 0.074
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:15<00:00, 12.96it/s]
+Layers:  50%|████████████████████████████████████████████████▌                                                | 2/4 [00:57<00:57, 28.57s/it]
+    CAV val acc (20 runs): 0.682 +- 0.068
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:15<00:00, 13.08it/s]
+Layers:  75%|████████████████████████████████████████████████████████████████████████▊                        | 3/4 [01:23<00:27, 27.43s/it]
+    CAV val acc (20 runs): 0.724 +- 0.073
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:14<00:00, 13.37it/s]
+Layers: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [01:45<00:00, 26.38s/it]
++------------------------------------------------------------------------------------------+
+|                       Model: resnet50v2; Class: MEL; Examples: MEL                       |
++------------------------+------------------+---------------------+------------------------+
+|        Concept         |      Layer       |     Attrib. mean    |   Attrib. 95.45% CI    |
++------------------------+------------------+---------------------+------------------------+
+| ruler_present/positive | conv5_block1_out | 0.000358 +- 0.00282 |   ['0', '0.000756']    |
+|                        | conv5_block2_out |        0 +- 0       |       ['0', '0']       |
+|                        | conv5_block3_out |        0 +- 0       |       ['0', '0']       |
+|                        |    post_relu     |  0.000819 +- 0.0027 | ['0.000438', '0.0012'] |
++------------------------+------------------+---------------------+------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched/vtcav_
+global_ruler_matched_MEL.png
+
+============================================================
+GlobalVisualTCAV [padonly_seed2_rulerbias_matched] — class: NV (2495 images)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_
+out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:18<00:00, 11.01it/s]
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:15<00:00, 13.18it/s]
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:14<00:00, 13.47it/s]
+Attributions: 100%|███████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:14<00:00, 13.82it/s]
+Layers: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [01:08<00:00, 17.21s/it]
++--------------------------------------------------------------------------------------------+
+|                         Model: resnet50v2; Class: NV; Examples: NV                         |
++------------------------+------------------+---------------------+--------------------------+
+|        Concept         |      Layer       |     Attrib. mean    |    Attrib. 95.45% CI     |
++------------------------+------------------+---------------------+--------------------------+
+| ruler_present/positive | conv5_block1_out |  0.00576 +- 0.00467 |  ['0.00509', '0.00642']  |
+|                        | conv5_block2_out | 2.62e-06 +- 3.7e-05 |    ['0', '7.86e-06']     |
+|                        | conv5_block3_out |        0 +- 0       |        ['0', '0']        |
+|                        |    post_relu     | 0.000191 +- 0.00106 | ['4.22e-05', '0.000341'] |
++------------------------+------------------+---------------------+--------------------------+
+Plot saved: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched/vtcav_
+global_ruler_matched_NV.png
+
+============================================================
+All classes complete. [padonly_seed2_rulerbias_matched]
+Results: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_results_padonly_seed2_rulerbias_matched
+Cache  : /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vtcav_padonly_seed2_rulerbias_matched/cache
+============================================================
+(vtcav_derma) skakkar@voxel:/net/projects/scratch/summer/valid_until_31_January_2027/skakkar/dev-uos/projects/VTCAV_Dermatology/src2$
