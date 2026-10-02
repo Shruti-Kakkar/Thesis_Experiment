@@ -9,7 +9,6 @@ The code builds on the original Visual-TCAV implementation by De Santis et al. (
 ## Branches
 
 - `main` holds the code as used for the submitted thesis. The tag `thesis_submission` marks that state.
-- `thesis_final` is identical to `main`.
 - The remaining branches hold the development history of individual experiments.
 
 ## Repository layout
