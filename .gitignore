@@ -242,3 +242,10 @@ concept_images_ruler/
 *.h5
 *.keras
 *.zip
+
+# Regenerable activation / IG caches written by the ttest scripts
+ig_cache/
+fmap_cache/
+
+# Local backups of results from before the emblem-clip fix
+*.PRECLIPFIX_BACKUP.json
