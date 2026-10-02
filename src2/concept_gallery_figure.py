@@ -42,11 +42,8 @@ import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 import PIL.Image
 
-PROJECT_ROOT = os.path.expanduser("~/scratch/dev-uos/projects/VTCAV_Dermatology")
-THESIS_IMAGES_DIR = os.path.expanduser(
-    "~/scratch/dev-uos/projects/Master_Thesis/Latex/"
-    "Cognitive_Science_Universitaet_Osnabrueck/images"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+THESIS_IMAGES_DIR = os.path.join(PROJECT_ROOT, "outputs2", "thesis_figures")
 
 DERM7PT_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images")
 RULER_CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_ruler_matched")

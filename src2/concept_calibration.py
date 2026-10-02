@@ -49,7 +49,7 @@ from sklearn.metrics import roc_curve, auc
 # ---------------------------------------------------------------------------
 # PROJECT-WIDE CONFIG (should not need to change between concept runs)
 # ---------------------------------------------------------------------------
-PROJECT_ROOT = "/home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "src"))
 from VisualTCAV import Model, LocalVisualTCAV, preprocess_resnet_v2

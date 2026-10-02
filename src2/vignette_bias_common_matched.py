@@ -37,9 +37,7 @@ for _gpu in tf.config.list_physical_devices('GPU'):
 
 MODEL_TAG = "padonly_seed2_vignette_matched"
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCE_MODEL_PATH = os.path.join(
     PROJECT_ROOT, "models2", "resnet50v2_isic2019_final_padonly_seed2.keras"
 )

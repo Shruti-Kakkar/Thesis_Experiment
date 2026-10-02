@@ -25,9 +25,7 @@ Author: Shruti Kakkar
 import os
 import tensorflow as tf
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
 MAX_EXAMPLES = 200  # must match the Global script's Model(max_examples=...)
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, "outputs2", "ruler_bias_test_image_lists")

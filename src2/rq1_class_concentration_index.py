@@ -31,7 +31,7 @@ import os
 
 import numpy as np
 
-PROJECT_ROOT = os.path.expanduser("~/scratch/dev-uos/projects/VTCAV_Dermatology")
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TTEST_RESULTS = os.path.join(
     PROJECT_ROOT, "outputs2",
     "vtcav_ttest_proper_ig_padonly_seed2_hardneg_randomsample",

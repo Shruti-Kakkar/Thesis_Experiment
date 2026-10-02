@@ -12,9 +12,7 @@ import pandas as pd
 # ─────────────────────────────────────────────
 # PATHS — hardcoded absolute paths for reliability
 # ─────────────────────────────────────────────
-PROJECT_ROOT  = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEST_INPUT    = os.path.join(PROJECT_ROOT, "datasets",
                              "ISIC_2019_Test_Input",
                              "ISIC_2019_Test_Input")

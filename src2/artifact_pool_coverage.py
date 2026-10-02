@@ -19,9 +19,7 @@ import os
 import re
 import pandas as pd
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SORTED_DIR = os.path.join(PROJECT_ROOT, "datasets", "ruler_sorted")
 GROUND_TRUTH = os.path.join(PROJECT_ROOT, "datasets", "ISIC_2019_Training_GroundTruth.csv")
 OUT_PATH = os.path.join(PROJECT_ROOT, "outputs2", "artifact_pool_coverage.json")

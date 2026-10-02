@@ -48,9 +48,7 @@ import json
 import numpy as np
 from joblib import dump
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
 
 SRC_DIR = os.path.join(PROJECT_ROOT, "src")

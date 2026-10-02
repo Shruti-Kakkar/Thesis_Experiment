@@ -59,9 +59,7 @@ MODEL_TAG = f"padonly_seed2_rulerbias_matched_{CATEGORY}"
 # ─────────────────────────────────────────────
 # 1. PATHS
 # ─────────────────────────────────────────────
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SOURCE_MODEL_PATH = os.path.join(
     PROJECT_ROOT, "models2", "resnet50v2_isic2019_final_padonly_seed2.keras"
