@@ -45,9 +45,7 @@ MODEL_TAG = "padonly_seed2_hardneg"
 # ─────────────────────────────────────────────
 # 1. PATHS
 # ─────────────────────────────────────────────
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Source model: from models2/ (the padding-only training line), NOT models/
 SOURCE_MODEL_PATH = os.path.join(

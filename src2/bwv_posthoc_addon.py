@@ -15,12 +15,13 @@ Adds two things to your existing BWV result:
      RESTRICT_TO_CORRECT_PREDICTIONS filter quietly bias the 56/57 split?)
 """
 
+import os
 import pandas as pd
 import numpy as np
 from scipy.stats import fisher_exact
 from sklearn.metrics import roc_curve
 
-PROJECT_ROOT = "/home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 META_PATH = f"{PROJECT_ROOT}/datasets/release_v0/meta/meta.csv"
 TRAIN_IDX_PATH = f"{PROJECT_ROOT}/datasets/release_v0/meta/train_indexes.csv"
 ATTRIBUTIONS_CSV = f"{PROJECT_ROOT}/outputs2/bwv_calibration/bwv_calibration_attributions.csv"

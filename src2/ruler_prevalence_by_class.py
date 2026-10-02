@@ -31,9 +31,7 @@ import pandas as pd
 # ─────────────────────────────────────────────
 # 0. CONFIG — fill in your actual ruler-sorted folder paths
 # ─────────────────────────────────────────────
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRAIN_CSV = os.path.join(PROJECT_ROOT, "datasets", "ISIC_2019_Training_GroundTruth.csv")
 
 # TODO: set this to wherever your four sorted folders actually live

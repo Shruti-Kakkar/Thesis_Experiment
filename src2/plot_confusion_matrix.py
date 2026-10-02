@@ -27,9 +27,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPORT_PATH = os.path.join(PROJECT_ROOT, "outputs2", "classification_report_PadOnly_seed2.txt")
 OUT_PATH = os.path.join(PROJECT_ROOT, "outputs2", "confusion_matrix_seed2.png")
 

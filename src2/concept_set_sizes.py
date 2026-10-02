@@ -18,9 +18,7 @@ sys.dont_write_bytecode = True
 import json
 import os
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images")
 OUT_PATH = os.path.join(PROJECT_ROOT, "outputs2", "concept_set_sizes.json")
 
