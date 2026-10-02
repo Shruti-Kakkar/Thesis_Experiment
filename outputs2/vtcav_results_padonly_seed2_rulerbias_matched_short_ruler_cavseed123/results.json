@@ -1,0 +1,86 @@
+{
+  "category": "short_ruler",
+  "cav_seed": 123,
+  "n_positive": 116,
+  "n_negative": 116,
+  "cav_val_acc": {
+    "conv5_block1_out": {
+      "mean": 0.4645833333333334,
+      "std": 0.06817945071647322
+    },
+    "conv5_block2_out": {
+      "mean": 0.4520833333333333,
+      "std": 0.06817945071647322
+    },
+    "conv5_block3_out": {
+      "mean": 0.453125,
+      "std": 0.075655411699656
+    },
+    "post_relu": {
+      "mean": 0.3864583333333333,
+      "std": 0.04906902380547448
+    }
+  },
+  "attribution": {
+    "MEL": {
+      "conv5_block1_out": {
+        "mean": 0.0008552750223316252,
+        "std": 0.0073271021246910095,
+        "ci_begin": 0.0,
+        "ci_end": 0.001891483785584569,
+        "n_images": 200
+      },
+      "conv5_block2_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "conv5_block3_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "post_relu": {
+        "mean": 0.004582128021866083,
+        "std": 0.006104900036007166,
+        "ci_begin": 0.003718764754012227,
+        "ci_end": 0.005445491522550583,
+        "n_images": 200
+      }
+    },
+    "NV": {
+      "conv5_block1_out": {
+        "mean": 0.010349376127123833,
+        "std": 0.009086226113140583,
+        "ci_begin": 0.009064389392733574,
+        "ci_end": 0.011634362861514091,
+        "n_images": 200
+      },
+      "conv5_block2_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "conv5_block3_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "post_relu": {
+        "mean": 0.001411156845279038,
+        "std": 0.0020511227194219828,
+        "ci_begin": 0.0011210843222215772,
+        "ci_end": 0.0017012293683364987,
+        "n_images": 200
+      }
+    }
+  }
+}

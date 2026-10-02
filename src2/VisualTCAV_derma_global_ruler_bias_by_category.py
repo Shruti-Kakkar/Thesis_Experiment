@@ -43,10 +43,10 @@ parser.add_argument('--cav-seed', type=int, default=42,
                      help="base seed for the 20 CAV train/val splits (run i uses "
                           "cav_seed+i) -- change to check whether a val_acc result "
                           "is a stable property of the concept or a fluke of one "
-                          "particular set of splits. NOTE: the CAV cache key does "
-                          "NOT include the seed, so the cache for this category must "
-                          "be cleared before rerunning with a different seed, or the "
-                          "old cached result will be silently reused.")
+                          "particular set of splits. The CAV cache key does NOT "
+                          "include the seed, so cache and results directories are "
+                          "suffixed with _cavseed<N> to keep seeds from overwriting "
+                          "each other.")
 args = parser.parse_args()
 CATEGORY = args.category
 CAV_SEED = args.cav_seed
@@ -67,11 +67,15 @@ SOURCE_MODEL_PATH = os.path.join(
     PROJECT_ROOT, "models2", "resnet50v2_isic2019_final_padonly_seed2.keras"
 )
 
-VTCAV_DIR       = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_{MODEL_TAG}")
+# Per-seed suffix: the CAV cache key excludes the seed, so a shared cache dir
+# would silently reuse another seed's CAVs (and a shared results dir would
+# overwrite its outputs).
+SEED_TAG = f"cavseed{CAV_SEED}"
+VTCAV_DIR       = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_{MODEL_TAG}_{SEED_TAG}")
 MODELS_DIR      = os.path.join(VTCAV_DIR, "models")
 CACHE_DIR       = os.path.join(VTCAV_DIR, "cache")
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")  # shared, unchanged
-RESULTS_DIR     = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_results_{MODEL_TAG}")
+RESULTS_DIR     = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_results_{MODEL_TAG}_{SEED_TAG}")
 
 CONCEPT_DIR = os.path.join(PROJECT_ROOT, f"concept_images_ruler_matched_{CATEGORY}")
 
@@ -122,6 +126,10 @@ SRC_DIR = os.path.join(PROJECT_ROOT, "src")
 sys.path.insert(0, SRC_DIR)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import json
+import numpy as np
+from joblib import load
+
 from VisualTCAV import GlobalVisualTCAV, Model
 from tensorflow.keras.applications.resnet_v2 import (
     preprocess_input as preprocess_resnet_v2
@@ -151,6 +159,15 @@ LAYERS = [
 # ─────────────────────────────────────────────
 # 7. RUN GLOBAL VISUAL-TCAV PER CLASS
 # ─────────────────────────────────────────────
+results = {
+    "category": CATEGORY,
+    "cav_seed": CAV_SEED,
+    "n_positive": n_pos,
+    "n_negative": n_neg,
+    "cav_val_acc": {},
+    "attribution": {},
+}
+
 for target_class in CLASSES:
 
     test_class_dir = os.path.join(TEST_IMAGES_DIR, target_class)
@@ -202,14 +219,45 @@ for target_class in CLASSES:
 
     global_visual_tcav.statsInfo()
 
+    results["attribution"][target_class] = {}
+    for concept_name in CONCEPTS:
+        for layer_name in LAYERS:
+            stat = global_visual_tcav.stats[layer_name][concept_name]
+            results["attribution"][target_class][layer_name] = {
+                "mean": float(stat.mean),
+                "std": float(stat.std),
+                "ci_begin": float(stat.begin),
+                "ci_end": float(stat.end),
+                "n_images": int(stat.n),
+            }
+
     plot_path = os.path.join(RESULTS_DIR, f"vtcav_global_ruler_{CATEGORY}_{target_class}.png")
     global_visual_tcav.plot()
     plt.savefig(plot_path, dpi=150, bbox_inches='tight')
     plt.close('all')
     print(f"Plot saved: {plot_path}")
 
+# CAV val_acc per layer, read back from the cached CAVs (not kept on the
+# GlobalVisualTCAV object after explain())
+concept_root = CONCEPTS[0].split('/')[0]
+for layer_name in LAYERS:
+    cav_path = os.path.join(
+        CACHE_DIR, "resnet50v2",
+        f"cav_{concept_root}_positive_200_neg_20runs_{layer_name}.joblib",
+    )
+    val_accs = np.asarray(load(cav_path).cav.val_accs)
+    results["cav_val_acc"][layer_name] = {
+        "mean": float(val_accs.mean()),
+        "std": float(val_accs.std()),
+    }
+
+results_path = os.path.join(RESULTS_DIR, "results.json")
+with open(results_path, "w") as f:
+    json.dump(results, f, indent=2)
+print(f"Results JSON saved: {results_path}")
+
 print(f"\n{'='*60}")
-print(f"All classes complete. [{MODEL_TAG}]")
+print(f"All classes complete. [{MODEL_TAG}, {SEED_TAG}]")
 print(f"Results: {RESULTS_DIR}")
 print(f"Cache  : {CACHE_DIR}")
 print(f"{'='*60}")

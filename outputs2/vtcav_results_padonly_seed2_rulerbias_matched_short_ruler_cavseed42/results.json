@@ -1,0 +1,86 @@
+{
+  "category": "short_ruler",
+  "cav_seed": 42,
+  "n_positive": 116,
+  "n_negative": 116,
+  "cav_val_acc": {
+    "conv5_block1_out": {
+      "mean": 0.45624999999999993,
+      "std": 0.05625
+    },
+    "conv5_block2_out": {
+      "mean": 0.4364583333333333,
+      "std": 0.0670156879436118
+    },
+    "conv5_block3_out": {
+      "mean": 0.4322916666666667,
+      "std": 0.07819441360765131
+    },
+    "post_relu": {
+      "mean": 0.3802083333333333,
+      "std": 0.05347109486546083
+    }
+  },
+  "attribution": {
+    "MEL": {
+      "conv5_block1_out": {
+        "mean": 0.00030874807271175086,
+        "std": 0.0028006613720208406,
+        "ci_begin": 0.0,
+        "ci_end": 0.0007048214320093393,
+        "n_images": 200
+      },
+      "conv5_block2_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "conv5_block3_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "post_relu": {
+        "mean": 0.00893933791667223,
+        "std": 0.007630327250808477,
+        "ci_begin": 0.007860247045755386,
+        "ci_end": 0.010018428787589073,
+        "n_images": 200
+      }
+    },
+    "NV": {
+      "conv5_block1_out": {
+        "mean": 0.004426254890859127,
+        "std": 0.0043817684054374695,
+        "ci_begin": 0.003806579392403364,
+        "ci_end": 0.00504593038931489,
+        "n_images": 200
+      },
+      "conv5_block2_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "conv5_block3_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "post_relu": {
+        "mean": 0.003219037316739559,
+        "std": 0.002795363776385784,
+        "ci_begin": 0.0028237132355570793,
+        "ci_end": 0.003614361397922039,
+        "n_images": 200
+      }
+    }
+  }
+}
