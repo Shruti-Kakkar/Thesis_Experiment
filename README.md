@@ -75,7 +75,14 @@ python src2/train_new_padonly_multiseed.py --seed 2
 python src2/train_new_padonly_multiseed.py --seed 3
 ```
 
-Every Visual-TCAV analysis uses `models2/resnet50v2_isic2019_final_padonly_seed2.keras`.
+Every Visual-TCAV analysis uses `models2/resnet50v2_isic2019_final_padonly_seed2.keras`. The trained model is attached to the [`thesis_submission` release](https://github.com/Shruti-Kakkar/Thesis_Experiment/releases/tag/thesis_submission). Place it at that path to skip training:
+
+```bash
+mkdir -p models2
+wget -P models2 https://github.com/Shruti-Kakkar/Thesis_Experiment/releases/download/thesis_submission/resnet50v2_isic2019_final_padonly_seed2.keras
+sha256sum models2/resnet50v2_isic2019_final_padonly_seed2.keras
+# 010f490034df8c99e91e50bc1179c59a929f02c706f9742f87a2eabe6960cb6b
+```
 
 ### 3. Clinical concepts (RQ1, RQ2, RQ4)
 
