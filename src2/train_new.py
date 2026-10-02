@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/train_new_padOnly.py / src2/train_new_padonly_multiseed.py (padding-only change, without the extra rotation augmentation).
+# Kept as a record of how the work developed.
+
 """
 train_new.py
 ResNet50V2 fine-tuning on ISIC 2019 for 8-class skin lesion classification.
