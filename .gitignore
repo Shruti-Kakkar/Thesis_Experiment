@@ -222,6 +222,11 @@ datasets/
 models/
 concept_images/
 concept_images_ruler_matched/
+concept_images_ruler_matched_lesion_side/
+concept_images_ruler_matched_short_ruler/
+concept_images_ruler_matched_thick_edge/
+concept_images_ruler_matched_ticks_edge/
+concept_images_vignette_matched/
 outputs/vtcav/
 
 # Padding-only line and any future MODEL_TAG variants under outputs2/ --

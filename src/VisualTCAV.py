@@ -792,13 +792,13 @@ class GlobalVisualTCAV(VisualTCAV):
 	def __init__(
 		self,
 		target_class, test_images_folder, m_steps=50, compute_negative_class=False,
-		n_cav_runs=20,
+		n_cav_runs=20, cav_seed=42,
 		*args, **kwargs
 	):
-		
+
 		# Super
 		super().__init__(**kwargs)
-		
+
 		# Local attributes
 		self.m_steps = m_steps
 		self.target_class = target_class
@@ -813,6 +813,13 @@ class GlobalVisualTCAV(VisualTCAV):
 		# positive and negative image sets — following Lucieri et al. (2020)
 		# who repeated CAV training 20 times per concept.
 		self.n_cav_runs = n_cav_runs
+		# MODIFICATION: base seed for _compute_cavs' per-run splits (run i
+		# uses cav_seed + i). Defaults to 42 (the previous hardcoded value)
+		# so existing scripts are unaffected; exposed here so a CAV can be
+		# retrained with an independent random draw, e.g. to check whether
+		# a low val_acc is a stable property of a concept or a fluke of one
+		# particular set of 20 splits.
+		self.cav_seed = cav_seed
 		
 		self.predictions = []
 		self.stats = {}
@@ -844,7 +851,7 @@ class GlobalVisualTCAV(VisualTCAV):
 				# CAVs with n_cav_runs splits
 				concept_layer = self._compute_cavs(
 					cache_cav, concept_name, layer_name,
-					n_runs=self.n_cav_runs
+					n_runs=self.n_cav_runs, seed=self.cav_seed
 				)
 
 				cavs[concept_name] = concept_layer

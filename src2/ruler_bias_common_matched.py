@@ -7,10 +7,18 @@ run's (VisualTCAV._compute_cavs()'s cache key is concept_name + n_runs +
 layer + max_examples, NOT concept_images_dir -- reusing the original
 MODEL_TAG here would silently reload the confounded CAV).
 
-Test images explained (TEST_IMAGES_DIR, N_PER_CLASS=25 each of MEL/NV)
-are UNCHANGED from ruler_bias_common.py -- only the CAV's training
-source differs. Imported by ruler_bias_local_screening_matched.py and
-ruler_bias_finalize_matched.py, mirroring the original pair.
+Test images (TEST_IMAGES_DIR, N_PER_CLASS=25 each of MEL/NV) are a
+SEEDED RANDOM sample per class, not the first N files alphabetically
+(that was this script's original approach -- ruler_bias_common.py's --
+and it turned out to be a real bug: filenames are clustered by
+acquisition batch, so "first 25 alphabetically" drew 0/25 square
+(real-vignette-style) images against a true population rate of ~85%
+(MEL) / ~59% (NV) square, completely missing the acquisition style
+where a related confound is large -- see the vignette screening's
+identical bug and its fix for the full story. A random sample is
+representative in expectation instead. Imported by
+ruler_bias_local_screening_matched.py and ruler_bias_finalize_matched.py,
+mirroring the original pair.
 
 Author: Shruti Kakkar
 """
@@ -19,6 +27,8 @@ import sys
 sys.dont_write_bytecode = True
 
 import os
+
+import numpy as np
 
 # Shared GPU on this machine -- claim memory incrementally instead of
 # grabbing it all upfront, so we can coexist with other processes'
@@ -80,13 +90,21 @@ LAYERS = ["post_relu"]   # only -- keeps this fast, matches ruler_bias_common.py
 N_PER_CLASS = 25
 N_TOP_TO_PLOT = 3         # generate full heatmaps only for the top N MEL outliers
 
+SCREENING_SAMPLE_SEED = 11  # seeded so the random sample is reproducible
+
 RESULTS_CSV = os.path.join(RESULTS_DIR, "attributions.csv")
 
 
 def pick_test_images(class_name, n):
     class_dir = os.path.join(TEST_IMAGES_DIR, class_name)
     files = sorted(f for f in os.listdir(class_dir) if f.lower().endswith('.jpg'))
-    return files[:n]
+    # offset derived from characters, not Python's hash() -- string hashing
+    # is randomized per-process (PYTHONHASHSEED) unless disabled, which
+    # would make this "seeded" sample silently non-reproducible across runs
+    class_offset = sum(ord(c) for c in class_name)
+    rng = np.random.default_rng(SCREENING_SAMPLE_SEED + class_offset)
+    idx = rng.choice(len(files), size=min(n, len(files)), replace=False)
+    return [files[i] for i in sorted(idx)]
 
 
 def build_targets():
