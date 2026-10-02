@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/regenerate_local_heatmap_figures_larger_fonts.py (same figures, larger fonts -- the version in the thesis).
+# Kept as a record of how the work developed.
+
 """
 regenerate_local_heatmap_figures.py
 

@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: nothing -- one-off visual check of resize_with_pad output, not a reported result.
+# Kept as a record of how the work developed.
+
 """
 sanity_check_resize_real_images.py
 

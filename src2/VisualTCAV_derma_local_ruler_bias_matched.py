@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/ruler_bias_ground_truth_verification_matched.py + ruler_bias_top_attribution_heatmaps_matched.py (400 hand-labelled images instead of 8 hand-picked ones).
+# Kept as a record of how the work developed.
+
 """
 VisualTCAV_derma_local_ruler_bias_matched.py
 Same as VisualTCAV_derma_local_ruler_bias.py, but explains images using

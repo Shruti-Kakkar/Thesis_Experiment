@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/VisualTCAV_derma_global_padonly_seed2.py (Global run on the padding-preserving model with hard-negative CAVs).
+# Kept as a record of how the work developed.
+
 """
 VisualTCAV_derma_global.py
 Runs GlobalVisualTCAV on the trained ResNet50V2 model for all

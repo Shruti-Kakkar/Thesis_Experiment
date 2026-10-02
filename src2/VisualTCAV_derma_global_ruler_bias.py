@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/VisualTCAV_derma_global_ruler_bias_matched.py (ruler_present CAV rebuilt from paired synthetic overlays; this version's real-photo concept set was confounded).
+# Kept as a record of how the work developed.
+
 """
 VisualTCAV_derma_global_ruler_bias.py
 Layer 2 of the bias-detection experiment: trains a 'ruler_present' CAV
