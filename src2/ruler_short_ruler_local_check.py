@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: nothing -- diagnostic heatmap for the short_ruler CAV, not a reported result.
+# Kept as a record of how the work developed.
+
 """
 ruler_short_ruler_local_check.py
 Diagnostic check (not a formal reported result) on the short_ruler

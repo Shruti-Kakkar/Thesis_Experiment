@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/ruler_bias_local_screening_matched.py (corrected ruler_present CAV).
+# Kept as a record of how the work developed.
+
 """
 ruler_bias_local_screening.py
 Scoring stage of the ruler-bias local screen. Run ruler_bias_finalize.py

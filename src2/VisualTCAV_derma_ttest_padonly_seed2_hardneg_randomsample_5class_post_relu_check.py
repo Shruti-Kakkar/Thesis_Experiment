@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/VisualTCAV_derma_ttest_padonly_seed2_hardneg_randomsample.py (full random-sample rerun over all classes and layers).
+# Kept as a record of how the work developed.
+
 """
 VisualTCAV_derma_ttest_padonly_seed2_hardneg_randomsample_5class_post_relu_check.py
 

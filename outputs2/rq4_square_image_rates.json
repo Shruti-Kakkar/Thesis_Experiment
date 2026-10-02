@@ -1,0 +1,36 @@
+{
+  "full_pool": {
+    "MEL": {
+      "square": 1135,
+      "total": 1327,
+      "pct": 85.53127354935945
+    },
+    "NV": {
+      "square": 1463,
+      "total": 2495,
+      "pct": 58.637274549098194
+    }
+  },
+  "screening_samples": {
+    "biased (files[:n])": {
+      "MEL": {
+        "square": 0,
+        "total": 25
+      },
+      "NV": {
+        "square": 0,
+        "total": 25
+      }
+    },
+    "corrected (random)": {
+      "MEL": {
+        "square": 22,
+        "total": 25
+      },
+      "NV": {
+        "square": 18,
+        "total": 25
+      }
+    }
+  }
+}

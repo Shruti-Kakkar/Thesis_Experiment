@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/ruler_bias_finalize_matched.py (corrected ruler_present CAV).
+# Kept as a record of how the work developed.
+
 """
 ruler_bias_finalize.py
 Second stage of the ruler-bias local screen: reads the attributions CSV

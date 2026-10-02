@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/ruler_bias_common_matched.py (corrected ruler_present CAV).
+# Kept as a record of how the work developed.
+
 """
 ruler_bias_common.py
 Shared setup for the ruler-bias local screening pipeline: paths, model
