@@ -48,9 +48,7 @@ import json
 import numpy as np
 from joblib import dump
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
 
 SRC_DIR = os.path.join(PROJECT_ROOT, "src")
@@ -74,12 +72,16 @@ RUNS = [
     {"label": "ruler_present (pooled)",     "model_tag": "padonly_seed2_rulerbias_matched",
      "concept_dir": "concept_images_ruler_matched",              "concept": "ruler_present/positive"},
     {"label": "ruler_present (thick_edge)", "model_tag": "padonly_seed2_rulerbias_matched_thick_edge",
+     "cav_seed": 42,
      "concept_dir": "concept_images_ruler_matched_thick_edge",   "concept": "ruler_present/positive"},
     {"label": "ruler_present (lesion_side)","model_tag": "padonly_seed2_rulerbias_matched_lesion_side",
+     "cav_seed": 42,
      "concept_dir": "concept_images_ruler_matched_lesion_side",  "concept": "ruler_present/positive"},
     {"label": "ruler_present (ticks_edge)", "model_tag": "padonly_seed2_rulerbias_matched_ticks_edge",
+     "cav_seed": 42,
      "concept_dir": "concept_images_ruler_matched_ticks_edge",   "concept": "ruler_present/positive"},
     {"label": "ruler_present (short_ruler)","model_tag": "padonly_seed2_rulerbias_matched_short_ruler",
+     "cav_seed": 123,
      "concept_dir": "concept_images_ruler_matched_short_ruler",  "concept": "ruler_present/positive"},
     {"label": "vignette_present",           "model_tag": "padonly_seed2_vignette_matched",
      "concept_dir": "concept_images_vignette_matched",           "concept": "vignette_present/positive"},
@@ -110,7 +112,10 @@ for run in RUNS:
     model_tag = run["model_tag"]
     print(f"\n{'='*60}\n{label}  [{model_tag}]\n{'='*60}")
 
-    vtcav_dir = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_{model_tag}")
+    # Per-style CAVs live in per-seed directories written by
+    # VisualTCAV_derma_global_ruler_bias_by_category.py --cav-seed <N>
+    vtcav_name = f"vtcav_{model_tag}" + (f"_cavseed{run['cav_seed']}" if "cav_seed" in run else "")
+    vtcav_dir = os.path.join(PROJECT_ROOT, "outputs2", vtcav_name)
     models_dir = os.path.join(vtcav_dir, "models")
     cache_dir = os.path.join(vtcav_dir, "cache")
     concept_dir = os.path.join(PROJECT_ROOT, run["concept_dir"])

@@ -31,9 +31,7 @@ import os
 import numpy as np
 from joblib import load
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_TAG = "padonly_seed2_hardneg"
 CACHE_DIR = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_{MODEL_TAG}", "cache", "resnet50v2")
 RESULTS_PATH = os.path.join(

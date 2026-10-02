@@ -40,7 +40,7 @@ from sklearn.metrics import roc_curve, auc
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-PROJECT_ROOT = "/home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # VisualTCAV.py lives in src/, this script lives in src2/, and it's not an
 # installed package (verified `import VisualTCAV` fails without this) --

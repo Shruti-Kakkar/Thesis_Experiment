@@ -53,9 +53,7 @@ import numpy as np
 from joblib import load, dump
 import tensorflow as tf
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_TAG = "padonly_seed2_hardneg"
 VTCAV_DIR = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_{MODEL_TAG}")
 MODELS_DIR = os.path.join(VTCAV_DIR, "models")

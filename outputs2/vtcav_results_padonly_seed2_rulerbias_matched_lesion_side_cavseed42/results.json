@@ -1,0 +1,86 @@
+{
+  "category": "lesion_side",
+  "cav_seed": 42,
+  "n_positive": 174,
+  "n_negative": 174,
+  "cav_val_acc": {
+    "conv5_block1_out": {
+      "mean": 0.7699999999999999,
+      "std": 0.0610954422295517
+    },
+    "conv5_block2_out": {
+      "mean": 0.7364285714285713,
+      "std": 0.07388283609464215
+    },
+    "conv5_block3_out": {
+      "mean": 0.7278571428571428,
+      "std": 0.07497958905935806
+    },
+    "post_relu": {
+      "mean": 0.7964285714285715,
+      "std": 0.06418643127004083
+    }
+  },
+  "attribution": {
+    "MEL": {
+      "conv5_block1_out": {
+        "mean": 8.949348557507619e-05,
+        "std": 0.0007360402378253639,
+        "ci_begin": 0.0,
+        "ci_end": 0.0001935852924361825,
+        "n_images": 200
+      },
+      "conv5_block2_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "conv5_block3_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "post_relu": {
+        "mean": 0.0004428341635502875,
+        "std": 0.0016598342917859554,
+        "ci_begin": 0.00020809815032407641,
+        "ci_end": 0.0006775701767764986,
+        "n_images": 200
+      }
+    },
+    "NV": {
+      "conv5_block1_out": {
+        "mean": 0.002576702507212758,
+        "std": 0.0029441567603498697,
+        "ci_begin": 0.0021603358909487724,
+        "ci_end": 0.0029930691234767437,
+        "n_images": 200
+      },
+      "conv5_block2_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "conv5_block3_out": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_begin": 0.0,
+        "ci_end": 0.0,
+        "n_images": 200
+      },
+      "post_relu": {
+        "mean": 9.953088738257065e-05,
+        "std": 0.0005578335258178413,
+        "ci_begin": 2.064131695078686e-05,
+        "ci_end": 0.00017842045053839684,
+        "n_images": 200
+      }
+    }
+  }
+}

@@ -36,9 +36,7 @@ from prettytable import PrettyTable
 # ─────────────────────────────────────────────
 # 1. PATHS
 # ─────────────────────────────────────────────
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VTCAV_DIR    = os.path.join(PROJECT_ROOT, "outputs", "vtcav")
 MODELS_DIR   = os.path.join(VTCAV_DIR, "models")
 CACHE_DIR    = os.path.join(VTCAV_DIR, "cache", "resnet50v2")

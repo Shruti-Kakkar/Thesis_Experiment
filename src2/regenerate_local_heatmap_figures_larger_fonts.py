@@ -46,17 +46,15 @@ from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize
 from prettytable import PrettyTable  # noqa: F401 (kept for parity with driver scripts, unused here)
 
-PROJECT_ROOT = os.path.expanduser("~/scratch/dev-uos/projects/VTCAV_Dermatology")
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC_DIR = os.path.join(PROJECT_ROOT, "src")
 sys.path.insert(0, SRC_DIR)
 
 from VisualTCAV import LocalVisualTCAV, Model, colormap
 from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess_resnet_v2
 
-THESIS_IMAGES_DIR = os.path.expanduser(
-    "~/scratch/dev-uos/projects/Master_Thesis/Latex/"
-    "Cognitive_Science_Universitaet_Osnabrueck/images"
-)
+THESIS_IMAGES_DIR = os.path.join(PROJECT_ROOT, "outputs2", "thesis_figures")
+os.makedirs(THESIS_IMAGES_DIR, exist_ok=True)
 
 GRAPH_FILENAME = "resnet50v2_isic2019_final.keras"
 LABELS_FILENAME = "isic2019_classes.txt"

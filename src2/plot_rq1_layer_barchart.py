@@ -27,18 +27,13 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-PROJECT_ROOT = os.path.expanduser(
-    "~/scratch/dev-uos/projects/VTCAV_Dermatology"
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS_PATH = os.path.join(
     PROJECT_ROOT, "outputs2", "vtcav_ttest_proper_ig_padonly_seed2_hardneg_randomsample",
     "ttest_results_proper_ig_randomsample.json"
 )
-OUT_PATH = os.path.join(
-    PROJECT_ROOT, "..", "Master_Thesis", "Latex",
-    "Cognitive_Science_Universitaet_Osnabrueck", "images", "rq1_layer_barchart_MEL.png"
-)
-OUT_PATH = os.path.normpath(OUT_PATH)
+OUT_PATH = os.path.join(PROJECT_ROOT, "outputs2", "thesis_figures", "rq1_layer_barchart_MEL.png")
+os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 
 TARGET_CLASS = "MEL"
 N_IMAGES = 200
