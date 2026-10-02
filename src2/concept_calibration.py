@@ -5,8 +5,9 @@ Determines an empirically-grounded VTCAV attribution threshold for a given
 concept, by comparing per-image attribution scores between ground-truth
 concept-present vs concept-absent images of a target class.
 
-USAGE: set the six variables under "PER-RUN CONFIG" below for whichever
-concept you're calibrating, then run. No separate script needed per concept.
+USAGE: python concept_calibration.py --concept <name> for any of the eight
+concepts in CALIBRATION_CONFIGS, or set the variables under "PER-RUN CONFIG"
+below and run without arguments.
 
 Design:
   - Uses ONLY held-out (non-train-split) Derm7pt images, to avoid circularity
@@ -102,6 +103,28 @@ CONCEPT_NEGATIVE_VALUES = ["absent"]       # values counted as "concept absent"
 # sources); leave {} for concepts with simple absent-only negatives
 # (blue_whitish_veil, regression_structures, pigmentation, vascular_structures).
 EXTRA_NEGATIVE_CONCEPTS = {}
+
+# Per-concept settings for the eight calibrations in the RQ4 table
+# (blue_whitish_veil is calibrated by bwv_calibration.py). Pass
+# --concept <name> to use one; without it, the variables above apply.
+CALIBRATION_CONFIGS = {
+    "pigment_network_typical":     ("NV",  "pigment_network",       ["typical"],   {"pigment_network_typical": ["pigment_network_atypical/positive"]}),
+    "pigment_network_atypical":    ("MEL", "pigment_network",       ["atypical"],  {"pigment_network_atypical": ["pigment_network_typical/positive"]}),
+    "streaks_regular":             ("NV",  "streaks",               ["regular"],   {"streaks_regular": ["streaks_irregular/positive"]}),
+    "streaks_irregular":           ("MEL", "streaks",               ["irregular"], {"streaks_irregular": ["streaks_regular/positive"]}),
+    "pigmentation":                ("MEL", "pigmentation",          ["diffuse irregular", "localized irregular", "diffuse regular", "localized regular"], {}),
+    "regression_structures":       ("MEL", "regression_structures", ["blue areas", "white areas", "combinations"], {}),
+    "dots_and_globules_regular":   ("NV",  "dots_and_globules",     ["regular"],   {"dots_and_globules_regular": ["dots_and_globules_irregular/positive"]}),
+    "dots_and_globules_irregular": ("MEL", "dots_and_globules",     ["irregular"], {"dots_and_globules_irregular": ["dots_and_globules_regular/positive"]}),
+}
+import argparse
+_parser = argparse.ArgumentParser()
+_parser.add_argument("--concept", choices=sorted(CALIBRATION_CONFIGS))
+_args = _parser.parse_args()
+if _args.concept:
+    CONCEPT = _args.concept
+    TARGET_CLASS, CONCEPT_META_COLUMN, CONCEPT_POSITIVE_VALUES, EXTRA_NEGATIVE_CONCEPTS = CALIBRATION_CONFIGS[CONCEPT]
+    CONCEPT_NEGATIVE_VALUES = ["absent"]
 
 OUTPUT_DIR = f"{PROJECT_ROOT}/outputs2/{CONCEPT}_calibration"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
