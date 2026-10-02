@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: src2/VisualTCAV_derma_ttest_padonly_seed2_hardneg_randomsample.py (hard-negative CAVs, proper-IG attribution, random sampling).
+# Kept as a record of how the work developed.
+
 """
 VisualTCAV_derma_ttest_padonly_seed2.py
 Statistical significance testing for Visual-TCAV results -- padding-only

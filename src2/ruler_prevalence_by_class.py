@@ -1,3 +1,7 @@
+# SUPERSEDED: not used for any result in the submitted thesis.
+# Replaced by: nothing -- exploratory check of ruler prevalence in the training data; the thesis measures the model's ruler sensitivity directly via the counterfactual tests instead.
+# Kept as a record of how the work developed.
+
 """
 ruler_prevalence_by_class.py
 Layer 1 of the ruler-bias experiment: before touching the model at all,

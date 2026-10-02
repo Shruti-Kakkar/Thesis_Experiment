@@ -1,0 +1,90 @@
+{
+  "conv5_block1_out": {
+    "n_cells": 80,
+    "zero_cells": 55,
+    "zero_via_emblem_check": 8,
+    "zero_via_class_weight": 47,
+    "emblem_check_fails": [
+      "vascular_structures"
+    ],
+    "significant_cells": 13,
+    "significant_inverse": 7,
+    "significant_correct": 6,
+    "nonzero_range": [
+      2.327975324498346e-05,
+      0.00854739267611876
+    ]
+  },
+  "conv5_block2_out": {
+    "n_cells": 80,
+    "zero_cells": 80,
+    "zero_via_emblem_check": 16,
+    "zero_via_class_weight": 64,
+    "emblem_check_fails": [
+      "regression_structures",
+      "vascular_structures"
+    ],
+    "significant_cells": 0,
+    "significant_inverse": 0,
+    "significant_correct": 0,
+    "nonzero_range": null
+  },
+  "conv5_block3_out": {
+    "n_cells": 80,
+    "zero_cells": 80,
+    "zero_via_emblem_check": 16,
+    "zero_via_class_weight": 64,
+    "emblem_check_fails": [
+      "regression_structures",
+      "vascular_structures"
+    ],
+    "significant_cells": 0,
+    "significant_inverse": 0,
+    "significant_correct": 0,
+    "nonzero_range": null
+  },
+  "post_relu": {
+    "n_cells": 80,
+    "zero_cells": 0,
+    "zero_via_emblem_check": 0,
+    "zero_via_class_weight": 0,
+    "emblem_check_fails": [],
+    "significant_cells": 68,
+    "significant_inverse": 2,
+    "significant_correct": 66,
+    "nonzero_range": [
+      0.0001004285173961422,
+      0.03285802589889499
+    ]
+  },
+  "rq2_concept_comparison": {
+    "regression_structures": [
+      {
+        "class": "MEL",
+        "mean": 0.0001529456302523613,
+        "rand_mean": 0.0006409565641122754,
+        "inverse": true
+      },
+      {
+        "class": "NV",
+        "mean": 0.00022577713076316286,
+        "rand_mean": 0.014689928736983713,
+        "inverse": true
+      },
+      {
+        "class": "VASC",
+        "mean": 0.0,
+        "rand_mean": 0.0003883342814739221,
+        "inverse": true
+      }
+    ],
+    "streaks_regular": [
+      {
+        "class": "NV",
+        "mean": 0.00854739267611876,
+        "rand_mean": 4.270947876616447e-05,
+        "inverse": false
+      }
+    ]
+  }
+}

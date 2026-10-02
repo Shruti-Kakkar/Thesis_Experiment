@@ -1,0 +1,53 @@
+{
+  "pigment_network_typical": {
+    "positive": 160,
+    "negative": 160,
+    "augmented_negative": 253
+  },
+  "pigment_network_atypical": {
+    "positive": 93,
+    "negative": 160,
+    "augmented_negative": 320
+  },
+  "streaks_regular": {
+    "positive": 39,
+    "negative": 273,
+    "augmented_negative": 374
+  },
+  "streaks_irregular": {
+    "positive": 101,
+    "negative": 273,
+    "augmented_negative": 312
+  },
+  "pigmentation": {
+    "positive": 160,
+    "negative": 253,
+    "augmented_negative": null
+  },
+  "regression_structures": {
+    "positive": 96,
+    "negative": 317,
+    "augmented_negative": null
+  },
+  "dots_and_globules_regular": {
+    "positive": 156,
+    "negative": 84,
+    "augmented_negative": 257
+  },
+  "dots_and_globules_irregular": {
+    "positive": 173,
+    "negative": 84,
+    "augmented_negative": 240
+  },
+  "blue_whitish_veil": {
+    "positive": 74,
+    "negative": 339,
+    "augmented_negative": null
+  },
+  "vascular_structures": {
+    "positive": 66,
+    "negative": 347,
+    "augmented_negative": null
+  },
+  "random": 500
+}
