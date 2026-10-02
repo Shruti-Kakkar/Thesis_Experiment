@@ -1,24 +1,22 @@
 """
-ruler_bias_common_matched.py
-Same as ruler_bias_common.py, but points at the CORRECTED 'ruler_present'
-CAV -- concept_images_ruler_matched instead of concept_images_ruler, and
-a fresh MODEL_TAG so the CAV cache can't collide with the confounded
-run's (VisualTCAV._compute_cavs()'s cache key is concept_name + n_runs +
-layer + max_examples, NOT concept_images_dir -- reusing the original
-MODEL_TAG here would silently reload the confounded CAV).
+vignette_bias_common_matched.py
+Same role as ruler_bias_common_matched.py, but points at the
+'vignette_present' CAV -- concept_images_vignette_matched, and its own
+MODEL_TAG so the CAV cache can't collide with any other run's
+(VisualTCAV._compute_cavs()'s cache key is concept_name + n_runs +
+layer + max_examples, NOT concept_images_dir -- reusing another
+MODEL_TAG here would silently reload the wrong CAV).
 
 Test images (TEST_IMAGES_DIR, N_PER_CLASS=25 each of MEL/NV) are a
 SEEDED RANDOM sample per class, not the first N files alphabetically
-(that was this script's original approach -- ruler_bias_common.py's --
-and it turned out to be a real bug: filenames are clustered by
-acquisition batch, so "first 25 alphabetically" drew 0/25 square
-(real-vignette-style) images against a true population rate of ~85%
-(MEL) / ~59% (NV) square, completely missing the acquisition style
-where a related confound is large -- see the vignette screening's
-identical bug and its fix for the full story. A random sample is
-representative in expectation instead. Imported by
-ruler_bias_local_screening_matched.py and ruler_bias_finalize_matched.py,
-mirroring the original pair.
+(that was ruler_bias_common_matched.py's approach, and it turned out to
+be a real bug there too -- filenames are clustered by acquisition batch,
+so "first 25 alphabetically" drew 0/25 square (real-vignette-style)
+images against a true population rate of ~85% (MEL) / ~59% (NV) square,
+completely missing the acquisition style where the vignette effect is
+actually large). A random sample is representative in expectation
+instead. Imported by vignette_bias_local_screening_matched.py and
+vignette_bias_finalize_matched.py, mirroring the ruler-matched pair.
 
 Author: Shruti Kakkar
 """
@@ -37,7 +35,7 @@ import tensorflow as tf
 for _gpu in tf.config.list_physical_devices('GPU'):
     tf.config.experimental.set_memory_growth(_gpu, True)
 
-MODEL_TAG = "padonly_seed2_rulerbias_matched"
+MODEL_TAG = "padonly_seed2_vignette_matched"
 
 PROJECT_ROOT = os.path.expanduser(
     "~/scratch/dev-uos/projects/VTCAV_Dermatology"
@@ -49,17 +47,17 @@ VTCAV_DIR   = os.path.join(PROJECT_ROOT, "outputs2", f"vtcav_{MODEL_TAG}")
 MODELS_DIR  = os.path.join(VTCAV_DIR, "models")
 CACHE_DIR   = os.path.join(VTCAV_DIR, "cache")
 TEST_IMAGES_DIR = os.path.join(PROJECT_ROOT, "datasets", "test_images_by_class")
-CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_ruler_matched")
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "outputs2", "ruler_bias_local_screening_matched")
+CONCEPT_DIR = os.path.join(PROJECT_ROOT, "concept_images_vignette_matched")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "outputs2", "vignette_bias_local_screening_matched")
 
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
-positive_dir = os.path.join(CONCEPT_DIR, "ruler_present", "positive")
-negative_dir = os.path.join(CONCEPT_DIR, "ruler_present", "negative")
+positive_dir = os.path.join(CONCEPT_DIR, "vignette_present", "positive")
+negative_dir = os.path.join(CONCEPT_DIR, "vignette_present", "negative")
 if not (os.path.isdir(positive_dir) and os.path.isdir(negative_dir)):
     raise FileNotFoundError(
         f"Expected {positive_dir} and {negative_dir} -- run "
-        f"build_ruler_matched_concepts.py first."
+        f"build_vignette_matched_concepts.py first."
     )
 
 MODEL_SUBDIR    = os.path.join(MODELS_DIR, "resnet50v2")
@@ -85,12 +83,12 @@ from tensorflow.keras.applications.resnet_v2 import (
     preprocess_input as preprocess_resnet_v2
 )
 
-CONCEPTS = ["ruler_present/positive"]
-LAYERS = ["post_relu"]   # only -- keeps this fast, matches ruler_bias_common.py
+CONCEPTS = ["vignette_present/positive"]
+LAYERS = ["post_relu"]   # only -- keeps this fast, matches ruler_bias_common_matched.py
 N_PER_CLASS = 25
 N_TOP_TO_PLOT = 3         # generate full heatmaps only for the top N MEL outliers
 
-SCREENING_SAMPLE_SEED = 11  # seeded so the random sample is reproducible
+SCREENING_SAMPLE_SEED = 7  # seeded so the random sample is reproducible
 
 RESULTS_CSV = os.path.join(RESULTS_DIR, "attributions.csv")
 

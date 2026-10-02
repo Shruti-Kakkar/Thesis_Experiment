@@ -1,0 +1,82 @@
+2026-08-22 00:51:00.598391: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-08-22 00:51:00.598422: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-08-22 00:51:00.599641: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-22 00:51:00.605752: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-08-22 00:51:02.360524: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-08-22 00:51:05.441426: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11556 MB memory:  -> device: 0, name: NVIDIA GeForce GTX TITAN X, pci bus id: 0000:03:00.0, compute capability: 5.2
+2026-08-22 00:52:14.108122: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+============================================================
+Vignette Bias -- Counterfactual Overlay Test
+N images: 50 | Class tested: NV (checking P(MEL) shift)
+Vignette: radius_frac=0.58, feather_frac=0.08 (fixed, deterministic)
+============================================================
+  KerasModelWrapper: searching inside nested 'resnet50v2' sub-model for layers (architecture family: 'resnet50v2')
+  KerasModelWrapper: found 10 layer tensors: ['conv4_block1_out', 'conv4_block2_out', 'conv4_block3_out', 'conv4_block4_out', 'conv4_block5_out', 'conv4_block6_out', 'conv5_block1_out', 'conv5_block2_out', 'conv5_block3_out', 'post_relu']
+Model loaded. MEL class index: 0
+
+Found 50 clean, confirmed-NV images to test
+
+  [1/50] ISIC_0034322.jpg: P(MEL) clean=0.0003 -> vignette=0.0209 (shift=+0.0206)
+  [2/50] ISIC_0034324.jpg: P(MEL) clean=0.0111 -> vignette=0.1550 (shift=+0.1439)
+  [3/50] ISIC_0034325.jpg: P(MEL) clean=0.0004 -> vignette=0.0246 (shift=+0.0242)
+  [4/50] ISIC_0034328.jpg: P(MEL) clean=0.0187 -> vignette=0.3811 (shift=+0.3624)
+  [5/50] ISIC_0034330.jpg: P(MEL) clean=0.0063 -> vignette=0.1394 (shift=+0.1331)
+  [6/50] ISIC_0034331.jpg: P(MEL) clean=0.0017 -> vignette=0.5031 (shift=+0.5013)
+  [7/50] ISIC_0034335.jpg: P(MEL) clean=0.2257 -> vignette=0.2828 (shift=+0.0571)
+  [8/50] ISIC_0034336.jpg: P(MEL) clean=0.0030 -> vignette=0.1064 (shift=+0.1034)
+  [9/50] ISIC_0034337.jpg: P(MEL) clean=0.0002 -> vignette=0.0103 (shift=+0.0101)
+  [10/50] ISIC_0034339.jpg: P(MEL) clean=0.2196 -> vignette=0.5616 (shift=+0.3420)
+  [11/50] ISIC_0034340.jpg: P(MEL) clean=0.0711 -> vignette=0.0998 (shift=+0.0287)
+  [12/50] ISIC_0034341.jpg: P(MEL) clean=0.0588 -> vignette=0.0916 (shift=+0.0328)
+  [13/50] ISIC_0034342.jpg: P(MEL) clean=0.0030 -> vignette=0.1533 (shift=+0.1503)
+  [14/50] ISIC_0034347.jpg: P(MEL) clean=0.0016 -> vignette=0.0813 (shift=+0.0797)
+  [15/50] ISIC_0034348.jpg: P(MEL) clean=0.0066 -> vignette=0.0779 (shift=+0.0713)
+  [16/50] ISIC_0034349.jpg: P(MEL) clean=0.0008 -> vignette=0.0755 (shift=+0.0747)
+  [17/50] ISIC_0034350.jpg: P(MEL) clean=0.0025 -> vignette=0.0078 (shift=+0.0053)
+  [18/50] ISIC_0034351.jpg: P(MEL) clean=0.0004 -> vignette=0.0207 (shift=+0.0203)
+  [19/50] ISIC_0034352.jpg: P(MEL) clean=0.0002 -> vignette=0.0087 (shift=+0.0085)
+  [20/50] ISIC_0034355.jpg: P(MEL) clean=0.3561 -> vignette=0.4294 (shift=+0.0733)
+  [21/50] ISIC_0034356.jpg: P(MEL) clean=0.0006 -> vignette=0.0420 (shift=+0.0414)
+  [22/50] ISIC_0034357.jpg: P(MEL) clean=0.0163 -> vignette=0.3160 (shift=+0.2997)
+  [23/50] ISIC_0034359.jpg: P(MEL) clean=0.4035 -> vignette=0.8120 (shift=+0.4085)
+  [24/50] ISIC_0034364.jpg: P(MEL) clean=0.0030 -> vignette=0.0083 (shift=+0.0053)
+  [25/50] ISIC_0034365.jpg: P(MEL) clean=0.0345 -> vignette=0.2840 (shift=+0.2496)
+  [26/50] ISIC_0034367.jpg: P(MEL) clean=0.0001 -> vignette=0.0094 (shift=+0.0094)
+  [27/50] ISIC_0034369.jpg: P(MEL) clean=0.0006 -> vignette=0.0008 (shift=+0.0001)
+  [28/50] ISIC_0034372.jpg: P(MEL) clean=0.0050 -> vignette=0.0527 (shift=+0.0477)
+  [29/50] ISIC_0034374.jpg: P(MEL) clean=0.0001 -> vignette=0.0652 (shift=+0.0651)
+  [30/50] ISIC_0034377.jpg: P(MEL) clean=0.0000 -> vignette=0.0015 (shift=+0.0015)
+  [31/50] ISIC_0034378.jpg: P(MEL) clean=0.4224 -> vignette=0.5875 (shift=+0.1651)
+  [32/50] ISIC_0034379.jpg: P(MEL) clean=0.2355 -> vignette=0.3696 (shift=+0.1341)
+  [33/50] ISIC_0034380.jpg: P(MEL) clean=0.0001 -> vignette=0.0556 (shift=+0.0555)
+  [34/50] ISIC_0034385.jpg: P(MEL) clean=0.0000 -> vignette=0.0002 (shift=+0.0002)
+  [35/50] ISIC_0034389.jpg: P(MEL) clean=0.0001 -> vignette=0.0053 (shift=+0.0053)
+  [36/50] ISIC_0034391.jpg: P(MEL) clean=0.0050 -> vignette=0.0416 (shift=+0.0366)
+  [37/50] ISIC_0034392.jpg: P(MEL) clean=0.1645 -> vignette=0.3222 (shift=+0.1577)
+  [38/50] ISIC_0034393.jpg: P(MEL) clean=0.2562 -> vignette=0.2676 (shift=+0.0115)
+  [39/50] ISIC_0034395.jpg: P(MEL) clean=0.0915 -> vignette=0.1982 (shift=+0.1067)
+  [40/50] ISIC_0034397.jpg: P(MEL) clean=0.0097 -> vignette=0.3680 (shift=+0.3583)
+  [41/50] ISIC_0034399.jpg: P(MEL) clean=0.0002 -> vignette=0.0539 (shift=+0.0537)
+  [42/50] ISIC_0034400.jpg: P(MEL) clean=0.0621 -> vignette=0.3090 (shift=+0.2469)
+  [43/50] ISIC_0034401.jpg: P(MEL) clean=0.0000 -> vignette=0.0016 (shift=+0.0016)
+  [44/50] ISIC_0034403.jpg: P(MEL) clean=0.0000 -> vignette=0.0003 (shift=+0.0003)
+  [45/50] ISIC_0034407.jpg: P(MEL) clean=0.0007 -> vignette=0.0709 (shift=+0.0702)
+  [46/50] ISIC_0034408.jpg: P(MEL) clean=0.0001 -> vignette=0.0461 (shift=+0.0460)
+  [47/50] ISIC_0034412.jpg: P(MEL) clean=0.0008 -> vignette=0.0810 (shift=+0.0802)
+  [48/50] ISIC_0034414.jpg: P(MEL) clean=0.0224 -> vignette=0.0653 (shift=+0.0429)
+  [49/50] ISIC_0034415.jpg: P(MEL) clean=0.0023 -> vignette=0.2027 (shift=+0.2004)
+  [50/50] ISIC_0034417.jpg: P(MEL) clean=0.0005 -> vignette=0.0669 (shift=+0.0664)
+
+============================================================
+RESULTS
+============================================================
+Mean P(MEL), clean:          0.0545
+Mean P(MEL), vignette added: 0.1587
+Mean shift:                  +0.1042  (std=0.1202)
+Paired t-test:               t=6.066, p=0.000000
+Significant at α=0.05?       YES
+Images that crossed the MEL decision boundary (P<0.5 -> P>=0.5) purely from the overlay: 4/50
+
+Results saved to: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_counterfactual_test_set
+Example before/after image pairs: /home/student/s/skakkar/scratch/dev-uos/projects/VTCAV_Dermatology/outputs2/vignette_bias_counterfactual_test_set/example_images
