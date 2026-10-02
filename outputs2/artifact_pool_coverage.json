@@ -1,0 +1,9 @@
+{
+  "reviewed_pool": 1972,
+  "isic_id_range": [
+    0,
+    13778
+  ],
+  "training_set": 25331,
+  "pct_of_training_set": 7.784927559117287
+}
