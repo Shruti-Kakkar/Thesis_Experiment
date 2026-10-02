@@ -1,0 +1,3302 @@
+{
+  "pigment_network_typical": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 5.115857813507319e-05,
+        "std": 0.0007216805548465852,
+        "rand_mean": 0.0004991951429343316,
+        "rand_std": 0.0004925421173900055,
+        "t_statistic": -5.150126476116351,
+        "p_value": 1.192163345175377e-06,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0022658075975050453,
+        "std": 0.004882531429694834,
+        "rand_mean": 0.011775087187898112,
+        "rand_std": 0.011951761855773924,
+        "t_statistic": -5.45844495406256,
+        "p_value": 1.2914562398212374e-06,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0002975438223354733,
+        "rand_std": 0.0003076083825553211,
+        "t_statistic": -6.770968785201216,
+        "p_value": 1.5018845908289917e-08,
+        "significant": true,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.015050972566577912,
+        "std": 0.018171193587036498,
+        "rand_mean": 0.001658989166426022,
+        "rand_std": 0.002506903166700072,
+        "t_statistic": 10.01659624006892,
+        "p_value": 8.993150565352955e-20,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.017561227603837323,
+        "std": 0.015511987989644017,
+        "rand_mean": 0.001134364007706924,
+        "rand_std": 0.00176250289443567,
+        "t_statistic": 14.561867410425036,
+        "p_value": 5.2838680354163025e-34,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.004295383115785967,
+        "std": 0.004632693135692808,
+        "rand_mean": 0.0011836676702930958,
+        "rand_std": 0.002626346126812411,
+        "t_statistic": 6.240707419523301,
+        "p_value": 5.370582274220974e-09,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.008227861703180678,
+        "std": 0.011110313009026762,
+        "rand_mean": 0.0010045936542710933,
+        "rand_std": 0.0022567442473513852,
+        "t_statistic": 8.48778678398739,
+        "p_value": 2.0848411433473644e-15,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.006578288290656928,
+        "std": 0.007350910094771727,
+        "rand_mean": 0.0009755812042953778,
+        "rand_std": 0.0019480759279417868,
+        "t_statistic": 9.484050974700658,
+        "p_value": 2.1414843333551725e-18,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.004586684843141503,
+        "std": 0.012671105440308535,
+        "rand_mean": 0.0002578721056383634,
+        "rand_std": 0.0005254647228439144,
+        "t_statistic": 3.2358675196949642,
+        "p_value": 0.0016942128802209064,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.0013801369023685066,
+        "std": 0.004026038176491014,
+        "rand_mean": 0.00043835462262235906,
+        "rand_std": 0.0007777323691637734,
+        "t_statistic": 2.2860880247226443,
+        "p_value": 0.024029280206379885,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0056276982501885595,
+        "std": 0.008489107859616643,
+        "rand_mean": 0.000839585064702574,
+        "rand_std": 0.0020564811917768533,
+        "t_statistic": 6.6036413634777205,
+        "p_value": 3.290007363206939e-10,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "pigment_network_atypical": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.00042185595259070397,
+        "std": 0.003608718137798776,
+        "rand_mean": 4.577679895446636e-05,
+        "rand_std": 0.000102267866940734,
+        "t_statistic": 1.4677285551365675,
+        "p_value": 0.1437465410682156,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0021691916944109836,
+        "std": 0.0041038023839265105,
+        "rand_mean": 0.00026558273135669883,
+        "rand_std": 0.0006709234450766153,
+        "t_statistic": 6.21498644156222,
+        "p_value": 2.339644455753532e-09,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 2.8406921326397704e-05,
+        "std": 0.00028829876423971577,
+        "rand_mean": 1.5391471567384614e-05,
+        "rand_std": 3.41819522637769e-05,
+        "t_statistic": 0.45155578182941253,
+        "p_value": 0.6524864070125395,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.026027957383776085,
+        "std": 0.01839381277213203,
+        "rand_mean": 0.0007505807093741168,
+        "rand_std": 0.0015320456074814559,
+        "t_statistic": 19.118479676229608,
+        "p_value": 7.755141359896491e-48,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.008803189270981875,
+        "std": 0.007550293058517291,
+        "rand_mean": 0.0005675487053941595,
+        "rand_std": 0.0011850062068511494,
+        "t_statistic": 14.67087489661837,
+        "p_value": 6.809364927105832e-35,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0031841882073058514,
+        "std": 0.005168765265403138,
+        "rand_mean": 0.00048815505000609957,
+        "rand_std": 0.0011311582764605018,
+        "t_statistic": 6.7324172436908905,
+        "p_value": 1.167077770962625e-10,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.003957394078879588,
+        "std": 0.006239387734377723,
+        "rand_mean": 0.0003621045180673718,
+        "rand_std": 0.0008693032106947363,
+        "t_statistic": 7.826021734106109,
+        "p_value": 1.9284353372797524e-13,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.007690417177545896,
+        "std": 0.008413807316546125,
+        "rand_mean": 0.0004166179703372791,
+        "rand_std": 0.0008122612999507403,
+        "t_statistic": 11.970933958294987,
+        "p_value": 1.3582440885117133e-25,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0001004285173961422,
+        "std": 0.00065482864766792,
+        "rand_mean": 7.69100594014482e-05,
+        "rand_std": 0.0001968255904690374,
+        "t_statistic": 0.3155470350744081,
+        "p_value": 0.7529111118045844,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.0007829168737841358,
+        "std": 0.0023764486458512646,
+        "rand_mean": 0.00020209298116257587,
+        "rand_std": 0.00043763331877652356,
+        "t_statistic": 2.3965247068130173,
+        "p_value": 0.018136177983722364,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0025434357265382776,
+        "std": 0.004991859203410807,
+        "rand_mean": 0.00033174588210390125,
+        "rand_std": 0.0007732427513293421,
+        "t_statistic": 5.458963270427881,
+        "p_value": 1.505585817691109e-07,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "streaks_regular": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.0002962460648268461,
+        "std": 0.0028134387810908193,
+        "rand_mean": 5.570541958877583e-06,
+        "rand_std": 1.9751854438938708e-05,
+        "t_statistic": 1.4573171274581134,
+        "p_value": 0.14660442041275282,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.00854739267611876,
+        "std": 0.013333936003719099,
+        "rand_mean": 4.270947876616447e-05,
+        "rand_std": 0.00018053441177283636,
+        "t_statistic": 8.994244890050192,
+        "p_value": 1.873028887395914e-16,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.00013084921878404342,
+        "std": 0.0013279745328162841,
+        "rand_mean": 1.0214002417901961e-05,
+        "rand_std": 2.888972647476892e-05,
+        "t_statistic": 0.9214824246176064,
+        "p_value": 0.35894769744948973,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.005098078347268711,
+        "std": 0.011696518089595683,
+        "rand_mean": 0.000723104615352031,
+        "rand_std": 0.0015083723674799699,
+        "t_statistic": 5.106852524973936,
+        "p_value": 7.027835109003613e-07,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0071791147095837,
+        "std": 0.010774346261842324,
+        "rand_mean": 0.0005257594561491544,
+        "rand_std": 0.0010821883655695499,
+        "t_statistic": 8.538015181122896,
+        "p_value": 2.5346461866275145e-15,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.00155026277930574,
+        "std": 0.0021873162189239553,
+        "rand_mean": 0.0005414132121654632,
+        "rand_std": 0.0015749555869260655,
+        "t_statistic": 3.692074436175132,
+        "p_value": 0.0003609633345054052,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.003132187799692474,
+        "std": 0.00484219222307435,
+        "rand_mean": 0.0004918034446378442,
+        "rand_std": 0.0015673748175434273,
+        "t_statistic": 6.442659812406565,
+        "p_value": 6.659336666284072e-10,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.0022686062144384777,
+        "std": 0.0038825158468916736,
+        "rand_mean": 0.00046669013126429486,
+        "rand_std": 0.0010439101858278543,
+        "t_statistic": 5.756357727439915,
+        "p_value": 2.542228937575023e-08,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0014724748539815115,
+        "std": 0.005449578864526342,
+        "rand_mean": 0.00011188946553599868,
+        "rand_std": 0.00030027251284756913,
+        "t_statistic": 2.3619820099218596,
+        "p_value": 0.020309322599184502,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.0018362463671610823,
+        "std": 0.004633313757237653,
+        "rand_mean": 0.00021904421858436125,
+        "rand_std": 0.00038752839112074706,
+        "t_statistic": 3.516586568963922,
+        "p_value": 0.0006447492171946234,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0009644734935136511,
+        "std": 0.0012100737599332872,
+        "rand_mean": 0.000539205940130876,
+        "rand_std": 0.002007095240484474,
+        "t_statistic": 1.4086541341675993,
+        "p_value": 0.1640978710211646,
+        "significant": false,
+        "zero_attribution": false
+      }
+    }
+  },
+  "streaks_irregular": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.0003043459728360176,
+        "std": 0.0025231011953671103,
+        "rand_mean": 6.829649194623925e-05,
+        "rand_std": 0.00015597959171179826,
+        "t_statistic": 1.309635495367082,
+        "p_value": 0.19178480256400401,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.001960518273881462,
+        "std": 0.003802653080206602,
+        "rand_mean": 0.0009618310281856339,
+        "rand_std": 0.002297655670327622,
+        "t_statistic": 2.3512952017066513,
+        "p_value": 0.020290849889788364,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 5.5216422949272855e-05,
+        "std": 0.0005603854891244394,
+        "rand_mean": 2.9265126084702878e-05,
+        "rand_std": 8.671865202912811e-05,
+        "t_statistic": 0.4585918611956257,
+        "p_value": 0.6474078611800425,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.018835363189346026,
+        "std": 0.015933661426722402,
+        "rand_mean": 0.0022194120662962177,
+        "rand_std": 0.0029238104066813342,
+        "t_statistic": 13.79760997032728,
+        "p_value": 3.030024560405786e-32,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.004885254108048684,
+        "std": 0.004264083103962841,
+        "rand_mean": 0.0017757567084071837,
+        "rand_std": 0.0024892799018625743,
+        "t_statistic": 6.662435244958105,
+        "p_value": 7.085894165785365e-10,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.006612916714220774,
+        "std": 0.00870158212109254,
+        "rand_mean": 0.0009025461263594706,
+        "rand_std": 0.0014658276158103253,
+        "t_statistic": 8.766116668202386,
+        "p_value": 3.790056999092045e-16,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.004251424774993211,
+        "std": 0.0057472073409508915,
+        "rand_mean": 0.0011192002232563482,
+        "rand_std": 0.0017380826767868813,
+        "t_statistic": 6.565000619259229,
+        "p_value": 3.189303200154585e-10,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.00674527820597632,
+        "std": 0.008042370139620282,
+        "rand_mean": 0.0012710796401570802,
+        "rand_std": 0.0016853004856798855,
+        "t_statistic": 8.845616568071005,
+        "p_value": 1.8499670883215308e-16,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0002104743775867014,
+        "std": 0.0009890578775264378,
+        "rand_mean": 0.00018079228065239524,
+        "rand_std": 0.0002960468501961252,
+        "t_statistic": 0.26382334307782346,
+        "p_value": 0.7923830496774771,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.002341282806373084,
+        "std": 0.004477880561833252,
+        "rand_mean": 0.0005057059763753213,
+        "rand_std": 0.0008285575578986598,
+        "t_statistic": 4.018164329729004,
+        "p_value": 0.00010406608180138022,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.003197795198657056,
+        "std": 0.004759597300462992,
+        "rand_mean": 0.0008237684156543131,
+        "rand_std": 0.001470669420542291,
+        "t_statistic": 5.560637273084005,
+        "p_value": 8.009298407851991e-08,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "pigmentation": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.00045188655145466327,
+        "std": 0.0037226096471993098,
+        "rand_mean": 0.00028337128678977024,
+        "rand_std": 0.00035413195076146976,
+        "t_statistic": 0.627163313968147,
+        "p_value": 0.5312247272011008,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.002892533929334604,
+        "std": 0.005100696607902461,
+        "rand_mean": 0.004751380029158861,
+        "rand_std": 0.006648399907075809,
+        "t_statistic": -1.8290866317758174,
+        "p_value": 0.07205318890815887,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.00027787674648257403,
+        "std": 0.002820140968512265,
+        "rand_mean": 0.0001421001710024519,
+        "rand_std": 0.00019892037109081799,
+        "t_statistic": 0.4860863924798339,
+        "p_value": 0.6279174756458132,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.010162379997127572,
+        "std": 0.010454496719975228,
+        "rand_mean": 0.006255885963924362,
+        "rand_std": 0.007937601524696773,
+        "t_statistic": 2.88378286945112,
+        "p_value": 0.004855366726102314,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0031910241580044383,
+        "std": 0.004142926501227589,
+        "rand_mean": 0.003855975106004257,
+        "rand_std": 0.005188315428224289,
+        "t_statistic": -0.8340541638704568,
+        "p_value": 0.4072959466652788,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.004249373934617324,
+        "std": 0.007168327148514934,
+        "rand_mean": 0.002807369460626091,
+        "rand_std": 0.004684487059235059,
+        "t_statistic": 1.7161115576390464,
+        "p_value": 0.08889218953347396,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.003764512604320771,
+        "std": 0.005058945625244155,
+        "rand_mean": 0.004258043314280957,
+        "rand_std": 0.006991274414088682,
+        "t_statistic": -0.4650745500064304,
+        "p_value": 0.6435023284957277,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.0063482271351858795,
+        "std": 0.00888806290704663,
+        "rand_mean": 0.003364981028638047,
+        "rand_std": 0.004588560632500341,
+        "t_statistic": 3.281137000655525,
+        "p_value": 0.0012861406237173894,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0004469134839162727,
+        "std": 0.0016246736679543007,
+        "rand_mean": 0.0004388639245384443,
+        "rand_std": 0.000785803115765435,
+        "t_statistic": 0.039310478159444155,
+        "p_value": 0.9686999242387544,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.005653637731274312,
+        "std": 0.008942135743612705,
+        "rand_mean": 0.0012339457311303808,
+        "rand_std": 0.0018689370719777749,
+        "t_statistic": 4.800576411292926,
+        "p_value": 4.5833520245404355e-06,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0030999954909709756,
+        "std": 0.004556780321931036,
+        "rand_mean": 0.0027264167339390213,
+        "rand_std": 0.004310305356346288,
+        "t_statistic": 0.5252983569764722,
+        "p_value": 0.6007534713314826,
+        "significant": false,
+        "zero_attribution": false
+      }
+    }
+  },
+  "regression_structures": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.0001529456302523613,
+        "std": 0.0018062117980042777,
+        "rand_mean": 0.0006409565641122754,
+        "rand_std": 0.0004826696014112501,
+        "t_statistic": -3.3557541741451167,
+        "p_value": 0.0009162580493451035,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.00022577713076316286,
+        "std": 0.001219388929309848,
+        "rand_mean": 0.014689928736983713,
+        "rand_std": 0.010940817595018502,
+        "t_statistic": -9.2401296888612,
+        "p_value": 2.4483434243381735e-12,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0003883342814739221,
+        "rand_std": 0.00031248156137544,
+        "t_statistic": -8.699201189190893,
+        "p_value": 1.662639956882375e-11,
+        "significant": true,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.03285802589889499,
+        "std": 0.01627438450019633,
+        "rand_mean": 0.0008150628183058188,
+        "rand_std": 0.0020163763449489295,
+        "t_statistic": 26.94772810419419,
+        "p_value": 8.539866467937571e-72,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.007688900436605763,
+        "std": 0.00606539544786107,
+        "rand_mean": 0.0008307099116642291,
+        "rand_std": 0.0019338816278356354,
+        "t_statistic": 13.419243187581827,
+        "p_value": 7.4663369590304735e-31,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.013992305417341413,
+        "std": 0.008616760692036622,
+        "rand_mean": 0.0003531559088151312,
+        "rand_std": 0.001022269284830797,
+        "t_statistic": 21.716970280049257,
+        "p_value": 1.3964326302863333e-56,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.018142895801101986,
+        "std": 0.014156323066017865,
+        "rand_mean": 0.0003571567219165445,
+        "rand_std": 0.0010431257920675491,
+        "t_statistic": 17.53120199364348,
+        "p_value": 8.135956654278408e-43,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.015730318227142562,
+        "std": 0.010344437904134949,
+        "rand_mean": 0.00047499896999324845,
+        "rand_std": 0.0012192105631440634,
+        "t_statistic": 20.24060553760981,
+        "p_value": 4.480496615736155e-52,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0010638433555908665,
+        "std": 0.003387587177769184,
+        "rand_mean": 6.27784138727053e-05,
+        "rand_std": 0.00018056613639964413,
+        "t_statistic": 2.7961650944662746,
+        "p_value": 0.006309585363885424,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.001384024581756631,
+        "std": 0.0026060498911743193,
+        "rand_mean": 0.00015636718277304543,
+        "rand_std": 0.0003376388570969088,
+        "t_statistic": 4.698760127068933,
+        "p_value": 7.613410577554185e-06,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.017459849655984506,
+        "std": 0.013581391811054853,
+        "rand_mean": 0.0002239240828764719,
+        "rand_std": 0.0006852686046801325,
+        "t_statistic": 16.183402054827237,
+        "p_value": 5.097824751432169e-36,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "dots_and_globules_regular": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.00010520716838072985,
+        "std": 0.0010963472838213374,
+        "rand_mean": 0.00022494732696030722,
+        "rand_std": 0.000372266402447732,
+        "t_statistic": -1.271509810964598,
+        "p_value": 0.2048489795389811,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.006766135047655553,
+        "std": 0.010523224544456611,
+        "rand_mean": 0.004063931755827071,
+        "rand_std": 0.007608707589085529,
+        "t_statistic": 2.049741769318326,
+        "p_value": 0.04299308925975741,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 2.327975324498346e-05,
+        "std": 0.00023626369134544084,
+        "rand_mean": 0.00011485386129397037,
+        "rand_std": 0.00019794254441321744,
+        "t_statistic": -2.5001551183648743,
+        "p_value": 0.013846648413750889,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.011092145283691934,
+        "std": 0.017232569779506986,
+        "rand_mean": 0.00658028792277221,
+        "rand_std": 0.009504919986382206,
+        "t_statistic": 2.4702531015303606,
+        "p_value": 0.014719668438579026,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.01823567422451504,
+        "std": 0.018820129451871576,
+        "rand_mean": 0.003911412576933572,
+        "rand_std": 0.004733223680643236,
+        "t_statistic": 9.577005221693659,
+        "p_value": 1.0911678890349736e-18,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0006044287929512393,
+        "std": 0.0014998835269061017,
+        "rand_mean": 0.002930416210815423,
+        "rand_std": 0.004269468275613541,
+        "t_statistic": -3.7569125899196454,
+        "p_value": 0.0004361325927013893,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.003923946690622699,
+        "std": 0.007659871467290994,
+        "rand_mean": 0.004209316826098171,
+        "rand_std": 0.006041912184047085,
+        "t_statistic": -0.2798504656591241,
+        "p_value": 0.7802210504656433,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.0049317693769444304,
+        "std": 0.00838875415300611,
+        "rand_mean": 0.003419806801646041,
+        "rand_std": 0.004591813593085732,
+        "t_statistic": 1.7076691730676015,
+        "p_value": 0.08992319098706725,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0005323655898861873,
+        "std": 0.002833350450527878,
+        "rand_mean": 0.0006041420321689858,
+        "rand_std": 0.0009497844715528818,
+        "t_statistic": -0.21880558224688362,
+        "p_value": 0.827168679460399,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.0013363013252169016,
+        "std": 0.005073142637345362,
+        "rand_mean": 0.0011540561613085304,
+        "rand_std": 0.0013363331435231357,
+        "t_statistic": 0.3405908904290413,
+        "p_value": 0.7339637018029848,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0009992655380522068,
+        "std": 0.002342190127879045,
+        "rand_mean": 0.002730455565304503,
+        "rand_std": 0.00421192432093957,
+        "t_statistic": -2.7527889925122513,
+        "p_value": 0.007863728392813114,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "dots_and_globules_irregular": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.00042349056340754035,
+        "std": 0.003483153302587037,
+        "rand_mean": 5.2350049739470706e-05,
+        "rand_std": 0.00016516253040491416,
+        "t_statistic": 1.4962992724024764,
+        "p_value": 0.13613197290431778,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0021464543454203524,
+        "std": 0.0036986364330097833,
+        "rand_mean": 0.00043434960032077475,
+        "rand_std": 0.001585613605439415,
+        "t_statistic": 4.941332142590441,
+        "p_value": 1.723325376693489e-06,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.00014526550120745713,
+        "std": 0.0014742838199032554,
+        "rand_mean": 2.326542955415789e-05,
+        "rand_std": 6.665305928623945e-05,
+        "t_statistic": 0.8380436024712867,
+        "p_value": 0.4039302793792572,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.025293467926676385,
+        "std": 0.01510405363519502,
+        "rand_mean": 0.0011990606175036873,
+        "rand_std": 0.002151745407860086,
+        "t_statistic": 21.629706917973703,
+        "p_value": 4.712274022041895e-57,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.004141957133570031,
+        "std": 0.0035858195187888115,
+        "rand_mean": 0.0011055203465311933,
+        "rand_std": 0.0018962801984897647,
+        "t_statistic": 8.17384702275434,
+        "p_value": 1.3352576358052022e-13,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.010433719273023598,
+        "std": 0.008707609642357762,
+        "rand_mean": 0.0005869162840598619,
+        "rand_std": 0.0014414155694395226,
+        "t_statistic": 15.132478486233376,
+        "p_value": 1.5652021946583256e-36,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.00882741800041913,
+        "std": 0.007594143568630804,
+        "rand_mean": 0.0004864869037608855,
+        "rand_std": 0.0013531799114347503,
+        "t_statistic": 14.582283439386172,
+        "p_value": 7.870844309553141e-35,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.010837127441554913,
+        "std": 0.008937994343556766,
+        "rand_mean": 0.0006697346815980608,
+        "rand_std": 0.001163012666522352,
+        "t_statistic": 15.522284891266223,
+        "p_value": 2.465912373549372e-37,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0008195064383671506,
+        "std": 0.0023430874723172576,
+        "rand_mean": 0.00014580348340242268,
+        "rand_std": 0.00042621741748719304,
+        "t_statistic": 2.648435319163381,
+        "p_value": 0.009390379952752154,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.0030519332978586203,
+        "std": 0.004903912508755542,
+        "rand_mean": 0.0002193271078278459,
+        "rand_std": 0.00041645449220086434,
+        "t_statistic": 5.818283958847345,
+        "p_value": 6.374248285918286e-08,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.008598531031108877,
+        "std": 0.007078609861992342,
+        "rand_mean": 0.0004075825338980215,
+        "rand_std": 0.0013223205338608896,
+        "t_statistic": 14.022367894233483,
+        "p_value": 2.2427232263000613e-31,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "blue_whitish_veil": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.0007784639671444892,
+        "std": 0.006371075567289196,
+        "rand_mean": 3.882685972153013e-05,
+        "rand_std": 0.00011884879041299912,
+        "t_statistic": 1.636536912208941,
+        "p_value": 0.1033033190248857,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0036528183851623906,
+        "std": 0.005923988383419395,
+        "rand_mean": 0.00044541823576892055,
+        "rand_std": 0.0016111009598213971,
+        "t_statistic": 6.697766244655767,
+        "p_value": 1.4252424608554691e-10,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0003206123812840535,
+        "std": 0.0032538602920778622,
+        "rand_mean": 9.531999786269389e-06,
+        "rand_std": 2.9468328056496247e-05,
+        "t_statistic": 0.9701857661767357,
+        "p_value": 0.3342258851680139,
+        "significant": false,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.030675536361304694,
+        "std": 0.0229353120273737,
+        "rand_mean": 0.00108876126046257,
+        "rand_std": 0.001873126934693427,
+        "t_statistic": 17.956249037309792,
+        "p_value": 2.973592885562767e-44,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.004718448481448831,
+        "std": 0.005081455174743174,
+        "rand_mean": 0.0011342744764933086,
+        "rand_std": 0.0017117265341903972,
+        "t_statistic": 8.232396781935195,
+        "p_value": 1.417804784119306e-14,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.016650096758876316,
+        "std": 0.015057379292774243,
+        "rand_mean": 0.0006184449953113892,
+        "rand_std": 0.001408149025796515,
+        "t_statistic": 14.759664069855438,
+        "p_value": 2.1427910126482964e-34,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.015702364945400404,
+        "std": 0.013713440972103546,
+        "rand_mean": 0.0005894454895598983,
+        "rand_std": 0.0014096059475989632,
+        "t_statistic": 15.22316754145514,
+        "p_value": 5.485289340380175e-36,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.012397656685684523,
+        "std": 0.01297882500808937,
+        "rand_mean": 0.0006352368125218072,
+        "rand_std": 0.0011392388949047357,
+        "t_statistic": 12.589175268440444,
+        "p_value": 1.8028321170612333e-27,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.001183923776037633,
+        "std": 0.003301736869356388,
+        "rand_mean": 0.00017021105483293938,
+        "rand_std": 0.0003745982920503564,
+        "t_statistic": 2.8788533411664394,
+        "p_value": 0.004939214575816092,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.008258856590740694,
+        "std": 0.012991535822484421,
+        "rand_mean": 0.0002282095925098833,
+        "rand_std": 0.0004153401305943168,
+        "t_statistic": 6.266753624290716,
+        "p_value": 8.598443382095526e-09,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.010866668642704485,
+        "std": 0.01095955075704393,
+        "rand_mean": 0.0004866245319872712,
+        "rand_std": 0.001235358669433501,
+        "t_statistic": 11.879141308061753,
+        "p_value": 2.585097778370422e-24,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  },
+  "vascular_structures": {
+    "conv5_block1_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block2_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "conv5_block3_out": {
+      "MEL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "NV": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "AK": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "BKL": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "DF": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "VASC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      },
+      "SCC": {
+        "mean": 0.0,
+        "std": 0.0,
+        "rand_mean": 0.0,
+        "rand_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "significant": false,
+        "zero_attribution": true
+      }
+    },
+    "post_relu": {
+      "MEL": {
+        "mean": 0.02044418321424928,
+        "std": 0.013134949307341565,
+        "rand_mean": 0.0008187393297087339,
+        "rand_std": 0.00218792638046657,
+        "t_statistic": 19.981658595165854,
+        "p_value": 1.6039004627681788e-52,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "NV": {
+        "mean": 0.0033688348433088323,
+        "std": 0.004303738615307385,
+        "rand_mean": 0.0007227172828707892,
+        "rand_std": 0.0018733042990188098,
+        "t_statistic": 6.520341124118755,
+        "p_value": 6.630548035794987e-10,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BCC": {
+        "mean": 0.023731093367096036,
+        "std": 0.013695209695809837,
+        "rand_mean": 0.0004920910966956797,
+        "rand_std": 0.0020638995480966446,
+        "t_statistic": 22.90431163820401,
+        "p_value": 3.282394339252779e-61,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "AK": {
+        "mean": 0.03211198857919953,
+        "std": 0.01747294452061768,
+        "rand_mean": 0.00043052492603558513,
+        "rand_std": 0.001719014852816841,
+        "t_statistic": 25.089585336426286,
+        "p_value": 1.306214582309546e-65,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "BKL": {
+        "mean": 0.017687568534265664,
+        "std": 0.012300234641202059,
+        "rand_mean": 0.0005087668844467998,
+        "rand_std": 0.0017042801519892594,
+        "t_statistic": 18.975936806243567,
+        "p_value": 1.2249555789846125e-48,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "DF": {
+        "mean": 0.0019162052354499042,
+        "std": 0.005206990661175875,
+        "rand_mean": 9.850225174732896e-05,
+        "rand_std": 0.00040942634247438653,
+        "t_statistic": 3.293103298615443,
+        "p_value": 0.0014069051455256629,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "VASC": {
+        "mean": 0.0033699212288830984,
+        "std": 0.005630693556918986,
+        "rand_mean": 0.00026923034031377404,
+        "rand_std": 0.0007249733166880776,
+        "t_statistic": 5.493854939201931,
+        "p_value": 2.5637848796199156e-07,
+        "significant": true,
+        "zero_attribution": false
+      },
+      "SCC": {
+        "mean": 0.030130462011562265,
+        "std": 0.01893138413394208,
+        "rand_mean": 0.0003485681505020156,
+        "rand_std": 0.0016401041146598342,
+        "t_statistic": 19.89777144567381,
+        "p_value": 1.776955722435995e-46,
+        "significant": true,
+        "zero_attribution": false
+      }
+    }
+  }
+}
